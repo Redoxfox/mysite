@@ -1,0 +1,185 @@
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+html, body {
+  background-color: #ffeead;
+  margin: 10px;
+}
+
+.container {
+  display: grid;  
+  grid-template-columns: repeat(4, 1fr);
+  background:  #ffeead;
+}
+
+.container .container1
+{   
+    background: rgb(201, 121, 84);
+    grid-column: 1 / -1;
+    height: 400px;
+    
+}
+
+.container .container2
+{   
+    background: rgb(84, 201, 181);
+    grid-column: 1 / 2;
+    height: 400px;
+    
+}
+
+.container .container3
+{   
+    background: rgb(190, 76, 47);
+    grid-column: 2 / 4;
+    height: 400px;  
+}
+
+.container .container4
+{   
+    background: rgb(84, 201, 181);
+    grid-column: 4 / 5;
+    height: 400px;
+    
+}
+
+.container .container5
+{   
+    /* grid: container2; */
+    background:#fe4a49;;
+    grid-column: 1 / 3;
+    height: 400px;
+    
+}
+
+.container .container6
+{   
+    /* grid: container2; */
+    background: #260a00;
+    grid-column: 3 / 5;
+    height: 400px;
+    
+}
+
+.container .container7
+{   
+    /* grid: container2; */
+    background:#520087;
+    grid-column: 1 / 3;
+    height: 400px;
+    
+}
+
+.container .container8
+{   
+    /* grid: container2; */
+    background:  rgb(84, 201, 181);
+    grid-column: 3 / 5;
+    height: 400px;
+    
+}
+
+.container .container9
+{   
+    /* grid: container2; */
+    background: #ffaa5e;
+    grid-column: 1/-1;
+    height: 400px;
+    
+}
+
+.container .container10
+{   
+    /* grid: container2; */
+    background: #281969;
+    grid-column: 1/2;
+    height: 400px;
+    
+}
+
+.container .container11
+{   
+    /* grid: container2; */
+    background: #7b811f;
+    grid-column: 2/3;
+    height: 400px;
+    
+}
+
+.container .container12
+{   
+    /* grid: container2; */
+    background: #c74533;
+    grid-column: 3/5;
+    grid-row: 6/8;
+    /* height: 400px; */
+    
+}
+
+.container .container13
+{   
+     /* grid: container2; */
+     background: #a5a797;
+     grid-column: 1/2;
+     height: 400px;
+    
+}
+
+.container .container14
+{   
+     /* grid: container2; */
+     background: #2aabc2;
+     grid-column: 2/3;
+     height: 400px;
+    
+}
+
+.container .container15
+{   
+     /* grid: container2; */
+     background: #2fc22a;
+     grid-column: 1/2;
+     height: 400px;
+    
+}
+
+.container .container16
+{   
+     /* grid: container2; */
+     background: #a77d9e;
+     grid-column: 2/5;
+     height: 400px;
+    
+}
+
+.container .container17
+{   
+    /* grid: container2; */
+    background:#520087;
+    grid-column: 1 / 3;
+    height: 400px;
+    
+}
+
+.container .container18
+{   
+    /* grid: container2; */
+    background:  rgb(84, 201, 181);
+    grid-column: 3 / 5;
+    height: 400px;
+    
+}
+
+.container .container19
+{   
+    /* grid: container2; */
+    background: #1e1d1f;
+    grid-column: 1 / -1;
+    height: 200px;
+    
+}

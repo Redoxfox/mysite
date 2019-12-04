@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro de usuario</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href= "{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet" type="text/css" media="screen" />
+ 
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="logo">LavaSplash</h1>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+            {% for valor in servicios %}
+              <h4>Mas información</h4>
+              <img src="/static/imgs/img_{{valor.id}}.jpg"  alt="{{valor.id}}">
+            {% endfor %}   
+            </div>
+            <div class="contact-form">
+              <form action = "{{ url }}/InsertNewServicioPtdo"  method="POST">
+                <p>
+                    <label for="id-servicio">Id del servicio:</label>
+                    {% for valor in servicios %}
+                    <input type="text" name="idservicio" required='required'  value="{{valor.id}}"/>
+                    {% endfor %} 
+                </p>
+                
+                <p>
+                    <label for="tipo">Nombre del servicio:</label>
+                    {% for valor in servicios %}
+                    <input type="text" name='tipo'  required='required' value="{{valor.tipo}}"/>
+                    {% endfor %} 
+                </p>
+                <p>
+                    <label for="costo">Costo del servicio:</label>
+                    {% for valor in servicios %}
+                    <input type="text"  name='costo' required='required'  value="{{valor.costo}}"/>
+                    {% endfor %} 
+                </p>
+                
+                <p>
+                  <select name="cliente">
+                    {% for valor in clientes %}
+                     <option value={{valor.id }}>{{ valor.nombre }}</option>
+                    {% endfor %}
+                  </select>
+                </p>
+
+
+                <li id=servicios class="categoria">
+                    <a href="#"><i class="fa fa-cogs fa-lg"></i> Servicio con descuento <span class="arrow"></span></a>
+                 <div class="Servicios">
+                  <ul class="navbar2">
+                    <li class="sub-items"><input type="text" name="costo_descuento" value=0 id="entrada"></li>
+                  </ul>
+                </div>
+              </li>
+
+              <p>
+                <label for="fecha">Fecha prestacion servicio:</label>
+                <input type="date" id="fecha"  name='fecha' />
+              </p>
+          
+                <p>
+                    <label for="obs">Observacion:</label>
+                    <input type="text" id="obs"  name='obs' />
+                </p>
+
+                <p>
+                    <button  type='submit' >Registar servicio</button> 
+                    <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
+                </p>
+                </form>
+            </div>
+            
+        </div>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/ajax_script.js')}}"></script>
+</head>
+<body>
+        <button onclick = "ajax()">
+                Send Ajax Request
+              </button>
+          
+          <div id="container"></div>
+       
+        <form name="formulario">
+    
+                <!-- primer select de categorias -->
+                <select name="categorias" onchange="obtenerSubCategorias();">
+                    <option value="1">Liga 1</option>
+                    <option value="2">Liga 2</option>
+                    <option value="3">Liga 3</option>
+                    <option value="4">Liga 4</option>
+                    <option value="5">Liga 5</option>
+                </select>
+                <!-- capa que contiene al segundo select, el dependiente -->
+                <div id="capaSubCategorias">
+                    <select name="subCategorias">	</select>
+                </div>
+        </form>
+</body>
+</html>

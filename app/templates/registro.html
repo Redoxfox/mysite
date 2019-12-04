@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro de usuario</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href= "{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet" type="text/css" media="screen" />
+  </head>
+<body>
+    <div class="container">
+        <h1 class="logo">LavaSplash</h1>
+        <div class="contact-wrapper">
+            
+            <div class="contact-form">
+                <form action="{{url}}/singup" method="post">
+                    <p>
+                        <label for="nick">Nick usuario:</label>
+                        <input type="text" name="nick" id="nick">
+                    </p>
+                    <p>
+                        <label for="name">Nombre completo:</label>
+                        <input type="text" name="name" id="name">
+                    </p>
+
+                    <p>
+                        <label for="Email">Correo electronico:</label>
+                        <input type="email" name="Email" id="Email">
+                    </p>
+                    <p>
+                        <label for="tel">Numero Celular:</label>
+                        <input type="tel" name="telefono" id="tel">
+                    </p>
+
+                    <p>
+                        <label for="dir">Direccion:</label>
+                        <input type="text" name="direccion" id="dir">
+                    </p>
+
+                    <p>
+                        <label for="pass">Contraseña:</label>
+                        <input type="password" name="password" id="pass">
+                    </p>
+
+                    <p>
+                        <label for="passc">Confirmacion contraseña:</label>
+                        <input type="password" name="passwordc" id="passc">
+                    </p>  
+                    
+                    <p>
+                        <button type="submit">Enviar registro</button>
+                    </p>
+
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4>Mas información</h4>
+                <ul>
+                  <li>Medellín Colombia</li>
+                  <li>contacto@gmail.com</li>
+                  <li>FacebooK</li>
+                  <li>Intagram</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet.</p>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

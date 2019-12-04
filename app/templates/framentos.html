@@ -1,0 +1,1336 @@
+
+
+<li id=servicios class="categoria">
+  <a href="#"><i class="fa fa-cogs fa-lg"></i> Gestion Servicios <span class="arrow"></span></a>
+<div class="Servicios">
+<ul class="navbar2">
+  <li class="sub-items"><a href="{{url}}/NewOfServicio">Crear oferta de servicio</a></li>
+  <li class="sub-items"><a href="{{url}}/NewServicioPtado">Nuevo servicio prestado</a></li>
+  <li class="sub-items"><a href="{{url}}/ListaOfServicios">Lista de servicios</a></li>
+  <li class="sub-items"><a href="{{url}}/ProcesarServicios">Saldo de servicios</a></li>
+  <li class="sub-items"><a href="<?php echo BASE_URL.'admin'.DS.'Lista_Productos'?>">Lista PTerminados</a></li>
+</ul>
+</div>
+</li>
+
+<li id="clientes" class="categoria">
+<a href="#"><i class="fa fa-money fa-lg"></i> Clientes <span class="arrow"></span></a>
+<div class="Clientes">
+<ul class="navbar2">
+  <li class="sub-items"><a href="{{url}}/NewClient">Nuevo Cliente</a></li>
+  <li class="sub-items"><a href="{{url}}/MostrarClientes">Lista de clientes</a></li>
+  <li class="sub-items"><a href="#">Compras Pendientes</a></li>
+</ul>
+</div>
+</li>
+
+<li id="gasto" class="categoria">
+<a href="#"><i class="fa fa-recycle fa-lg"></i> Gastos Personales <span class="arrow"></span></a>
+<div class="Gasto">
+<ul class="navbar2">
+  <li class="sub-items"><a href="{{url}}/NewMovtoIngreso">Generacion Nuevo Ingreso </a></li>
+  <li class="sub-items"><a href="{{url}}/NewMovtoGasto">Generacion Nuevo Gasto</a></li>
+  <li class="sub-items"><a href="{{url}}/NewIngreso">Nuevo Items Lista Ingreso</a></li>
+  <li class="sub-items"><a href="{{url}}/NewGasto">Nuevo Items Lista Gasto</a></li>
+  <li class="sub-items"><a href="{{url}}/ListaIngresos">Lista de ingresos</a></li>
+  <li class="sub-items"><a href="{{url}}/ListaGasto">Lista de gastos</a></li>
+  <li class="sub-items"><a href="{{url}}/Lista_MovtoIngreso">Lista de movimientos ingresos</a></li>
+  <li class="sub-items"><a href="{{url}}/Lista_MovtoGasto">Lista de movimientos gastos</a></li>
+  <li class="sub-items"><a href="{{url}}/ProcesarGastos">Mostrar Saldo de Gastos</a></li>
+</ul>
+</div>
+</li>
+
+<li id="apuestas" class="categoria">
+<a href="#"><i class="fa fa-recycle fa-lg"></i> Apuestas <span class="arrow"></span></a>
+<div class="Apuestas">
+<ul class="navbar2">
+   
+  <li class="sub-items"><a href="{{url}}/NuevaCasa">Nueva Casa</a></li>
+  <li class="sub-items"><a href="{{url}}/NuevaLiga">Nueva liga</a></li>
+  <li class="sub-items"><a href="{{url}}/NuevoEquipo">Agregar Equipo Nuevo</a></li>
+  <li class="sub-items"><a href="{{url}}/Ins_Equipos">Equipos en masivo</a></li>
+  <li class="sub-items"><a href="{{url}}/Resultados">Resultados en masivo</a></li>
+  <li class="sub-items"><a href="{{url}}/EditarEquipos">Editar Equipos</a></li>
+  <li class="sub-items"><a href="{{url}}/Estadistica">Estadisticas</a></li>
+  <li class="sub-items"><a href="{{url}}/Partidos">Partidos jugados</a></li>
+  <li class="sub-items"><a href="{{url}}/Historial">Historial</a></li>
+  <li class="sub-items"><a href="{{url}}/Ajuste_Cuota">Ajustar Cuota</a></li>
+</ul>
+</div>
+</li>
+
+
+<li id="pedidos" class="categoria">
+<a href="#"><i class="fa fa-truck fa-lg"></i> Pedidos <span class="arrow"></span></a>
+<div class="Pedidos">
+<ul class="navbar2">
+  <li class="sub-items"><a href="#">Pedidos Facturar</a></li>
+  <li class="sub-items"><a href="#">Pedidos Facturar Consignacion</a></li>
+  <li class="sub-items"><a href="#">Pedidos Pendientes</a></li>
+</ul>
+</div>
+</li>
+
+<li id="ventas" class="categoria">
+<a href="#"><i class="fa fa-briefcase fa-lg"></i> Ventas <span class="arrow"></span></a>
+<div class="Ventas">
+<ul class="navbar2">
+  <li class="sub-items"><a href="#">Pedidos Facturar</a></li>
+  <li class="sub-items"><a href="#">Pedidos Facturar Consignacion</a></li>
+  <li class="sub-items"><a href="#">Historico Ventas</a></li>
+</ul>
+</div>
+</li>
+
+<li id="reportes" class="categoria">
+<a href="#"><i class="fa fa-bar-chart fa-lg"></i> Reportes <span class="arrow"></span></a>
+<div class="Reportes">
+<ul class="navbar2">
+  <li class="sub-items"><a  href="#">Ventas Mes</a></li>
+  <li class="sub-items"><a  href="#">Historico Ventas</a></li>
+  <li class="sub-items"><a  href="#">Grafico Ventas</a></li>
+</ul>
+</div>
+</li>
+
+
+
+
+
+{% if lista['view'] == 'NewIngreso' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de Gestion de ingresos ################-->
+<!--####################Nuevo item lista ingresos#######################-->
+<div class="container">
+      <h1 class="logo">Gastos e ingresos personales</h1> 
+          <div class="contact-form">
+              <form action = "{{ url }}/InsertNewIngreso"  method="post">
+            
+
+              <p>
+                  <label for="detalle">Observacion:</label>
+                  <input type="text" id="detalle"  name='detalle' required='required'/>
+              </p>
+           
+              <p>
+                  <button  type='submit' >Registar servicio</button> 
+                  <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
+              </p>
+
+              </form>
+          </div>
+  </div>
+
+  <br>
+<h4>Lista de ingresos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>detalle</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in ingresos %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.detalle }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesIngreso/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarIngreso/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% elif lista['view'] == 'ListaOfServicios' %}
+<!--#####################Gestion de servicios ofertados###################-->
+<!--#####################Mostrar listada servicios ofertados##############-->
+<br> 
+<h4>SALDO DE SERVICIOS PRESTADOS</h4>
+<table>
+<thead>
+<tr>
+  <th>DETALLE DE SERVICIOS PRESTADOS</th>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td> </td>
+  <td>Total </td>
+  <td>Porcentaje</td>
+</tr>
+<tr>
+  <td>Mensual</td>
+  <td>{{total[0]}}</td>
+  <td>{{total[1]}}</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<h4>Lista de servicios prestados</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>Valor</th>
+<th>Fecha</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in  Softado %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.costo_total }}</td>
+<td>{{ valor.fecha }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesServicio/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarServicio/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% elif lista['view'] == 'Editar_ingreso' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de Gestion de ingresos ################-->
+<!--#############################Editar item lista ingresos#############-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  {% for valor in Oferta_Servicio %} 
+  <form action = "{{ url }}/ActualizarIngreso/"  method="post">
+    <p>
+        <label for="id">Id del ingreso:</label>
+        <input type="text" name='id' required='required' value="{{ valor.id }}"/>
+      </p>
+    <p>
+      <label for="detalle">Detalle del ingreso:</label>
+      <input type="text" name='detalle' required='required' value="{{ valor.detalle }}"/>
+    </p>   
+  <p>
+      <button  type='submit' >Actualizar Ingreso</button> 
+  </p>
+ 
+  </form>
+  {% endfor %}
+</div>
+</div>
+
+{% elif lista['view'] == 'Lista_Ingresos' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de Gestion de ingresos ################-->
+<!--#####################Mostrar lista items ingresos###################-->
+<br>
+<h4>Lista de ingresos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>detalle</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in ingresos %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.detalle }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesIngreso/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarIngreso/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% elif lista['view'] == 'NewGasto' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de Gestion de gastos ##################-->
+<!--####################Nuevo item lista gastos ########################-->
+<div class="container">
+      <h1 class="logo">Gastos e ingresos personales</h1> 
+          <div class="contact-form">
+              <form action = "{{ url }}/InsertNewGasto"  method="post">    
+              <p>
+                  <label for="detalle">Observacion:</label>
+                  <input type="text" id="detalle"  name='detalle' required='required'/>
+              </p>
+           
+              <p>
+                  <button  type='submit' >Registar gasto</button> 
+              </p>
+
+              </form>
+          </div>
+  </div>
+
+  <br>
+<h4>Lista de gastos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>detalle</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in gastos %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.detalle }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesGastos/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarGasto/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% elif lista['view'] == 'Editar_gasto' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de Gestion de gastos ##################-->
+<!--#############################Editar item lista gastos###############-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  {% for valor in Oferta_Servicio %} 
+  <form action = "{{ url }}/ActualizarGasto/"  method="post">
+    <p>
+        <label for="id">Id del Gasto:</label>
+        <input type="text" name='id' required='required' value="{{ valor.id }}"/>
+      </p>
+    <p>
+      <label for="detalle">Detalle del Gasto:</label>
+      <input type="text" name='detalle' required='required' value="{{ valor.detalle }}"/>
+    </p>   
+  <p>
+      <button  type='submit' >Actualizar Gasto</button> 
+  </p>
+ 
+  </form>
+  {% endfor %}
+</div>
+</div>
+
+{% elif lista['view'] == 'Lista_Gastos' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de Gestion de gastos ##################-->
+<!--#####################Mostrar lista items gastos ####################-->
+<br>
+<h4>Lista de gastos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>detalle</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in ingresos %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.detalle }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesGastos/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarGasto/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% elif lista['view'] == 'NewMovtoGasto' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de movimeintos de gastos ##################-->
+<!--####################Nuevo item lista mvto gastos ########################-->
+<div class="container">
+      <h1 class="logo">Gastos e ingresos personales</h1> 
+          <div class="contact-form">
+              <form action = "{{ url }}/InsertNewMovtoGasto"  method="post">    
+                <p>
+                  <label for="id_gasto">Tipo de gasto:</label>
+                  <select name="id_gasto">
+                    {% for valor in gastos %}
+                     <option value={{valor.id }}>{{ valor.detalle}}</option>
+                    {% endfor %}
+                  </select>
+                </p>
+
+                <p>
+                    <label for="valor">Valor del gasto:</label>
+                    <input type="text"  name='valor' required='required'/>
+                </p>
+
+              <p>
+                <label for="fecha">Fecha prestacion servicio:</label>
+                <input type="date" id="fecha"  name='fecha' />
+              </p>
+          
+                <p>
+                    <label for="obs">Observacion:</label>
+                    <input type="text" id="obs"  name='obs' value="Gasto fijo"/>
+                </p>
+
+                <p>
+                    <button  type='submit' >Registrar gasto</button> 
+                </p>
+
+              </form>
+          </div>
+  </div>
+
+  <br>
+<h4>Lista de gastos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>Detalle</th>
+<th>Valor</th>
+<th>Fecha</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in gasto %}
+<tr>
+<td>{{ gasto[valor][0] }}</td>
+<td>{{ gasto[valor][1] }}</td>
+<td>{{ gasto[valor][2] }}</td>
+<td>{{ gasto[valor][3] }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesMovtoGasto/{{gasto[valor][0]}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarMovtoGasto/{{gasto[valor][0]}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% elif lista['view'] == 'Editar_MovtoGasto' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item lista mvto gastos################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  {% for valor in gasto %} 
+  <form action = "{{ url }}/ActualizarMovtoGasto/"  method="post">
+  <p>
+    <label for="id">id:</label>
+    <input type="text"  name='id' required='required' value="{{ valor.id }}"/>
+  </p>
+    
+    <p>
+      <label for="valor">Valor del gasto:</label>
+      <input type="text"  name='valor' required='required' value="{{ valor.valor }}"/>
+    </p>
+
+    <p>
+      <label for="fecha">Fecha de gasto:</label>
+      <input type="date" id="fecha"  name='fecha' value="{{ valor.fecha }}"/>
+    </p>
+
+    <p>
+      <label for="obs">Observacion:</label>
+      <input type="text" id="obs"  name='obs' value="{{ valor.observacion }}"/>
+    </p>
+
+    <p>
+      <button  type='submit' >Actualizar Gasto</button> 
+    </p>
+ 
+  </form>
+  {% endfor %}
+</div>
+</div>
+
+{% elif lista['view'] == 'Lista_MovtoGastos' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Mostrar item lista mvto gastos###############-->
+
+<br>
+<h4>Lista de movimientos gastos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>Detalle</th>
+<th>Valor</th>
+<th>Fecha</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in gasto %}
+<tr>
+<td>{{ gasto[valor][0] }}</td>
+<td>{{ gasto[valor][1] }}</td>
+<td>{{ gasto[valor][2] }}</td>
+<td>{{ gasto[valor][3] }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesMovtoGasto/{{gasto[valor][0]}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarMovtoGasto/{{gasto[valor][0]}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<!--###########################################################################################-->
+<!--################################Gestion Movimiento Ingresos################################-->
+<!--###########################################################################################-->
+{% elif lista['view'] == 'NewMovtoIngreso' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de movimeintos de gastos ##################-->
+<!--####################Nuevo item lista mvto gastos ########################-->
+<div class="container">
+      <h1 class="logo">Gastos e ingresos personales</h1> 
+          <div class="contact-form">
+              <form action = "{{ url }}/InsertNewMovtoIngreso"  method="post">    
+                <p>
+                  <label for="id_ingreso">Tipo de Ingreso:</label>
+                  <select name="id_ingreso">
+                    {% for valor in ingresos %}
+                     <option value={{valor.id }}>{{ valor.detalle}}</option>
+                    {% endfor %}
+                  </select>
+                </p>
+
+                <p>
+                    <label for="valor">Valor del Ingreso:</label>
+                    <input type="text"  name='valor' required='required' />
+                </p>
+
+              <p>
+                <label for="fecha">Fecha Ingreso:</label>
+                <input type="date" id="fecha"  name='fecha' />
+              </p>
+          
+                <p>
+                    <label for="obs">Observacion:</label>
+                    <input type="text" id="obs"  name='obs' value="Ingreso fijo"/>
+                </p>
+
+                <p>
+                    <button  type='submit' >Registar ingreso</button> 
+                </p>
+
+              </form>
+          </div>
+  </div>
+
+  <br>
+<h4>Lista de ingresos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>Detalle</th>
+<th>Valor</th>
+<th>Fecha</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in ingreso %}
+<tr>
+<td>{{ ingreso[valor][0] }}</td>
+<td>{{ ingreso[valor][1] }}</td>
+<td>{{ ingreso[valor][2] }}</td>
+<td>{{ ingreso[valor][3] }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesMovtoIngreso/{{ingreso[valor][0]}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarMovtoIngreso/{{ingreso[valor][0]}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% elif lista['view'] == 'Editar_MovtoIngreso' %}
+<!--#####################Gestion de ingresos personales#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item lista mvto gastos################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  {% for valor in ingreso %} 
+  <form action = "{{ url }}/ActualizarMovtoIngreso/"  method="post">
+  <p>
+    <label for="id">id:</label>
+    <input type="text"  name='id' required='required' value="{{ valor.id }}"/>
+  </p>
+    
+    <p>
+      <label for="valor">Valor del gasto:</label>
+      <input type="text"  name='valor' required='required' value="{{ valor.valor }}"/>
+    </p>
+
+    <p>
+      <label for="fecha">Fecha de gasto:</label>
+      <input type="date" id="fecha"  name='fecha' value="{{ valor.fecha }}"/>
+    </p>
+
+    <p>
+      <label for="obs">Observacion:</label>
+      <input type="text" id="obs"  name='obs' value="{{ valor.observacion }}"/>
+    </p>
+
+    <p>
+      <button  type='submit' >Actualizar ingreso</button> 
+    </p>
+ 
+  </form>
+  {% endfor %}
+</div>
+</div>
+
+{% elif lista['view'] == 'Lista_MovtoIngresos' %}
+<!--#####################Gestion de ingresos personales###################-->
+<!--#####################Seccion de movimeintos de ingresos###############-->
+<!--#######################Mostrar item lista mvto ingresos###############-->
+
+<br>
+<h4>Lista de movimientos ingresos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>Detalle</th>
+<th>Valor</th>
+<th>Fecha</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in ingreso %}
+<tr>
+<td>{{ ingreso[valor][0] }}</td>
+<td>{{ ingreso[valor][1] }}</td>
+<td>{{ ingreso[valor][2] }}</td>
+<td>{{ ingreso[valor][3] }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesMovtoIngreso/{{ingreso[valor][0]}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarMovtoIngreso/{{ingreso[valor][0]}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<!--###########################################################################################-->
+<!--################################Gestion Movimiento Ingresos################################-->
+<!--###########################################################################################-->
+{% elif lista['view'] == 'GastoTotal' %}
+<!--#####################Gestion de ingresos personales###################-->
+<!--#####################Seccion de movimeintos de ingresos###############-->
+<!--#######################Mostrar item lista mvto ingresos###############-->
+<br> 
+<h4>SALDO DE GASTOS GENERALES</h4>
+<table>
+<thead>
+<tr>
+  <th>DETALLE GASTOS GENERALES</th>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td> </td>
+  <td>Ingresos </td>
+  <td>Gastos</td>
+</tr>
+<tr>
+  <td>Mensual</td>
+  <td>{{total[3]}}</td>
+  <td>{{total[4]}}</td>
+</tr>
+<tr>
+  <td>Anual </td>
+  <td>{{total[0]}}</td>
+  <td>{{total[1]}}</td>
+ </tr>
+<tr>
+    <td>Saldo Total </td>
+    <td></td>
+    <td>{{total[2]}}</td>
+</tr>
+</tbody>
+</table>
+<br>
+{% elif lista['view'] == 'NuevaLiga' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/InsertarLiga/"  method="post">
+ 
+    <p>
+      <label for="nombre">Nombre Liga:</label>
+      <input type="text"  name='nombre' required='required'/>
+    </p>
+
+    <p>
+      <label for="pais">Pais liga:</label>
+      <input type="text" id="fecha"  name='pais' />
+    </p>
+
+    <p>
+      <label for="continente">continente:</label>
+      <input type="text" id="continente"  name='continente'/>
+    </p>
+
+    <p>
+      <button  type='submit' >Crear Nueva Liga</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+{% elif lista['view'] == 'EditarEquipo' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/ActualizarEquipo/"  method="post" name="formulario">
+ 
+    <p>
+      <label for="id_liga">Tipo de Ingreso:</label>
+      <select name="id_liga" onchange="obtenerSubCategorias();">
+        {% for valor in ligas %}
+         <option value={{valor.id }}>{{ valor.nombre}}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>  
+    <div id="capaSubCategorias">
+      <label for="pais">Nombre Equipo:</label>
+      <select name="subCategorias">	</select>
+    </div>
+    <p></p>
+
+    <p>
+      <label for="equipo">Nuevo Nombre Equipo:</label>
+      <input type="text" id="fecha"  name='equipo' />
+    </p>
+    <p>
+      <button  type='submit' >Actualizar Nombre Equipo</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+{% elif lista['view'] == 'NuevoEquipo' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/InsertarEquipo/"  method="post">
+    <p>
+      <label for="id_liga">Tipo de Ingreso:</label>
+      <select name="id_liga" >
+        {% for valor in ligas %}
+         <option value={{valor.id }}>{{ valor.nombre}}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>
+      <label for="nombre">Nombre Liga:</label>
+      <input type="text"  name='nombre' required='required'/>
+    </p>
+
+    <p>
+      <button  type='submit' >Agregar Equipo Liga</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+{% elif lista['view'] == 'ListaPartidos' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<h4>Lista de ingresos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>local</th>
+<th>goles</th>
+<th>goles</th>
+<th>visitante</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in result %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.nombre_eql}}</td>
+<td>{{ valor.gol_eql}}</td>
+<td>{{ valor.gol_eqv}}</td>
+<td>{{ valor.nombre_eqv}}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesIngreso/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarIngreso/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% elif lista['view'] == 'Estadistica' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/Estadisticas/"  method="post" name="formulario">
+ 
+    <p>
+      <label for="id_liga">Tipo de Ingreso:</label>
+      <select name="id_liga" onchange="obtenerSubCategorias();">
+        {% for valor in ligas %}
+         <option value={{valor.id }}>{{ valor.nombre}}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>  
+    <div id="capaSubCategorias">
+      <label for="pais">Nombre Equipo:</label>
+      <select name="subCategorias">	</select>
+    </div>
+    </p>
+
+    <div id="capaSubCategorias2">
+      <label for="pais">Nombre Equipo:</label>
+      <select name="subCategorias2">	</select>
+    </div>
+    </p>
+    <p>
+      <button  type='submit' >Actualizar Nombre Equipo</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+{% elif lista['view'] == 'Estadisticas' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+    
+    <form action = "{{ url }}/Estadisticas/"  method="post" name="formulario">
+   
+      <p>
+        <label for="id_liga">Tipo de Ingreso:</label>
+        <select name="id_liga" onclick="obtenerSubCategorias();">
+          {% for valor in ligas %}
+           <option value={{valor.id }}>{{ valor.nombre}}</option>
+          {% endfor %}
+        </select>
+      </p>
+      <p>  
+      <div id="capaSubCategorias">
+        <label for="pais">Nombre Equipo:</label>
+        <select name="subCategorias">	</select>
+      </div>
+      </p>
+
+      <div id="capaSubCategorias2">
+        <label for="pais">Nombre Equipo:</label>
+        <select name="subCategorias2">	</select>
+      </div>
+      </p>
+      <p>
+        <button  type='submit' >Actualizar Nombre Equipo</button> 
+      </p>
+   
+    </form>
+ 
+</div>
+</div>
+
+<h4>Probabilidad de mercador total {{ local }} vs {{visit}}</h4>
+<table>
+<thead>
+<tr>
+<th>Mercado</th>
+<th>Probabildad</th>
+<th>Porcentaje</th>
+<th>Couta</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in total %}
+<tr>
+<td>{{ [valor][0][0] }}</td>
+<td>{{ [valor][0][1]}}</td>
+<td>{{ [valor][0][2]}}</td>
+<td>{{ [valor][0][3]}}</td>    
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<h4>Probabilidad de goles maracados {{ local }} como local</h4>
+<table>
+<thead>
+<tr>
+<th>Mercado</th>
+<th>Probabildad</th>
+<th>Porcentaje</th>
+<th>Couta</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in Local_gol %}
+<tr>
+<td>{{ [valor][0][0] }}</td>
+<td>{{ [valor][0][1]}}</td>
+<td>{{ [valor][0][2]}}</td>
+<td>{{ [valor][0][3]}}</td>    
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<h4>Probabilidad de goles maracados {{ visit }} como visitante</h4>
+<table>
+<thead>
+<tr>
+<th>Mercado</th>
+<th>Probabildad</th>
+<th>Porcentaje</th>
+<th>Couta</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in Visit_gol %}
+<tr>
+<td>{{ [valor][0][0] }}</td>
+<td>{{ [valor][0][1]}}</td>
+<td>{{ [valor][0][2]}}</td>
+<td>{{ [valor][0][3]}}</td>    
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<h4>Probabilidad de goles maracados {{ local }} historial local-visitante</h4>
+<table>
+<thead>
+<tr>
+<th>Mercado</th>
+<th>Probabildad</th>
+<th>Porcentaje</th>
+<th>Couta</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in LVisit_gol  %}
+<tr>
+<td>{{ [valor][0][0] }}</td>
+<td>{{ [valor][0][1]}}</td>
+<td>{{ [valor][0][2]}}</td>
+<td>{{ [valor][0][3]}}</td>    
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<h4>Probabilidad de goles maracados {{ visit }} historial visitante-local </h4>
+<table>
+<thead>
+<tr>
+<th>Mercado</th>
+<th>Probabildad</th>
+<th>Porcentaje</th>
+<th>Couta</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in VLocal_gol %}
+<tr>
+<td>{{ [valor][0][0] }}</td>
+<td>{{ [valor][0][1]}}</td>
+<td>{{ [valor][0][2]}}</td>
+<td>{{ [valor][0][3]}}</td>    
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<h4>Probabilidad de goles maracados historial liga </h4>
+<table>
+<thead>
+<tr>
+<th>Mercado</th>
+<th>Probabildad</th>
+<th>Porcentaje</th>
+<th>Couta</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in Liga_gol %}
+<tr>
+<td>{{ [valor][0][0] }}</td>
+<td>{{ [valor][0][1]}}</td>
+<td>{{ [valor][0][2]}}</td>
+<td>{{ [valor][0][3]}}</td>    
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% elif lista['view'] == 'ResultadosMasivo' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/InsertarPartidos/"  method="post">
+    <p>
+      <label for="id_liga">Tipo de Ingreso:</label>
+      <select name="id_liga" >
+        {% for valor in ligas %}
+         <option value={{valor.id }}>{{ valor.nombre}}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>
+      <button  type='submit' >Agregar Equipo Liga</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+{% elif lista['view'] == 'Ins_equipos' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/InsertarEquipos/"  method="post">
+    <p>
+      <label for="id_liga">Tipo de Ingreso:</label>
+      <select name="id_liga" >
+        {% for valor in ligas %}
+         <option value={{valor.id }}>{{ valor.nombre}}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>
+      <button  type='submit' >Agregar Equipo Liga</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+
+{% elif lista['view'] == 'NuevosEquipos' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<h4>Equipos ingresados nueva liga </h4>
+<table>
+<thead>
+<tr>
+<th>Nombre Equipo</th>
+<th>Ingresados</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in equipos %}
+<tr>
+<td>{{valor }}</td>
+<td>{{ eqs }}</td> 
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% elif lista['view'] == 'Historial' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/Recibirjson/"  method="post" name="formulario">
+ 
+    <p>
+      <label for="id_liga">Nombre de Liga:</label>
+      <select name="id_liga" id="idliga" onclick="obtenerSubCategorias();">
+        {% for valor in ligas %}
+         <option value={{valor.id }}>{{ valor.nombre}}</option>
+        {% endfor %}
+      </select>
+    </p>
+
+    <p>
+        <label for="id_casa">Nombre de Casa:</label>
+        <select name="id_casa" id="idcasa">
+          {% for valor in casas %}
+           <option value={{valor.id }}>{{ valor.casa}}</option>
+          {% endfor %}
+        </select>
+    </p>
+
+    <p>  
+    <div id="capaSubCategorias">
+      <label for="pais">Nombre Equipo:</label>
+      <select name="subCategorias">	</select>
+    </div>
+    </p>
+
+    <div id="capaSubCategorias2">
+      <label for="pais">Nombre Equipo:</label>
+      <select name="subCategorias2">	</select>
+    </div>
+    </p>
+
+    <p>
+      <label for="mercado">Mercado:</label>
+      <select name = "eq_2" id = "mercado"  >
+         <option value="0.5">Over 0.5 goles</option>
+         <option value="1.5">Over 1.5 goles</option>
+         <option value="2.5">Over 2.5 goles</option>
+      </select>
+    </p>
+    <p>
+      <label for="cuota">Mercado:</label>
+      <input type="text" name = "cuota" id = "cuota" value = 0.0>
+    </p>
+    <p>
+        <label for="valor">Valor Apuesta:</label>
+        <input type="text" name = "valor" id = "valor" value = 0.0>
+    </p>
+
+    <p>
+        <label for="fecha">Fecha Apuesta:</label>
+        <input type="date" id="fecha"  name='fecha' />
+    </p>
+
+<p>   
+  <textarea id="texto" cols="75" rows="5" name = "json"></textarea>
+  <button type="button" onclick='concatenar()' id="botón">Agregar</button>
+</p>
+
+<p>   
+  <button type="button" onclick='generar_json()' id="json">Generar Json</button>
+</p>
+
+    <p>
+      <button  type='submit' >Actualizar Nombre Equipo</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+<script type="text/javascript">
+
+function obtener_valor() {
+let palabras = document.getElementById('id_liga').value;
+document.getElementById('texto').innerHTML = palabras;
+console.log(palabras);
+}
+
+function concatenar() {
+let apertura = "{"
+let id_liga = '"id_liga":' + document.getElementById('idliga').value + ",";
+let id_casa = '"id_casa":' + document.getElementById('idcasa').value + ",";
+let eq_1 = '"eq_1":' + document.getElementById('eq_1').value + ",";
+let eq_2 = '"eq_2":' + document.getElementById('eq_2').value + ",";
+let mercado = '"mercado":' + '"'+ document.getElementById('mercado').value + '"' + ",";
+let cuota = '"cuota":' +  document.getElementById('cuota').value  + ",";
+let valor = '"valor":' + document.getElementById('valor').value;
+let cierre = "},"
+let union = document.getElementById('texto').value;
+document.getElementById('texto').innerHTML = union + (apertura + id_liga + id_casa + eq_1 + eq_2 + mercado + cuota + valor +  cierre);
+}
+
+function generar_json() {
+let union = document.getElementById('texto').value;
+n = union.length;
+union = union.substr(0,n-1);   // '(1, 2): bc'
+document.getElementById('texto').innerHTML = "[" + union + "]";
+}
+
+</script>
+{% elif lista['view'] == 'Select_Liga' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/MostrarPartidos/"  method="post">
+    <p>
+      <label for="id_liga">Tipo de Ingreso:</label>
+      <select name="id_liga" >
+        {% for valor in ligas %}
+         <option value={{valor.id }}>{{ valor.nombre}}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>
+      <button  type='submit'>Mostrar Partidos Jugados</button> 
+    </p>
+ 
+  </form>      
+</div>
+</div>
+{% elif lista['view'] == 'Partidos' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<h4>Lista de partidos jugados ultima temporada</h4>
+<br>
+<h6>Numero ultima temporada ingresada: {{ultima}}</h6>
+<h6>Numero de partidos ingresados: {{total}}</h6>
+<br>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>local</th>
+<th>goles</th>
+<th>goles</th>
+<th>visitante</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in result %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.nombre_eql}}</td>
+<td>{{ valor.gol_eql}}</td>
+<td>{{ valor.gol_eqv}}</td>
+<td>{{ valor.nombre_eqv}}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesIngreso/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarIngreso/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% elif lista['view'] == 'NuevaCasa' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+  
+  <form action = "{{ url }}/InsertarCasa/"  method="post">
+ 
+    <p>
+      <label for="nombre">Nombre Casa:</label>
+      <input type="text"  name='nombre' required='required'/>
+    </p>
+
+    <p>
+      <button  type='submit' >Crear Nueva Casa</button> 
+    </p>
+ 
+  </form>
+
+</div>
+</div>
+{% elif lista['view'] == 'Ajuste_cuotas' %}
+<!--#####################Gestion de apuestas#################-->
+<!--#####################Seccion de movimeintos de gastos ##############-->
+<!--#######################Editar item equipo################-->
+<div class="container">
+<h1 class="logo">LavaSplash</h1>
+<div class="contact-form">
+
+<form action = "{{ url }}/MostrarCuotas/"  method="post">
+  <p>
+    <label for="nombre">Favorito/Empate:</label>
+    <input type="text"  name='FE' required='required'/>
+  </p>
+
+  <p>
+    <label for="nombre">Empate/empate:</label>
+    <input type="text"  name='EE' required='required'/>
+  </p>
+
+  <p>
+    <label for="nombre">NoFavorito/Empate:</label>
+    <input type="text"  name='NE' required='required'/>
+  </p>
+
+  <p>
+    <label for="nombre">Favorito/NoFavorito:</label>
+    <input type="text"  name='FN' required='required'/>
+  </p>
+
+  <p>
+    <label for="nombre">Empate/NoFavorito:</label>
+    <input type="text"  name='EN' required='required'/>
+  </p>
+
+  <p>
+    <label for="nombre">NoFavorito/NoFavorito:</label>
+    <input type="text"  name='NN' required='required'/>
+  </p>
+
+  <p>
+    <button  type='submit' >Calcular valor</button> 
+  </p>
+
+</form>      
+</div>
+</div>
+{% else %}\
+  Por favor indique si es socio o cliente.\
+{% endif %}

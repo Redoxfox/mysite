@@ -1,0 +1,45 @@
+{%block NewIngreso%}
+<div class="container">
+    <h1 class="logo">Gastos e ingresos personales</h1> 
+        <div class="contact-form">
+            <form action = "{{ url }}/InsertNewIngreso"  method="post">
+          
+
+            <p>
+                <label for="detalle">Observacion:</label>
+                <input type="text" id="detalle"  name='detalle' required='required'/>
+            </p>
+         
+            <p>
+                <button  type='submit' >Registar servicio</button> 
+                <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
+            </p>
+
+            </form>
+        </div>
+</div>
+
+<br>
+<h4>Lista de ingresos</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>detalle</th>
+<th>Editar</th>
+<th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+
+{% for valor in ingresos %}
+<tr>
+<td>{{ valor.id }}</td>
+<td>{{ valor.detalle }}</td>
+<td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesIngreso/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
+<td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarIngreso/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>       
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{%endblock%}

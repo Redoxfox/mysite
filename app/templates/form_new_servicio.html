@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro de usuario</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href= "{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet" type="text/css" media="screen" />
+  </head>
+<body>
+    <div class="container">
+        <h1 class="logo">LavaSplash</h1>
+        <div class="contact-wrapper">
+            
+            <div class="contact-form">
+                <form action = "{{ url }}/InsertNewServicio"  method="post">
+                  <p>
+                    <label for="tipo">Nombre del servicio:</label>
+                    <input type="text" name='tipo' required='required'/>
+                </p>
+                <p>
+                    <label for="costo">Costo del servicio:</label>
+                    <input type="number"  name='costo' required='required'/>
+                </p>
+
+                <p>
+                    <label for="obs">Observacion:</label>
+                    <input type="text" id="obs"  name='obs' required='required'/>
+                </p>
+             
+                <p>
+                    <button  type='submit' >Registar servicio</button> 
+                    <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
+                </p>
+
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4>Mas información</h4>
+                <ul>
+                  <li>Medellín Colombia</li>
+                  <li>contacto@gmail.com</li>
+                  <li>FacebooK</li>
+                  <li>Intagram</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <h4>Lista de servicio disponibles</h4>
+      <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>tipo</th>
+          <th>Costo</th>
+          <th>Observacion</th>
+        </tr>
+      </thead>
+      <tbody>
+
+       {% for valor in Oferta_Servicio %}
+        <tr>
+          <td>{{ valor.id }}</td>
+          <td>{{ valor.tipo }}</td>
+          <td>{{ valor.costo }}</td>
+          <td>{{ valor.detalles }}</td>
+        </tr>
+       {% endfor %}
+      </tbody>
+  </table>
+    
+</body>
+</html>

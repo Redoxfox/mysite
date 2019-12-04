@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #matrice {
+            display: grid
+            
+        }
+    </style>
+</head>
+<body>
+    <input id="rows" type="text">
+    <input id="cols" type="text">
+    <button>Cambiar</button>
+
+
+    <div id="matrice">
+    
+    </div>
+
+    <button id="button2">Cambiar</button>
+
+    <script>
+        const rows = document.getElementById("rows")
+        const cols = document.getElementById("cols")
+        const matrice = document.getElementById("matrice")
+        const btn = document.querySelector("button")
+        const btn2 = document.getElementById("button2")
+        btn.addEventListener("click", () => {
+            const rv = parseInt(rows.value)
+            const cv = parseInt(cols.value)
+            matrice.style.gridTemplateRows = "repeat(" + rv + ", 1fr)"
+            matrice.style.gridTemplateColumns = "repeat(" + cv + ", 1fr)"
+            matrice.innerHTML = ""
+            for(let i = 0; i < rv; i++) {
+                for (let j = 0; j < cv; j++) {
+                    const inp = document.createElement("input" )
+                    inp.id = "inp-" + i + "-" + j
+                    matrice.appendChild(inp)
+                }
+            }
+        })
+           btn2.addEventListener("click", () => {
+              mostrar()
+            })
+        function mostrar() {
+            const rv = parseInt(rows.value)
+            const cv = parseInt(cols.value)
+            for (let i = 0; i < rv; i++) {
+                for (let j = 0; j < cv; j++) {
+                    inp = "inp-" + i  + "-" + j
+                    z = document.getElementById(inp).value
+                    
+                    alert.log(z)                   
+                }
+            }
+
+
+              
+        }
+       
+    </script>
+</body>
+</html>
+

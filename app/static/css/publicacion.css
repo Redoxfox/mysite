@@ -1,0 +1,39 @@
+.container .post{
+    font-family: sans-serif; 
+    line-height: 1.5em;
+    font-size: 16pt;
+    margin: 20px;
+    text-align:justify
+}
+
+h2{
+    font-family: sans-serif; 
+    line-height: 1.5em;
+    text-align:center
+}
+#cabecera{
+    background-color:#E5BC7A;
+    height:20%;
+}
+#menu{
+    height:10%;
+    background-color:#C8CACC;
+}
+#izquierda{
+    height:50%;
+    background-color:#BDD2EF;
+    float:left;
+    width:50%;
+}
+#derecha{
+    height:50%;
+    background-color:#DAF7E2;
+    float:right;
+    width:50%;
+}
+#footer{
+    height:20%;
+    background-color:rgb(196, 193, 211);
+    clear:both;
+}
+

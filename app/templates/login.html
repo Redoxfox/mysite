@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro de usuario</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href= "{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet" type="text/css" media="screen" />
+  </head>
+<body>
+    <div class="container">
+        <h1 class="logo">LavaSplash</h1>
+        <div class="contact-wrapper">
+            
+            <div class="contact-form">
+                <form action="{{url}}/validar" method="post">
+                    <p>
+                        <label for="username">Usuario:</label>
+                        <input type="text" name="username" id="username">
+                    </p>
+                    <p>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password">
+                    </p>
+                    
+                    <p>
+                        <button type="submit">Enviar registro</button>
+                    </p>
+
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4>Mas información</h4>
+                <ul>
+                  <li>Medellín Colombia</li>
+                  <li>contacto@gmail.com</li>
+                  <li>FacebooK</li>
+                  <li>Intagram</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet.</p>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

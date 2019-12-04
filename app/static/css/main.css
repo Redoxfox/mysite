@@ -1,0 +1,316 @@
+main > * {
+    background-color:gainsboro;
+    /*background-color:black;*/
+    padding: 0;
+    font-size: 1em;
+}
+
+ul>li{
+    list-style: none;
+}
+
+
+/*Definir grip container*/
+main {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "header"
+    "izquierda"
+    "contenido"
+    "derecha"
+    "footer";
+    
+}
+
+
+
+.navbar2{
+   
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    background: steelblue; 
+    list-style: none;
+}
+
+
+.menuitems {
+    color:white;
+    text-decoration:none;
+    line-height: 3;
+    display: block;
+    
+ }
+ 
+ li{
+   
+    border-bottom: 1px solid darkslategray;
+    text-align: center;
+    flex-direction: row;
+ } 
+
+ li>a{
+    text-decoration:none; 
+ }
+ .categoria{
+     background:lightsteelblue;
+     text-align: left;
+     line-height: 2;
+     
+ }
+
+
+ 
+ .menuitems:hover{
+     background:rgb(179, 245, 245);
+     color: black;
+ }
+
+ h1 {
+     /*color: rgb(27, 23, 68);*/
+     color:black;
+ }
+
+ .categoria .navbar2 .sub-items{
+    text-align: left;
+    color: azure;
+ }
+
+ .Servicios {
+    display: none; 
+        
+ }
+
+#servicios:hover .Servicios{
+    display: block; 
+    color: black; 
+}
+
+.Clientes {
+    display: none;   
+}
+
+#clientes:hover .Clientes{
+    display: block; 
+    color: black; 
+}
+
+.Apuestas {
+    display: none;   
+}
+
+#apuestas:hover .Apuestas{
+    display: block; 
+    color: black; 
+}
+
+.Gasto {
+    display: none;   
+}
+
+#gasto:hover .Gasto{
+    display: block; 
+    color: black; 
+}
+
+
+.Pedidos {
+    display: none;   
+}
+
+#pedidos:hover .Pedidos{
+    display: block; 
+    color: black; 
+}
+
+.Ventas {
+    display: none;   
+}
+
+#ventas:hover .Ventas{
+    display: block; 
+    color: black; 
+}
+
+.Reportes {
+    display: none;   
+}
+
+#reportes:hover .Reportes{
+    display: block; 
+    color: black; 
+}
+
+.Herramientas {
+    display: none;   
+}
+
+#herramientas:hover .Herramientas{
+    display: block; 
+    color: black; 
+}
+
+.categoria .navbar2 .sub-items>a{
+    color: azure;
+}
+
+.categoria .navbar2 .sub-items>a:hover{
+    background-color: lightgreen;
+    color: black;
+}
+
+.categoria>a{
+    background-color:azure;
+    color: black;
+}
+
+
+@media(min-width:500px){
+    main{
+        grid-template-areas: 
+        "header header header"
+        "izquierda contenido derecha"
+        "footer footer footer";
+    }
+
+   .categoria .navbar2 .sub-items{
+       text-align: left;
+       color: azure;
+   }
+
+   .categoria .navbar2 .sub-items>a{
+        color: azure;
+    }
+
+    .categoria .navbar2 .sub-items>a:hover{
+        background-color: lightgreen;
+        color: black;
+    }
+
+
+
+    .navbar{
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style: none;
+        background: steelblue;
+        display:flex;
+    }
+    
+    .menuitems {
+       color: white;
+       text-decoration:none;
+       line-height: 3;
+       display: block;
+    }
+    
+  
+
+    .Servicios {
+        display: none; 
+            
+    }
+
+    #servicios:hover .Servicios{
+        display: block; 
+        color: black; 
+    }
+
+    .Clientes {
+        display: none;   
+    }
+
+    #clientes:hover .Clientes{
+        display: block; 
+        color: black; 
+    }
+    
+    .Produccion {
+        display: none;   
+    }
+
+    #produccion:hover .Produccion{
+        display: block; 
+        color: black; 
+    }
+    
+
+    .Pedidos {
+        display: none;   
+    }
+
+    #pedidos:hover .Pedidos{
+        display: block; 
+        color: black; 
+    }
+
+    .Ventas {
+        display: none;   
+    }
+
+    #ventas:hover .Ventas{
+        display: block; 
+        color: black; 
+    }
+
+    .Reportes {
+        display: none;   
+    }
+
+    #reportes:hover .Reportes{
+        display: block; 
+        color: black; 
+    }
+
+    .Herramientas {
+        display: none;   
+    }
+
+    #herramientas:hover .Herramientas{
+        display: block; 
+        color: black; 
+    }
+    
+    
+    li{
+       flex:auto;
+       border-right: 1px solid darkslategray;
+       text-align: center;
+       list-style: none;
+    } 
+    
+    .menuitems:hover{
+        background:rgb(179, 245, 245);
+        color: black;
+    }
+
+    .categoria>a{
+        background-color:azure;
+        color: black;
+    }
+    
+}
+
+header {
+    grid-area: header;
+    
+}
+
+aside :first-of-type {
+    grid-area: izquierda
+}
+
+article {
+    grid-area: contenido;
+}
+
+aside :last-of-type {
+    grid-area: derecha;
+}
+
+footer {
+    grid-area: footer;
+}

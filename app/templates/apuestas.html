@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/ajax_script.js')}}"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<form action = "{{ url }}/MostrarCuotas/" name="formulario" method="post">
+    <article>
+        <label  for="nombre" class="itemslabel">NoFavorito:</label>
+        <input type="text"  name='NoF' required='required'/>
+        <label for="nombre" class="itemslabel">Empate:</label>
+        <input type="text"  name='Emp' required='required'/>
+        <label for="nombre" class="itemslabel">VEsperado:</label>
+        <input type="text"  name='VEs' required='required'/>
+       
+    </article>
+    <article>
+        <label for="nombre" class="itemslabel">Favorito/Empate:</label>
+        <input type="text"  name='FE' required='required'/>
+        <label for="nombre" class="itemslabel">Empate/empate:</label>
+        <input type="text"  name='EE' required='required'/>
+        <label for="nombre" class="itemslabel">NoFavorito/Empate:</label>
+        <input type="text"  name='NE' required='required'/>
+    </article>
+   
+    <article>
+        <label  for="nombre" class="itemslabel">Favorito/NoFavorito:</label>
+        <input type="text"  name='FN' required='required'/>
+        <label for="nombre" class="itemslabel">Empate/NoFavorito:</label>
+        <input type="text"  name='EN' required='required'/>
+        <label for="nombre" class="itemslabel">NoFavorito/NoFavorito:</label>
+        <input type="text"  name='NN' required='required'/>
+        
+    </article>
+    <article>
+      <label  for="nombre" class="itemslabel">NoFavorito2:</label>
+      <input type="text"  name='NoF2' required='required'/>
+      <label for="nombre" class="itemslabel">Empate2:</label>
+      <input type="text"  name='Emp2' required='required'/>
+      <label for="nombre" class="itemslabel">VEsperado2:</label>
+      <input type="text"  name='VEs2' required='required'/>
+    </article>
+    <article>
+      <label for="nombre" class="itemslabel">Favorito/Empate2:</label>
+      <input type="text"  name='FE2' required='required'/>
+      <label for="nombre" class="itemslabel">Empate/empate2:</label>
+      <input type="text"  name='EE2' required='required'/>
+      <label for="nombre" class="itemslabel">NoFavorito/Empate2:</label>
+      <input type="text"  name='NE2' required='required'/>
+    </article>
+    <article>
+      <label  for="nombre" class="itemslabel">Favorito/NoFavorito2:</label>
+      <input type="text"  name='FN2' required='required'/>
+      <label for="nombre" class="itemslabel">Empate/NoFavorito2:</label>
+      <input type="text"  name='EN2' required='required'/>
+      <label for="nombre" class="itemslabel">NoFavorito/NoFavorito2:</label>
+      <input type="text"  name='NN2' required='required'/>
+    </article>
+    <article>
+      <label  for="nombre" class="itemslabel">Favorito:</label>
+      <input type="text"  name="favorito" required='required'/>
+      <label for="nombre" class="itemslabel">NoFavorito:</label>
+      <input type="text"  name="Nofavorito" required='required'/>
+      <label for="nombre" class="itemslabel">Empate:</label>
+      <input type="text"  name="Empate" required='required' value= "Empate"/>
+    </article>
+    <article>
+      <label  for="nombre" class="itemslabel">Favorito2:</label>
+      <input type="text"  name="favorito2" required='required'/>
+      <label for="nombre" class="itemslabel">NoFavorito2:</label>
+      <input type="text"  name="Nofavorito2" required='required'/>
+      <label for="nombre" class="itemslabel">Empate2:</label>
+      <input type="text"  name="Empate2" required='required' value= "Empate"/>
+    </article>
+    <button  type="submit" onclick="cuotas();" >Calcular valor</button> 
+</form>      
+{% if lista['view'] == 'Ajuste_cuotas' %}
+{% for valor in valor  %}
+<h4>Valores a apostar</h4>
+<table>
+<thead>
+  <tr>
+    <th>{{nom_eq.favorito}} vs {{nom_eq.No_favorito}}</th>
+    <th>{{nom_eq.favorito2}} vs {{nom_eq.No_favorito2}}</th>
+  </tr>
+</thead>
+<tbody>
+ 
+  <tr>
+    <td>{{nom_eq.favorito}}/{{nom_eq.Empate}}={{ valor.FE }}</td>
+    <td>{{nom_eq.favorito2}}/{{nom_eq.Empate2}}={{ valor.FE2 }}</td>
+  </tr>
+  <tr>
+    <td>{{nom_eq.Empate}}/{{nom_eq.Empate}}={{ valor.EE }}</td>
+    <td>{{nom_eq.Empate2}}/{{nom_eq.Empate2}}={{ valor.EE2 }}</td>
+  </tr>
+  <tr>
+    <td>{{nom_eq.No_favorito}}/{{nom_eq.Empate}}={{ valor.NE }}</td>
+    <td>{{nom_eq.No_favorito2}}/{{nom_eq.Empate2}}={{ valor.NE2 }}</td>
+  </tr>
+
+  <tr>
+    <td>{{nom_eq.favorito}}/{{nom_eq.No_favorito}}={{ valor.FN }}</td>
+    <td>{{nom_eq.favorito2}}/{{nom_eq.No_favorito2}}={{ valor.FN2 }}</td>
+  </tr>
+
+  <tr>
+    <td>{{nom_eq.Empate}}/{{nom_eq.No_favorito}}={{ valor.EN }}</td>
+    <td>{{nom_eq.Empate2}}/{{nom_eq.No_favorito2}}={{ valor.EN2 }}</td>
+  </tr>
+  <tr>
+    <td>{{nom_eq.No_favorito}}/{{nom_eq.No_favorito}}={{ valor.NN }}</td>
+    <td>{{nom_eq.No_favorito2}}/{{nom_eq.No_favorito2}}={{ valor.NN2 }}</td>
+  </tr>
+  <tr>
+    <td>{{nom_eq.No_favorito}}={{ valor.NoF }}</td>
+    <td>{{nom_eq.No_favorito2}}={{ valor.NoF2 }}</td>
+  </tr>
+
+  <tr>
+    <td>{{nom_eq.Empate}}={{ valor.Emp}}</td>
+    <td>{{nom_eq.Empate2}}={{ valor.Emp2}}</td>
+  </tr>
+
+  <tr>
+    <td>Total={{ valor.total}}</td>
+    <td>Total={{ valor.total2}}</td>
+  </tr>
+  
+    
+ {% endfor %}
+</tbody>
+</table>
+
+
+<h4>Distribucion apuestas</h4>
+<table>
+<thead>
+</thead>
+<tbody>
+  <tr>
+    <th>Casa1</th>
+  </tr>
+  <tr>
+    {% for valor in Ap_Casa1 %}
+    <td>{{valor}}</td>
+    {% endfor %}
+  </tr>
+  <tr>
+    <th>Casa2</th>
+  </tr>
+  <tr>
+    {% for valor in Ap_Casa2 %}
+    <td>{{valor}}</td>
+    {% endfor %}
+  </tr>
+  <tr>
+    <th>Casa3</th>
+  </tr>
+  <tr>
+    {% for valor in Ap_Casa3 %}
+    <td>{{valor}}</td>
+    {% endfor %}
+  </tr>
+  
+
+</tbody>
+</table>
+
+{% endif %}
+<div id="valo_r"></div>
+<style>
+  html {
+      height: 100%;
+    }
+  
+
+    form {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 50%;
+    }
+
+    article{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 50%;
+    }
+    
+    .izquierda{
+      background: violet;
+    }
+
+    .derecha{
+        background: chartreuse;
+    }
+    
+    .itemslabel{
+        display: inline;
+        margin: 10px;
+    }
+
+    header, footer {
+      grid-column: span 2;
+    }
+</style>
+</body>
+
+  
+
+</html>
