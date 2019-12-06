@@ -10,7 +10,7 @@ if route_exist > 0:
 else:
     route_file_config = dir_act + "/mysite/app/config/config.json"
 
-f =open("./app/config/config.json","r")
+f =open(route_file_config,"r")
 file=f.read()
 CONFIG = json.loads(file)
 URLBASE = CONFIG['DEFAULT']['URLBASE']
