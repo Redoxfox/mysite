@@ -8,7 +8,7 @@ route_exist = route_file_config.find("mysite")
 if route_exist > 0:
     route_file_config = dir_act + "/app/config/config.json"
 else:
-    route_file_config = dir_act + "mysite/app/config/config.json"
+    route_file_config = dir_act + "/mysite/app/config/config.json"
 
 print(dir_act)
 print(os.path.isfile(route_file_config))
