@@ -3,7 +3,6 @@ import os
 import json
 dir_act = os.getcwd()
 route_file_config = dir_act 
-#+ "/app/config/config.json"
 route_exist = route_file_config.find("mysite")
 if route_exist > 0:
     route_file_config = dir_act + "/app/config/config.json"
