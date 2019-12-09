@@ -25,8 +25,8 @@ def index():
 
     Sql="ddasddf"
     lista = URLBASE
-    connect=Model("root")   
     username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username)   
     Nick = "Redoxfox"
     TSWusers = dict()
     TSWusers = {'TABLE':'users',
