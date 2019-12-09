@@ -1,4 +1,5 @@
 from app import app, render_template
+from app.model.modeldb import Model
 import os
 import json
 dir_act = os.getcwd()
@@ -12,6 +13,7 @@ else:
 f =open(route_file_config,"r")
 file=f.read()
 CONFIG = json.loads(file)
+MODODESARROLLO = 'DEFAULT'
 URLBASE = CONFIG['DEFAULT']['URLBASE']
 
 print(dir_act)
@@ -20,6 +22,19 @@ print(os.path.isdir('app/config'))
 
 @app.route("/")
 def index():
+
     Sql="ddasddf"
-    lista = route_file_config 
-    return render_template("index.html", sql=Sql, lista=lista)
+    lista = URLBASE
+    connect=Model("root")   
+    username = CONFIG['TYPE_USER']['ROOT']
+    Nick = "Redoxfox"
+    TSWusers = dict()
+    TSWusers = {'TABLE':'users',
+        'Col1':'nick',
+        'Col2':'password',
+        'Col3':'salt',
+        'Whe4':'nick=%s'
+        }
+    Data = (Nick,)
+    DatosUsers = connect.SW_TABLE(username,TSWusers,Data)
+    return render_template("index.html", sql = Sql, lista = DatosUsers)
