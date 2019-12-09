@@ -80,7 +80,6 @@ class Model:
            Wheres = Wheres + ";"
 
         result = Colunm + Values + "WHERE " + Wheres
-        print(result)
         sql = result
         cursor = con.cursor()
         cursor.execute(sql, (args))

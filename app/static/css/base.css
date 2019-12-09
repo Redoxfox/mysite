@@ -23,6 +23,12 @@ html, body {
     text-align:center;
     display: table-cell;
     vertical-align:middle;
+    /*Centrar Mediante Flex*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+   
     
 }
 
@@ -45,6 +51,11 @@ html, body {
     text-align:center;
     display: table-cell;
     vertical-align:middle;
+     /*Centrar Mediante Flex*/
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     flex-direction: column;
     
 }
 
@@ -108,15 +119,21 @@ color: white;
 
 .container .container8
 {   
-    background: white;
-    grid-column: 1/3;
+    background: rgb(110, 88, 88);
+    grid-column: 1/4;
     font-size:30px;
     height: 50px;
     font-weight: bold;
     /* text-align:center; */
     display: table-cell;
     vertical-align:middle;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
     
+    
+
 }
 
 .container .container7
