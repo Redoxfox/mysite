@@ -86,7 +86,8 @@ class Model:
         cursor.execute(sql, (args))
         DatosUsers = cursor.fetchall()
         TotalEquipos = cursor.fetchall() 
-
+        con.close()
         return  DatosUsers 
 
         #return result
+
