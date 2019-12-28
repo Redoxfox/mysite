@@ -28,14 +28,40 @@ html, body {
     justify-content: center;
     align-content: center;
     flex-direction: column;
+
+
    
     
 }
 
 .container .container2
 {   
-    background: gray;
+    background: red;
     grid-column: 3 / 5;
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid rgb(21, 57, 133);
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+   
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
     
 }
 
@@ -112,12 +138,20 @@ color: white;
 .container .container6
 {   
     background: rgb(245, 239, 239);
-    grid-column: 4/5;
+    grid-column: 1/4;
     height: 300px;
       
 }
 
-.container .container8
+.container .container7
+{   
+    background: rgb(245, 239, 239);
+    grid-column: 4/5;
+    height: 300px;
+    
+}
+
+.container .container9
 {   
     background: rgb(110, 88, 88);
     grid-column: 1/4;
@@ -130,20 +164,18 @@ color: white;
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: column;
-    
-    
+    flex-direction: column;  
 
 }
 
-.container .container7
+.container .container8
 {   
     background: rgb(245, 239, 239);
     grid-column: 1/5;
       
 }
 
-.container .container7 nav
+.container .container8 nav
 {   
     padding: 1em;
     font-family: Verdana, Geneva, sans-serif;
@@ -153,7 +185,7 @@ color: white;
 
 
 
-.container .container7 nav ul
+.container .container8 nav ul
 {   
     display: flex;
     list-style: none;
@@ -162,7 +194,7 @@ color: white;
     background: #333;
 }
 
-.container .container7 li a 
+.container .container8 li a 
 {   
     color: white;
     display: block;
@@ -172,7 +204,7 @@ color: white;
 
 
 
-.container .container7 nav li a:hover {
+.container .container8 nav li a:hover {
 background: tomato;
 color: white;
 }
