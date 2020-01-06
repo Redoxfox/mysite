@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carlos Mario Torres Desarrollador Junior</title>
+    <link href= "{{ url_for('static', filename='css/basels.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/maind.css') }}" rel="stylesheet" type="text/css" media="screen" />   
+    
+</head>
+<body>
+<main class="container">
+<h1 class="Titulo">Bienvenido a lavasplash</h1>
+<div class="logo">
+    <img src="{{ url_for('static', filename='imgs/logo.png') }}">
+</div> 
+<header class="menu_principal">  
+
+<nav > 
+    <ul >
+        <li ><a href="#" class="menuitems">Inicio</a></li>
+        <li ><a href="#" class="menuitems">Mi perfil</a></li>
+        <li ><a href="#" class="menuitems">Escribeme</a></li>
+        <li ><a href="{{url}}/login" class="menuitems">Iniciar Sesión</a></li>
+        <li ><a href="{{url}}/registro" class="menuitems">Registrate</a></li>
+    </ul>
+</nav>
+</header>
+<div class="menu_lateral">      
+    <ul  class="cabecera">
+      <li>
+        <a href="#" id = "cabecera">
+            <i class="fa fa-dashboard fa-lg"></i> Panel Administrador
+        </a>
+      </li>
+        
+      <li id="servicios2" class="categoria">
+        <a href="#"><i class="fa fa-cogs fa-lg"></i> Gestion Servicios <span class="arrow"></span></a>
+            <div id="Of_Servicios"  class="Servicios">
+              <ul class="navbar2">
+                <li class="sub-items"><a href="{{url}}/NewOfServicio">Crear oferta de servicio</a></li>
+                <li class="sub-items"><a href="{{url}}/NewServicioPtado">Nuevo servicio prestado</a></li>
+                <li class="sub-items"><a href="{{url}}/ListaOfServicios">Lista de servicios</a></li>
+                <li class="sub-items"><a href="{{url}}/ProcesarServicios">Saldo de servicios</a></li>
+                <li class="sub-items"><a href="#">Lista PTerminados</a></li>
+              </ul>
+            </div>
+      </li>
+            
+    </ul>
+</div>
+
+<div class="slider" id="slider-container">
+    <div class="sliderImages" id="sliderJs"></div>
+    <div class="sliderNavigation" id="sliderNavigation">
+    </div>
+</div>
+
+<div class="promociones">
+        
+        <img src="https://picsum.photos/300/500">
+</div>
+
+<section id="oferta" class="oferta">
+
+</section>
+</main>  
+<script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+<script src="{{ url_for('static', filename='js/event_nav.js') }}"></script>
+</body>
+</html>

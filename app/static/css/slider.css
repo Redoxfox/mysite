@@ -1,0 +1,21 @@
+.container .slider {
+    margin-top: 20px;
+    background: blue;
+    color: white;
+    grid-column: 2/4;
+    height: 500px;
+    text-align: center;
+    
+    /*Bloque para centrar elementos*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slider .images{
+    border-radius: 20px;
+    left: 0;
+    object-fit: fill;
+  } 

@@ -57,8 +57,7 @@ main {
  .categoria{
      background:lightsteelblue;
      text-align: left;
-     line-height: 2;
-     
+     line-height: 2;   
  }
 
 
@@ -79,8 +78,7 @@ main {
  }
 
  .Servicios {
-    display: none; 
-        
+    display: none;       
  }
 
 #servicios:hover .Servicios{

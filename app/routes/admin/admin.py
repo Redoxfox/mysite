@@ -9,4 +9,4 @@ def passw():
 @app.route("/admin/admin_user")
 def admin_user():
     #urlrev = URLBASE
-    return render_template("principal.html", url = urlrev)
+    return render_template("principal.html")
