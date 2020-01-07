@@ -37,4 +37,77 @@ def index():
         }
     Data = (Nick,)
     DatosUsers = connect.SW_TABLE(username,TSWusers,Data)
+
+    '''  TCliente = dict()
+    TCliente = {'TABLE':'elementos2',
+        'id':'INT AUTO_INCREMENT',
+        'id_servicio':'INT NOT NULL',
+        'id_cliente':'INT NOT NULL',
+        'PK':'id'
+    }
+
+    createtable = connect.CT_TABLE(username, TCliente)  
+
+    #print(createtable)
+    #print(DatosUsers)
+
+    #Insertar datos forma simple
+    id = None
+    id_servicio = "3"
+    id_cliente = "3"
+    Data = [id, id_servicio, id_cliente]
+    Insert_client= dict()
+    Insert_client= {'TABLE':'elementos2',
+            'Col1':'id',
+            'Col2':'id_servicio',
+            'Col3':'id_cliente',
+            'Val4':'%s',
+            'Val5':'%s',
+            'Val6':'%s'   
+        }
+    
+    insertsimple = connect.IT_TABLE(username, Insert_client, Data) 
+
+    print(insertsimple)'''
+
+    '''#Consultar datos de forma simple
+    TSSClient = dict()
+    TSSClient = {'TABLE':'clientes',
+    'Col1':'id',
+    'Col2':'nombre',
+    'Col3':'direccion',
+    'Col4':'telefono',
+    'Col5':'nit',
+    'Col6':'email',
+    'Col7':'web'
+        }
+    DatosUsers = connect.SSP_TABLE(username,TSSClient)
+
+    print (DatosUsers)
+
+    #Eliminar fila de acuerdo a una condicion.
+    id = "2"
+    id2 = "4"
+    delete_ofservicio = dict()
+    delete_ofservicio = {'TABLE':'elementos2',
+            'Whe1':'id>' + id +' and  id < ' + id2 
+        }
+    delete = connect.DELWT_TABLE(username, delete_ofservicio)
+
+    print(delete)'''
+
+    '''id = "4"
+    id_servicio = "5"
+    id_cliente = "5"
+    Data = [id_servicio, id_cliente, id]
+    Update_ofIngreso= {'TABLE':'elementos2',
+            'Val1':'id_servicio=%s',
+            'Val2':'id_cliente=%s',
+            'Whe3':'id= %s'
+        }
+
+    insertsimple = connect.UPWT_TABLE(username, Update_ofIngreso, Data)
+
+    print(insertsimple)'''
+    
     return render_template("index.html", sql = Sql, lista = DatosUsers)

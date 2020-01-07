@@ -61,10 +61,19 @@
         
         <img src="https://picsum.photos/300/500">
 </div>
-
 <section id="oferta" class="oferta">
-
+<h1 id="mis-servicios">Lista de servicios prestados lavasplash</h1>
+<div class="images_servicios">
+    {% for valor in servicios %}        
+        <div id="{{valor.id}}" class="items-services">
+          <img class = "itms-img" src="/static/imgs/img_{{valor.id}}.jpg"  alt="{{valor.id}}">
+          <li class="items"><a href="{{url}}/reg_prestado/{{valor.id}}/">{{valor.tipo}}</a></li>
+          <li class="items"><a href="{{url}}/reg_prestado/{{valor.id}}/">PRECIO:  ${{valor.costo}}</a></li>
+        </div>
+    {% endfor %} 
+</div>
 </section>
+
 </main>  
 <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
 <script src="{{ url_for('static', filename='js/event_nav.js') }}"></script>

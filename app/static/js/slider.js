@@ -1,6 +1,6 @@
 //Array imagenes 
 
-let images = ['/static/imgs/img_1.jpg','/static/imgs/img_2.jpg','/static/imgs/img_3.jpg','/static/imgs/img_4.jpg'];
+let images = ['/static/imgs/img_c1.jpg','/static/imgs/img_c2.jpg','/static/imgs/img_c3.jpg','/static/imgs/img_c4.jpg'];
 
 //Elemento para cargar el slider
 
