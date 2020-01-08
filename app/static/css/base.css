@@ -11,7 +11,7 @@ html, body {
   background:  whitesmoke;
 }
 
-.container .container1
+.container .nombre
 {   
  
     background: black;
@@ -34,12 +34,21 @@ html, body {
     
 }
 
-.container .container2
+.container .Logo-cv
 {   
-    background: red;
     grid-column: 3 / 5;
-    width: 70px;
-    height: 70px;
+    background: gray;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column; 
+}
+
+#logo-cv{
+    background: red;
+    width: 40px;
+    height: 40px;
     border: 10px solid #eee;
     border-top: 10px solid rgb(21, 57, 133);
     border-radius: 50%;
@@ -47,13 +56,6 @@ html, body {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-
-   
 }
 @keyframes girar {
   from {
@@ -66,7 +68,7 @@ html, body {
 }
 
 
-.container .container3
+.container .profesion
 {   
     background: white;
     grid-column: 3/5;
@@ -86,22 +88,22 @@ html, body {
 }
 
 
-.container .container4
+.container .fondo-lateral
 {   
     background: gray;
     grid-column: 1/3;
     grid-row: 2/3;    
 }
 
-.container .container5
+.container .menu-principal
 {   
     background: rgb(245, 239, 239);
     grid-column: 1/5;
       
 }
 
-.container .container5 nav
-{   
+.container .menu-principal nav
+{   margin: 0;
     padding: 1em;
     font-family: Verdana, Geneva, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -110,7 +112,7 @@ html, body {
 
 
 
-.container .container5 nav ul
+.container .menu-principal nav ul
 {   
     display: flex;
     list-style: none;
@@ -119,7 +121,7 @@ html, body {
     background: #333;
 }
 
-.container .container5 li a 
+.container .menu-principal li a 
 {   
     color: white;
     display: block;
@@ -127,15 +129,19 @@ html, body {
     padding: .5em 1em;
 }
 
+#my-picture{
+    border: 4px solid black;
+    border-radius: 10px; 
+    width: 95%;
+}
 
-
-.container .container5 nav li a:hover {
+.container .menu-principal nav li a:hover {
 background: tomato;
 color: white;
 }
 
 
-.container .container6
+.container .presentacion
 {   
     background: rgb(245, 239, 239);
     grid-column: 1/4;
@@ -143,7 +149,7 @@ color: white;
       
 }
 
-.container .container7
+.container .imagen-perfil
 {   
     background: rgb(245, 239, 239);
     grid-column: 4/5;
@@ -151,7 +157,7 @@ color: white;
     
 }
 
-.container .container9
+.container .titulo-proyectos
 {   
     background: rgb(110, 88, 88);
     grid-column: 1/4;
@@ -168,33 +174,26 @@ color: white;
 
 }
 
-.container .container8
+.container .Menu-proyectos
 {   
     background: rgb(245, 239, 239);
     grid-column: 1/5;
       
 }
 
-.container .container8 nav
-{   
-    padding: 1em;
-    font-family: Verdana, Geneva, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;  
+
+.option-menu
+{  
+padding: 0%;
+   display: flex;
+   list-style: none;
+   background: #333;
+   font-family: Verdana, Geneva, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale; 
 }
 
-
-
-.container .container8 nav ul
-{   
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: #333;
-}
-
-.container .container8 li a 
+.option-menu li a 
 {   
     color: white;
     display: block;
@@ -202,18 +201,77 @@ color: white;
     padding: .5em 1em;
 }
 
+.option-menu li {
+    flex-grow:1;
+    text-align:left;
+    border-right: 2px solid red;
+}
+.option-menu li:first-child{
+    border-left: 2px solid red;
+  }
 
-
-.container .container8 nav li a:hover {
+.option-menu li a:hover {
 background: tomato;
 color: white;
 }
 
-.servicios .contenedor{
-    display: grid;
-    grid-template-columns: repeat(4,25%);
+.container .vista-proyectos{
+    grid-column: 1/5;
     grid-gap: 2px 50px;
 }
+
+.show-project{
+    
+    display: flex;
+    flex-direction: row;  
+}
+
+.img-project{
+    border: 4px solid rgb(185, 185, 41);
+    border-radius: 20px;
+}
+
+.items-proyectos{
+    /*Distribucion de espacio de forma uniforme hijos elemento padre (.show-project)*/
+    flex-grow: 1; 
+    margin: 10px;
+    width: 25%;
+    background:rgba(68, 68, 71, 0.753);
+    border: 4px solid beige;
+    border-radius: 10px;
+    /*Posicionamiento flexbox componente padre*/
+    display: flex;
+    flex-direction:column;  
+    align-items: center;
+}
+
+.float-lateral{
+    background: beige; 
+    margin: 10px;
+    padding: 1.5em;
+    border: 2px solid red;
+    border-radius: 50px 20px;
+}
+
+.project-show{
+    background: #eee;
+    width: 40%;
+    height: 50px;
+    margin:0px auto;
+    /*Centrar verticalmente elemento inline (a)*/
+    line-height: 50px;
+    display: block;
+    margin: 10px;
+    /*Centrar horizontalmente elemento inline (a)*/
+    text-align: center;
+}
+
+.project-show a{
+    text-decoration: none;
+    color: black; 
+}
+
+
 
 
 

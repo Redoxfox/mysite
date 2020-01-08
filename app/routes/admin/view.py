@@ -24,7 +24,7 @@ print(os.path.isdir('app/config'))
 def index():
 
     Sql="ddasddf"
-    lista = URLBASE
+    url = URLBASE
     username = CONFIG['TYPE_USER']['ROOT']
     connect=Model(username)   
     Nick = "Redoxfox"
@@ -110,4 +110,4 @@ def index():
 
     print(insertsimple)'''
     
-    return render_template("index.html", sql = Sql, lista = DatosUsers)
+    return render_template("index.html", url=url, lista = DatosUsers)

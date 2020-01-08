@@ -10,25 +10,25 @@
 </head>
 <body>
 <main class="container">
-<div class="container1"> 
+<div class="nombre"> 
         Carlos Mario Torres 
 </div>
 
-<div class="container2"> 
-    <div>CMT</div>
+<div class="Logo-cv"> 
+    <div id="logo-cv">CMT</div>
 </div>
         
-<div class="container3">
+<div class="profesion">
         Desarrollador Junior 
 </div>
 
-<div class="container4"> 
+<div class="fondo-lateral"> 
    
 </div>
 
-<header class="container5">   
+<header class="menu-principal">   
 <nav > 
-    <ul >
+    <ul class="option-menu">
         <li ><a href="#" class="menuitems">Inicio</a></li>
         <li ><a href="#" class="menuitems">Mi perfil</a></li>
         <li ><a href="#" class="menuitems">Escribeme</a></li>
@@ -37,7 +37,7 @@
     </ul>
 </nav>
 </header>
-<div class="container6">
+<div class="presentacion">
          <h4><strong>Sobre mí</strong></h4>
          <p >
             Hola! Mi nombre es Carlos Mario Torres, soy estudiante del quinto semestre de Ingenieria de Sistemas, en la Universidad Abierta y a 
@@ -54,17 +54,17 @@
         </p>         
 </div>
 
-<div class="container7">
-    <img src="https://picsum.photos/400/400">  
+<div class="imagen-perfil">
+    <img id="my-picture" src="https://picsum.photos/400/400">  
 </div>
 
-<div class="container9">
+<div class="titulo-proyectos">
     Mis proyectos 
 </div>
 
-<div class="container8">   
-    <nav > 
-        <ul >
+<div class="Menu-proyectos">   
+    <nav id="menu-proyectos">
+        <ul class="option-menu" >
             <li ><a href="#" class="menuitems">Flask</a></li>
             <li ><a href="#" class="menuitems">Javascript</a></li>
             <li ><a href="#" class="menuitems">Java</a></li>
@@ -75,42 +75,69 @@
             <li ><a href="{{url}}/registro" class="menuitems">Todos</a></li>
         </ul>
     </nav>
-
 </div> 
 
-
-
-<!-- </div> -->
-<!-- 
-       
-        <aside>Izquierda</aside>
-        <article>Contenido</article>
-        <aside>Derecha</aside>
-        <footer>Footer</footer> -->
-    </main>
-
-    <section class="servicios">
-        <div class="contenedor">
-            <div class="contenedor"> 
-                <img src="https://picsum.photos/300/300">
+<section class="vista-proyectos">
+ <div class="show-project">
+    <div class="items-proyectos">
+        <h2>Lavasplash lavado ecologico</h2>
+        <img class="img-project" src="https://picsum.photos/300/300" >
+        <div class="float-lateral">
+            <h4 ><strong>Simple aplicacion Web para empresa lavado ecologico.</strong></h4>
+            <p >
+                Lavasplah es una inicitiva que promueve el lavado de vehiculos de forma ecologica, su principal 
+                objetivo es la no utilizcion de agua en el lavado de vehiculos.
+            </p>  
+            <p>
+                Esta simple aplicacion permite la administracion y seguimiento de los servicios prestados permitiendo 
+            </p> 
+            <p> 
+                <ul>
+                    <li>Crecion de nuevo servicio de lavado</li>
+                    <li>Registro servicio solicitado por cliente</li>
+                    <li>Creacion de nuevos clientes</li>
+                    <li>Listado de servicios prestados a los clientes</li>
+                    <li>Consulta de servicios realizados</li>        
+                </ul>
+            </p>     
+        </div> 
+        <div class="project-show">
+            <a href="{{url}}/lavasplash/index_ls">Ver aplicacion</a>
+        </div>            
+    </div> 
+        <div class="items-proyectos">
+            <h2>Control de finanazas personales</h2>
+            <img class="img-project"  src="https://picsum.photos/300/300">
+            <div class="float-lateral">
+                <h4 ><strong>Simple aplicacion Web para control de finanzas personales. </strong></h4>     
+                <p >
+                    Lavasplah es una inicitiva que promueve el lavado de vehiculos de forma ecologica, su principal 
+                    objetivo es la no utilizcion de agua en el lavado de vehiculos.
+                </p>  
+                <p>
+                    Esta simple aplicacion permite la administracion y seguimiento de los servicios prestados permitiendo 
+                </p> 
+                <p> 
+                    <ul>
+                        <li>Crecion de nuevo servicio de lavado</li>
+                        <li>Registro servicio solicitado por cliente</li>
+                        <li>Creacion de nuevos clientes</li>
+                        <li>Listado de servicios prestados a los clientes</li>
+                        <li>Consulta de servicios realizados</li>        
+                    </ul>
+                </p>     
             </div>
-            
-            <div class="contenedor"> 
-                 Programa diseñado en python
-                 
-            </div>
-                
-            <div class="contenedor">
-                <img src="https://picsum.photos/300/300">
-            </div>
-            
-            <div class="contenedor"> 
-               Programa para desarrollo autonomo
-            </div>
+            <div class="project-show">
+                <a href="{{url}}/lavasplash/index_ls">Ver aplicacion</a>
+            </div>    
         </div>
-        
-    
-      </section>
+    </div>
+  </div>  
+  </section>
+
+</main>
+
+ 
     
 </body>
 </html>
