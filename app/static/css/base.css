@@ -136,8 +136,8 @@ html, body {
 }
 
 .container .menu-principal nav li a:hover {
-background: tomato;
-color: white;
+    background: tomato;
+    color: white;
 }
 
 
@@ -145,33 +145,55 @@ color: white;
 {   
     background: rgb(245, 239, 239);
     grid-column: 1/4;
-    height: 300px;
+    height: 350px;
+    border: 2px solid green;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
       
 }
+
+
 
 .container .imagen-perfil
 {   
     background: rgb(245, 239, 239);
     grid-column: 4/5;
     height: 300px;
+    margin: 20px;
     
+}
+
+#titulo-items{
+    margin-top: 0px;
+    padding: 1.5em;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 10px;
+
+    background:burlywood;
+}
+
+.parrafos{
+    font-size: 30px;
 }
 
 .container .titulo-proyectos
 {   
-    background: rgb(110, 88, 88);
-    grid-column: 1/4;
+    grid-column: 1/5;
     font-size:30px;
     height: 50px;
     font-weight: bold;
-    /* text-align:center; */
-    display: table-cell;
-    vertical-align:middle;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;  
+    margin-bottom: 50px;
 
+}
+
+.titulo-proyectos hr{
+    border: 0; 
+    height: 12px; 
+    box-shadow: inset 0 12px 12px -12px orange;
+   
 }
 
 .container .Menu-proyectos
@@ -245,6 +267,8 @@ color: white;
     align-items: center;
 }
 
+
+
 .float-lateral{
     background: beige; 
     margin: 10px;
@@ -271,6 +295,27 @@ color: white;
     color: black; 
 }
 
+.footer{
+    grid-column: 1/5;
+    height: 70px;
+    
+    
+}
+
+.footer .sociales{
+    background: rgb(243, 189, 118);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.footer .sociales a{
+    font-size: 35px;
+    color: #eee;
+    margin-left: 30px;
+}
 
 
 

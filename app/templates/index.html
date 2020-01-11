@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Carlos Mario Torres Desarrollador Junior</title>
-    <link href= "{{ url_for('static', filename='css/base.css') }}" rel="stylesheet" type="text/css" media="screen" />  
-    
+    <link href= "{{ url_for('static', filename='css/base.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css" media="screen" />   
+   
 </head>
 <body>
 <main class="container">
@@ -37,17 +38,17 @@
     </ul>
 </nav>
 </header>
-<div class="presentacion">
-         <h4><strong>Sobre mí</strong></h4>
-         <p >
+<div class="presentacion" id="sobre-my">
+         <h4 id="titulo-items"><strong>Sobre mí: !Mueve el mouse sobre el parrafo y busca la combinacion de color que te guste!..</strong></h4>
+         <p class="parrafo">
             Hola! Mi nombre es Carlos Mario Torres, soy estudiante del quinto semestre de Ingenieria de Sistemas, en la Universidad Abierta y a 
             Distancia (UNAD).
          </p>  
-         <p>
+         <p class="parrafo">
             Aunque en el momento no cuento con experiencia laboral, ni un titulo en el area de sistemas. Si cuento con un titulo de Tecnología Quimica 
             de la Universidad de Antioquia y experiencia laboral de aproximadamente 8 años en la industria quimica. 
         </p> 
-        <p> 
+        <p class="parrafo"> 
             Sin embargo soy una persona autodidacta, dedicada y muy apasionado por los lenguajes de programacion y desde el 2014 de forma personal he trabajado
             en proyectos en lenguajes de programacion como PHP, Python, Javascript, C#, Java, Fortran, Matlab, Tcl/tk, VBA/Excel y SO Linux; Enfocado principalmente
             a desarrollar aplicaciones web principalmente en el micro-framework Flask escrito en python y hace unos meses en el stack MERN de Javascript.
@@ -55,12 +56,10 @@
 </div>
 
 <div class="imagen-perfil">
-    <img id="my-picture" src="https://picsum.photos/400/400">  
+    <img id="my-picture" src="https://picsum.photos/400/300">  
 </div>
 
-<div class="titulo-proyectos">
-    Mis proyectos 
-</div>
+
 
 <div class="Menu-proyectos">   
     <nav id="menu-proyectos">
@@ -76,7 +75,11 @@
         </ul>
     </nav>
 </div> 
-
+<div class="titulo-proyectos">
+    <hr>
+        Mis proyectos 
+    <hr>
+</div>
 <section class="vista-proyectos">
  <div class="show-project">
     <div class="items-proyectos">
@@ -135,9 +138,18 @@
   </div>  
   </section>
 
+  <footer class="footer">
+      <div class="sociales">
+          <a href="#"><i class="fab fa-twitter-square"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#"><i class="fab fa-slack"></i></a>
+      </div>
+  </footer>
+
 </main>
 
- 
-    
+<script src="{{ url_for('static', filename='js/sobre-my.js') }}"></script> 
+<script src="https://kit.fontawesome.com/b6bfe8df39.js" crossorigin="anonymous"></script>    
 </body>
 </html>
