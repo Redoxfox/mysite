@@ -27,11 +27,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: column;
-
-
-   
-    
+    flex-direction: column; 
 }
 
 .container .Logo-cv
@@ -218,7 +214,7 @@ padding: 0%;
 }
 
 .menuitems{
-    font-size: 21px;
+    font-size: 25px;
 }
 
 .option-menu li a 
