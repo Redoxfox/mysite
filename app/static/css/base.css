@@ -281,7 +281,7 @@ color: white;
 
 .project-show{
     background: #eee;
-    width: 40%;
+    width: 50%;
     height: 50px;
     margin:0px auto;
     /*Centrar verticalmente elemento inline (a)*/
@@ -295,6 +295,18 @@ color: white;
 .project-show a{
     text-decoration: none;
     color: black; 
+    font-size: 20px;
+}
+
+.project-show:hover{
+    
+    background: yellowgreen;
+}
+
+.project-show a:hover{
+    text-decoration: none;
+    color:white; 
+    font-size: 35px;
 }
 
 .items-app{
@@ -307,12 +319,11 @@ color: white;
 
 .footer{
     grid-column: 1/5;
-    height: 70px;
-    
-    
+    height: 100px;   
 }
 
 .footer .sociales{
+    padding: 10px;
     background: rgb(46, 94, 182);
     display: flex;
     flex-direction: row;
