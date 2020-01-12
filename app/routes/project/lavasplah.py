@@ -190,4 +190,70 @@ def NewOfServicio():
         'Col4':'detalles'
         }
     DatosOfServicio = connect.SSP_TABLE(username,TSSOfServicio)
-    return render_template("form_new_servicio.html", url = urlrev, Oferta_Servicio = DatosOfServicio)   
+    return render_template("form_new_servicio.html", url = urlrev, Oferta_Servicio = DatosOfServicio)  
+
+
+#Nuevo servicio prestado
+@app.route("/NewServicioPtado", methods=["GET", "POST"])
+def NewServicioPtado():
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    TSSServicioPtado = dict()
+    TSSServicioPtado  = {'TABLE':'servicio',
+        'Col1':'id',
+        'Col2':'tipo',
+        'Col3':'costo',
+        }
+    DatosServicioPtado = connect.SSP_TABLE(username,TSSServicioPtado)
+    return render_template("form_new_servicios.html", url = urlrev, servicios = DatosServicioPtado)  
+
+#Editar servicio ofertado
+@app.route('/VerDetallesServicio/<id>/', methods=['POST', 'GET'])
+def VerDetallesServicio(id):
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    TSSOfServicio = dict()
+    wid = id
+    TSSOfServicio  = {'TABLE':'servicio',
+        'Col1':'id',
+        'Col2':'tipo',
+        'Col3':'costo',
+        'Col4':'detalles',
+        'Whe5':'id=%s'
+        }
+    Data = (wid,)
+    DatosOfServicio = connect.SW_TABLE(username,TSSOfServicio, Data)
+    return render_template("ActualizarServicio.html", url = urlrev,  Oferta_Servicio = DatosOfServicio) 
+
+#Eliminar servicio ofertado
+@app.route('/EliminarServicio/<id>/', methods=['POST', 'GET'])
+def EliminarServicio(id):
+    urlrev = URLBASE 
+    delete_ofservicio = dict()
+    delete_ofservicio = {'TABLE':'servicio',
+            'Whe1':'id=' + id
+        }
+    Del_TOServicioPtdo= Model(delete_ofservicio)
+    sql = Del_TOServicioPtdo.DELWT_TABLE()
+    cursor = db1.cursor()
+    cursor.execute(sql)
+    cursor.close()
+    db1.commit()
+    TSSOfServicio = dict()
+    TSSOfServicio  = {'TABLE':'servicio',
+        'Col1':'id',
+        'Col2':'tipo',
+        'Col3':'costo',
+        'Col4':'detalles'
+        }
+    TSOfSevicio = Model(TSSOfServicio)
+    sql = TSOfSevicio.SSP_TABLE()
+    cursor = db1.cursor()
+    cursor.execute(sql)
+    DatosOfServicio = cursor.fetchall()
+
+    return render_template("ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
+
+
