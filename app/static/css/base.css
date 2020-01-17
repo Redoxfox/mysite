@@ -4,6 +4,7 @@
     html, body {
       background-color: whitesmoke;
       margin: 10px;
+      font-family: 'Baskervville', serif;
     }
     
     .container {
@@ -126,6 +127,7 @@
         display: block;
         text-decoration: none;
         padding: .5em 1em;
+        font-family: 'Baskervville', serif;
     }
     
     #my-picture{
@@ -171,7 +173,8 @@
         margin-right: 0px;
         padding-right: 10px;
         font-size: 21px;
-        background:burlywood;
+        background:rgb(128, 177, 250);
+        background:white;
     }
     
     p{
@@ -226,6 +229,7 @@
         display: block;
         text-decoration: none;
         padding: .5em 1em;
+        font-family: 'Baskervville', serif;
     }
     
     .option-menu li {
@@ -346,6 +350,11 @@
     
     /*Moviles*/
     @media(max-width:850px){
+        html, body {
+            background-color: whitesmoke;
+            margin: 10px;
+            font-family: 'Baskervville', serif;
+          }
        
         .container .nombre
         {   
@@ -434,6 +443,7 @@
         display: block;
         text-decoration: none;
         padding: .5em 1em;
+        font-family: 'Baskervville', serif;
     }
     
     .option-menu li {
