@@ -11,6 +11,9 @@
       grid-template-columns: repeat(4, 1fr);
       background:  whitesmoke;
     }
+
+   
+    
     
     .container .nombre
     {   
@@ -34,7 +37,7 @@
     .container .Logo-cv
     {   
         grid-column: 3 / 5;
-        background: gray;
+        background: rgb(199, 236, 202);
         height: 80px;
         display: flex;
         justify-content: center;
@@ -87,7 +90,7 @@
     
     .container .fondo-lateral
     {   
-        background: gray;
+        background: rgb(199, 236, 202);
         grid-column: 1/3;
         grid-row: 2/3;    
     }
@@ -114,7 +117,7 @@
         list-style: none;
         padding: 0;
         margin: 0;
-        background: #333;
+        background: rgb(39, 123, 226);
     }
     
     .container .menu-principal li a 
@@ -207,7 +210,7 @@
     padding: 0%;
        display: flex;
        list-style: none;
-       background: #333;
+       background: rgb(39, 123, 226);
        font-family: Verdana, Geneva, sans-serif;
        -webkit-font-smoothing: antialiased;
        -moz-osx-font-smoothing: grayscale; 
@@ -228,10 +231,10 @@
     .option-menu li {
         flex-grow:1;
         text-align:left;
-        border-right: 2px solid red;
+        border-right: 4px solid yellowgreen;
     }
     .option-menu li:first-child{
-        border-left: 2px solid red;
+        border-left: 2px solid yellowgreen;
       }
     
     .option-menu li a:hover {
@@ -260,8 +263,8 @@
         flex-grow: 1; 
         margin: 10px;
         width: 25%;
-        background:rgba(68, 68, 71, 0.753);
-        border: 4px solid beige;
+        background:rgba(245, 248, 248, 0.966);
+        border: 4px solid rgb(141, 142, 146);
         border-radius: 10px;
         /*Posicionamiento flexbox componente padre*/
         display: flex;
@@ -272,15 +275,15 @@
     
     
     .float-lateral{
-        background: beige; 
+        background: whitesmoke; 
         margin: 10px;
         padding: 1.5em;
-        border: 2px solid red;
-        border-radius: 50px 20px;
+        border: 2px solid rgb(216, 214, 100);
+        border-radius: 5px 5px;
     }
     
     .project-show{
-        background: #eee;
+        background: rgb(39, 123, 226);
         width: 50%;
         height: 50px;
         margin:0px auto;
@@ -290,6 +293,7 @@
         margin: 10px;
         /*Centrar horizontalmente elemento inline (a)*/
         text-align: center;
+        border-radius: 5px 5px;
     }
     
     .project-show a{
@@ -414,7 +418,7 @@
     {  
        padding: 0%;
        list-style: none;
-       background:rgb(39, 123, 226);;
+       background:rgb(39, 123, 226);
        font-family: Verdana, Geneva, sans-serif;
        -webkit-font-smoothing: antialiased;
        -moz-osx-font-smoothing: grayscale; 
