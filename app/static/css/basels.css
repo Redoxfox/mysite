@@ -4,7 +4,7 @@ html, body {
   font-family: 'Baskervville', serif;
 }
 
-@media(min-width:500px){
+@media(min-width:1024px){
   main{
     display: grid;  
     grid-template-columns: repeat(3, 1fr);
@@ -43,7 +43,7 @@ html, body {
   }
 
   .item-oferta{
-    font-size: 12px;
+    font-size: 18px;
   }
 
   article{
@@ -237,7 +237,8 @@ article .slider{
   width: 40px;
   height: 20px;
   border: 1px solid rgb(120, 162, 240);
-  background: blue;
+  /*background: blue;*/
+  background: rgb(58, 58, 99);
   /*box-shadow: 2px 7px 3px black inset;
   border-radius: 50%; */
 }
@@ -262,8 +263,7 @@ article .slider{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  
   
   /*display: flex;
   flex-wrap: wrap;
@@ -319,7 +319,13 @@ article .slider{
 
 }
 
-@media(max-width:500px){
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+ 
+  
+}
+
+@media(max-width:768px){
 
   main{
     display: grid;  
@@ -334,12 +340,14 @@ article .slider{
     grid-column: 1/4;
     height: auto;
     margin-top: 50px;
+    order: 1;
   }
   
   .aside-izquierda{
     grid-column: 1/4;
     background: whitesmoke;
     width: 100%;
+    order: 3;
   }
 
   .aside-derecha{
@@ -349,6 +357,7 @@ article .slider{
     background: rgb(248, 235, 53);
     width: 100%;
     padding-bottom: 20px;
+    order: 4;
   }
  
   .aside-derecha a{
@@ -359,13 +368,16 @@ article .slider{
   article{
     grid-column: 1/4;
     background: white;
+    order: 2;
   }
   section{
     background: rgb(5, 5, 5);
     grid-column: 1/4;
+    order: 5;
   }
   footer{
     grid-column: 1/4;
+    order: 6;
   }
 
 
@@ -392,7 +404,8 @@ article .slider{
   padding: 0%;
   /*display: flex;*/
   list-style: none;
-  background: rgb(39, 123, 226);
+  /*background: rgb(39, 123, 226);*/
+  background: rgb(1, 12, 26);
   font-family: Verdana, Geneva, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
@@ -439,7 +452,8 @@ height: 500px;
 }
 
 #cabecera-menu-lateral{
-background: steelblue;
+/*background: steelblue;*/
+background: rgb(33, 44, 53);
 color: white;
 display: block; 
 }
@@ -548,7 +562,8 @@ background: white;
 width: 40px;
 height: 20px;
 border: 1px solid rgb(120, 162, 240);
-background: blue;
+/*background: blue;*/
+background: rgb(58, 58, 99);
 /*box-shadow: 2px 7px 3px black inset;
 border-radius: 50%; */
 }
@@ -582,7 +597,7 @@ justify-content: center;*/
 } 
 
 .images_servicios .items-services{
-width: 95%;
+width: 300px;
 height: 250px;
 margin: 10px;
 
@@ -614,7 +629,7 @@ display: block;
 
 .footer .sociales{
 padding: 10px;
-background: rgb(46, 94, 182);
+background: rgb(5, 5, 5);
 display: flex;
 flex-direction: row;
 justify-content: left;
