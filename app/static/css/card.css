@@ -75,7 +75,7 @@ body{
     
 }
   
-  @media (min-width: 640px) and (max-width: 970px) {
+  @media (min-width: 500px) and (max-width: 970px) {
     
     .container{
         margin: 0 auto;
@@ -146,7 +146,7 @@ body{
     
   }
   
-  @media(max-width:640px){
+  @media(max-width:500px){
     .container{
         margin: 0;
         width: auto;
