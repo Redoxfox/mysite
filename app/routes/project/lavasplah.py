@@ -3,6 +3,11 @@ from app import app, render_template
 from app.model.modeldb import Model
 import os
 import json
+from datetime import datetime, date
+import re
+import numpy as np
+
+
 dir_act = os.getcwd()
 route_file_config = dir_act 
 route_exist = route_file_config.find("mysite")
@@ -135,6 +140,7 @@ def ListaOfServicios():
     cursor.execute(sql)
     DatosOfServicio = cursor.fetchall()'''
     DatosOfServicio = connect.SSP_TABLE(username,TSSOfServicio)
+    
 
     return render_template("ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
 
@@ -253,7 +259,67 @@ def EliminarServicio(id):
     cursor = db1.cursor()
     cursor.execute(sql)
     DatosOfServicio = cursor.fetchall()
+    
 
     return render_template("ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
+
+##################################################
+# Gestion de servicios prestados
+##################################################
+##################################################
+# Operacion con servicios prestados
+##################################################
+#Calculo de gastos
+@app.route('/ProcesarServicios/', methods=['POST', 'GET'])
+def ProcesarServicios( ):
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    
+    lista = dict()
+    lista = {'view':'ListaOfServicios'
+        }
+    detalle = []
+    servicio_mes = []
+    gasto_mes = []
+    #Lista de servicios ofertados.
+    TSSOfServicioOftado = dict()
+    TSSOfServicioOftado  = {'TABLE':'servicios order by fecha',
+        'Col1':'id',
+        'Col2':'costo_total',
+        'Col3':'fecha'
+        }
+    #TSOfSevicioOftado = Model(TSSOfServicioOftado)
+    #sql = TSOfSevicioOftado.SSP_TABLE()
+    #cursor = db1.cursor()
+    #cursor.execute(sql)
+    #DatosOfServicioOftado = cursor.fetchall()
+    DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
+    
+    
+
+    for rows in DatosOfServicioOftado:
+        id = rows["id"]
+        costo_total = rows["costo_total"]
+        fecha = rows["fecha"]
+        
+        mes = format(fecha.month)
+        today = date.today()
+        #mes_actual = format(today.month)
+
+        mes_actual = '7'
+        print (mes)
+        if mes == mes_actual:
+            servicio_mes.append(costo_total)
+    
+    s_mes = np.array(servicio_mes)
+    porc = s_mes * 0.15
+    saldo_mes = s_mes.sum()
+    porc_mes = porc.sum()
+    detalle.append(saldo_mes)
+    detalle.append(porc_mes)
+    
+    
+    return render_template("saldo.html", url = urlrev, lista=lista, total = detalle, Softado=DatosOfServicioOftado)
 
 

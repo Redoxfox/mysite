@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href= "{{ url_for('static', filename='css/publicacion.css') }}" rel="stylesheet" type="text/css" media="screen" />
+  <link href= "{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css" media="screen" />
+  <link href= "{{ url_for('static', filename='css/EstiloTabla.css') }}" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+    <br> 
+        <h4>SALDO DE SERVICIOS PRESTADOS</h4>
+        <table>
+        <thead>
+          <tr>
+            <th>DETALLE DE SERVICIOS PRESTADOS</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> </td>
+            <td>Total </td>
+            <td>Porcentaje</td>
+          </tr>
+          <tr>
+            <td>Mensual</td>
+            <td>{{total[0]}}</td>
+            <td>{{total[1]}}</td>
+          </tr>
+        </tbody>
+    </table>
+<br>
+<br>
+</body>
+</html>

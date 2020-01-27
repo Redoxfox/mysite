@@ -5,12 +5,10 @@
 	<meta name="descripcion" content="Pagina interactiva de enseñanza" />
 	<meta name="Keywords" content= "Balance ecuaciones, Reacciones, Caida libre" />
 	<title>TorresEdu.Lab... De todo un poco </title>
-  <link href= "{{ url_for('static', filename='css/publicacion.css') }}" rel="stylesheet" type="text/css" media="screen" />
-  <link href= "{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css" media="screen" />
-  <link href= "{{ url_for('static', filename='css/EstiloTabla.css') }}" rel="stylesheet" type="text/css" media="screen" />
   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,700&display=swap" rel="stylesheet">
+  <link href= "{{ url_for('static', filename='css/card.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
   <style>
       canvas{
         border: 1px solid;
@@ -18,45 +16,37 @@
     </style>
 </head>
 <body> 
+    <h1>Lista de servicio disponibles</h1>
     <br>
-    <h4>Lista de servicio disponibles</h4>
-      <table>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>tipo</th>
-          <th>Costo</th>
-          <th>Observacion</th>
-          <th>Editar</th>
-          <th>Eliminar</th>
-        </tr>
-      </thead>
-      <tbody>
-
-       {% for valor in Oferta_Servicio %}
-        <tr>
-          <td>{{ valor.id }}</td>
-          <td>{{ valor.tipo }}</td>
-          <td>{{ valor.costo }}</td>
-          <td>{{ valor.detalles }}</td>
-          <td data-label="editar"><a class='btn btn-warning' style='font-size: 15px;' title='Editar Producto' href="{{url}}/VerDetallesServicio/{{valor.id}}/"><i class='fa fa-pencil' aria-hidden='true' fa-2x></i>Editar</a></td>
-          <td data-label="eliminar"><a class='btn btn-danger' style='font-size: 15px;' title='Eliminar Proveedor' href="{{url}}/EliminarServicio/{{valor.id}}/"><i class='fa fa-trash-o' aria-hidden='true' fa-2x></i>Eliminar</a></td>
-          
-        </tr>
-       {% endfor %}
-      </tbody>
-  </table>
-    <div class="container">
-        <p class="post">
-          {{sql}}
-        </p>
-      </div>
+    <section class="container flex text-center">
+      {% for valor in Oferta_Servicio %}
+        <div class="column">
+          <div class="tipo">
+            {{ valor.tipo }}
+          </div>
+          <hr>
+          <div class="costo">
+            $ {{ valor.costo }}
+          </div>
+          <hr>
+           <div class="detalle">
+              <p>{{ valor.detalles }}</p>
+           </div>
+           
+          <hr>
+           <div>
+              <a class='Editar' href="{{url}}/VerDetallesServicio/{{valor.id}}/">Editar</a>
+              <a class='Eliminar' href="{{url}}/EliminarServicio/{{valor.id}}/">Eliminar</a>
+           </div>
+        </div>
+      {% endfor %}
+    </section>
+    
+   
+  
 <div id='footer'>
     Copyright &copy; 2017
 </div>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 </body>
 </html>

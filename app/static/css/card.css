@@ -1,0 +1,217 @@
+body{
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+}
+
+
+@media(min-width:970px){
+.container{
+    margin: 0 auto;
+    width: 90%;
+    background: white;
+}
+
+.flex{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;  
+    grid-gap: 15px;
+}
+
+.Editar{
+    text-decoration: none;
+    background: rgb(65, 152, 233);
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 3;
+    color: white;
+}
+
+.Eliminar{
+    text-decoration: none;
+    background: orange;
+    font-size: 20px;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 3;
+}
+
+
+
+.text-center{
+    text-align: center;
+}
+
+.column{
+    background: rgb(228,228,228);
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgb(199, 175, 175);
+}
+
+.detalle{
+    height: 150px;
+}
+
+
+
+.tipo{
+    height: 60px;
+}
+
+.costo{
+    color: #21bbc0;
+}
+
+    
+}
+  
+  @media (min-width: 640px) and (max-width: 970px) {
+    
+    .container{
+        margin: 0 auto;
+        width: 90%;
+        background: white;
+    }
+    
+    .flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;  
+        grid-gap: 15px;
+    }
+    
+    .Editar{
+        text-decoration: none;
+        background: rgb(65, 152, 233);
+        font-size: 20px;
+        border-radius: 5px;
+        margin: 3px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 3;
+        color: white;
+    }
+    
+    .Eliminar{
+        text-decoration: none;
+        background: orange;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 3;
+    }
+    
+    
+    
+    .text-center{
+        text-align: center;
+    }
+    
+    .column{
+        background: rgb(228,228,228);
+        color: #333;
+        border: 2px solid #333;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgb(199, 175, 175);
+    }
+    
+    .detalle{
+        height: 150px;
+    }
+    
+    
+    
+    .tipo{
+        height: 60px;
+    }
+    
+    .costo{
+        color: #21bbc0;
+    }
+    
+  }
+  
+  @media(max-width:640px){
+    .container{
+        margin: 0;
+        width: auto;
+        background: white;
+    }
+    
+    .flex{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;  
+        grid-gap: 15px;
+    }
+    
+    .Editar{
+        text-decoration: none;
+        background: rgb(65, 152, 233);
+        font-size: 20px;
+        border-radius: 5px;
+        margin: 3px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 3;
+        color: white;
+    }
+    
+    .Eliminar{
+        text-decoration: none;
+        background: orange;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 3;
+    }
+    
+    
+    
+    .text-center{
+        text-align: center;
+    }
+    
+    .column{
+        background: rgb(228,228,228);
+        color: #333;
+        border: 2px solid #333;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgb(199, 175, 175);
+    }
+    
+    .detalle{
+        height: 150px;
+    }
+    
+    
+    
+    .tipo{
+        height: 60px;
+    }
+    
+    .costo{
+        color: #21bbc0;
+    }
+  
+  }
