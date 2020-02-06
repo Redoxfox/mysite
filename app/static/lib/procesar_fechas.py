@@ -4,7 +4,7 @@ class proc_fecha:
         fecha = fecha
         list_fecha = fecha.split("-")
         year = list_fecha
-        year_int = int(year[0])
+        year_int = year[0]
         
         return  year_int
 
@@ -12,7 +12,7 @@ class proc_fecha:
         fecha = fecha
         list_fecha = fecha.split("-")
         month = list_fecha
-        month_int = int(month[1])
+        month_int = month[1]
         
         return  month_int
        
@@ -21,7 +21,7 @@ class proc_fecha:
         fecha = fecha
         list_fecha = fecha.split("-")
         day = list_fecha
-        day_int = int(day[2])
+        day_int = day[2]
         
         return  day_int
 

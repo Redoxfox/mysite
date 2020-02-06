@@ -366,10 +366,15 @@ def mes(dia_mes):
         id = rows["id"]
         costo_total = rows["costo_total"]
         fecha = rows["fecha"]
-        year = int(format(fecha.year))
+        #print(type(fecha))
+        """year = int(format(fecha.year))
         mes = int(format(fecha.month))
-        dia = int(format(fecha.day))
-        today = date.today()  
+        dia = int(format(fecha.day))"""
+
+        year = fecha.strftime("%Y")
+        mes = fecha.strftime("%m")
+        dia = fecha.strftime("%d")
+
         cont += 1
         
         #mes_actual = format(today.month)
