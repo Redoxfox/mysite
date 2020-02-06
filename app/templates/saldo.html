@@ -5,35 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href= "{{ url_for('static', filename='css/publicacion.css') }}" rel="stylesheet" type="text/css" media="screen" />
-  <link href= "{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css" media="screen" />
-  <link href= "{{ url_for('static', filename='css/EstiloTabla.css') }}" rel="stylesheet" type="text/css" media="screen" />
+    <link href= "{{ url_for('static', filename='css/card_saldo.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+  <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/saldo.js')}}"></script>
 </head>
 <body>
-    <br> 
-        <h4>SALDO DE SERVICIOS PRESTADOS</h4>
-        <table>
-        <thead>
-          <tr>
-            <th>DETALLE DE SERVICIOS PRESTADOS</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td> </td>
-            <td>Total </td>
-            <td>Porcentaje</td>
-          </tr>
-          <tr>
-            <td>Mensual</td>
-            <td>{{total[0]}}</td>
-            <td>{{total[1]}}</td>
-          </tr>
-        </tbody>
-    </table>
-<br>
-<br>
+<h1>Lista de servicio disponibles</h1>
+
+  <div class="find_service">
+  <div class="fechas-dia-mes">
+    <div class="items">
+      <input type="date" id="fecha"  name='fecha' />
+      <button class='Editar' onclick="mensaje()">Consultar Dia</button>
+    </div> 
+             
+    <div class="items">
+      <input type="date" id="fecha"  name='fecha' />
+      <button class='Eliminar' onclick="mensaje()">Consultar Mes</button>
+    </div>
+  </div>
+      
+    <div class="fechas-entre">
+      <div class="items">
+        <label for="">Fecha incial:</label>
+        <input type="date" id="fecha"  name='fecha' />
+      </div>
+
+      <div class="items">
+        <label for="">Fecha final:</label>
+        <input type="date" id="fecha"  name='fecha' />
+      </div>
+    </div>
+    <div class="find-date-entre">
+      <div></div>
+      <button class='Eliminar' onclick="mensaje()">Consultar Mes</button>
+      <div></div>
+    </div>
+  </div>
+    
+    <section class="container flex text-center" id="cards">
+      <div class="column">
+      <div class="mes" id="mes">
+       date
+      </div>
+      <hr>
+      <div class="Nro_Servicios" id="Nro_servicios">
+       0
+      </div>
+      <a class="" href=""></a>
+      <hr>
+      <h5 id="dia_l">Dia del mes en que presta el servicio:</h5>
+       <div class="dias_laborados" id="dias_laborados">
+          <a href=""></a>
+       </div>
+       <hr>
+       
+      
+      <h5>saldo servicios</h5>
+      <hr>
+       <div id="saldo">
+      
+       </div>
+       <hr>  
+    </div>
+      
+    </section>
+ 
+   
+  
+<div id='footer'>
+    Copyright &copy; 2017
+</div>
 </body>
 </html>

@@ -3,4 +3,5 @@ config.json
 config.py
 .vscode/
 proyecto/
+saldo.js
 

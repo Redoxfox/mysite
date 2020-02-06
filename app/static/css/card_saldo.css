@@ -1,0 +1,83 @@
+body{
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+}
+
+.container{
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 5px;
+    border: 2px;
+    background: rgb(224, 228, 217);
+    padding: 10px;
+}
+
+.fechas-dia-mes{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;  
+    grid-gap: auto;
+}
+
+.fechas-entre{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;  
+    grid-gap: auto;
+}
+
+.find-date-entre{
+    display: grid;
+    grid-template-columns:33% 33% 33%;
+    justify-items: center;  
+    grid-gap: auto;
+}
+
+.Editar{
+    text-decoration: none;
+    background: rgb(65, 152, 233);
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 1;
+    color: white;
+}
+
+.Eliminar{
+    text-decoration: none;
+    background: orange;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 1;
+}
+
+.dias_laborados {
+    display: grid;
+    border: 2px dashed rgba(114, 186, 94, 0.35);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    background: rgba(114, 186, 94, 0.05);
+}
+
+.dia_laborado {
+    width: 50%;
+    height: 50%;
+    background: rgba(69, 214, 81, 0.4);
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#saldo{
+    text-align: center;
+    background: rgba(69, 214, 81, 0.4);
+    border-radius: 5px;
+    color: blue;
+}

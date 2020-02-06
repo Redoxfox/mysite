@@ -1,10 +1,12 @@
 from app import app, request
 from app import app, render_template
 from app.model.modeldb import Model
+from app.static.lib import procesar_fechas
 import os
 import json
 from datetime import datetime, date
 import re
+from flask import jsonify
 import numpy as np
 
 
@@ -308,7 +310,7 @@ def ProcesarServicios( ):
         #mes_actual = format(today.month)
 
         mes_actual = '7'
-        print (mes)
+        #print (mes)
         if mes == mes_actual:
             servicio_mes.append(costo_total)
     
@@ -320,6 +322,85 @@ def ProcesarServicios( ):
     detalle.append(porc_mes)
     
     
+    #return jsonify( DatosOfServicioOftado)
     return render_template("saldo.html", url = urlrev, lista=lista, total = detalle, Softado=DatosOfServicioOftado)
 
+##################################################
+# Operacion con servicios prestados
+##################################################
+#Calculo de gastos 
+@app.route('/mes/<string:dia_mes>', methods=['POST', 'GET'])
+def mes(dia_mes):
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    lista = dict()
+    lista = {'view':'ListaOfServicios'
+        }
+    detalle = []
+    servicio_mes = []
+    gasto_mes = []
+    #Lista de servicios ofertados.
+    TSSOfServicioOftado = dict()
+    TSSOfServicioOftado  = {'TABLE':'servicios order by fecha',
+        'Col1':'id',
+        'Col2':'costo_total',
+        'Col3':'fecha'
+        }
+    DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
+    
+    mis_servicios = {}
+    fecha_recibida = procesar_fechas.proc_fecha()
+    #listfecha = fecha_recibida.datosdb(dia_mes)
+    cont = 0
+
+    #print(listfecha)
+
+    year_res = fecha_recibida.year_fecha(dia_mes)
+    mes_res = fecha_recibida.month_fecha(dia_mes)
+    dia_res = fecha_recibida.day_fecha(dia_mes)
+    nom_mes = fecha_recibida.nombre_mes(dia_mes)
+
+
+    for rows in DatosOfServicioOftado:
+        id = rows["id"]
+        costo_total = rows["costo_total"]
+        fecha = rows["fecha"]
+        year = int(format(fecha.year))
+        mes = int(format(fecha.month))
+        dia = int(format(fecha.day))
+        today = date.today()  
+        cont += 1
+        
+        #mes_actual = format(today.month)
+
+        mes_actual = '7'
+        #print (mes_res)
+        #print (year_res)
+        #print (dia_res)
+        if mes == mes_res and  year == year_res and  dia == dia_res:
+            servicio_mes.append(costo_total)
+            mis_servicios[cont]= {"_id":id, 
+                "costo_total":costo_total,
+                "fecha": fecha,
+                "dia": dia,
+                "url": urlrev,
+                "mes": nom_mes
+            }
+            
+            
+    #servicio_mes.append(costo_total)
+    """s_mes = np.array(servicio_mes)
+    porc = s_mes * 0.15
+    saldo_mes = s_mes.sum()
+    porc_mes = porc.sum()
+    detalle.append(saldo_mes)
+    detalle.append(porc_mes)"""
+
+    #xx = json.dumps(DatosOfServicioOftado)
+
+    #xx = type(DatosOfServicioOftado)
+    
+    #return jsonify( DatosOfServicioOftado)
+    return (mis_servicios)
 
