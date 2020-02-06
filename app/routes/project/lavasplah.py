@@ -300,7 +300,7 @@ def ProcesarServicios( ):
     
     
 
-    for rows in DatosOfServicioOftado:
+    """for rows in DatosOfServicioOftado:
         id = rows["id"]
         costo_total = rows["costo_total"]
         fecha = rows["fecha"]
@@ -319,7 +319,7 @@ def ProcesarServicios( ):
     saldo_mes = s_mes.sum()
     porc_mes = porc.sum()
     detalle.append(saldo_mes)
-    detalle.append(porc_mes)
+    detalle.append(porc_mes)"""
     
     
     #return jsonify( DatosOfServicioOftado)
