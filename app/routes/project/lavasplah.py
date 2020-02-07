@@ -328,7 +328,7 @@ def ProcesarServicios( ):
 ##################################################
 # Operacion con servicios prestados
 ##################################################
-#Calculo de gastos 
+#Consulta de servicios prestados por dia mes  
 @app.route('/mes/<string:dia_mes>', methods=['POST', 'GET'])
 def mes(dia_mes):
     urlrev = URLBASE 
@@ -366,15 +366,6 @@ def mes(dia_mes):
         id = rows["id"]
         costo_total = rows["costo_total"]
         fecha = str(rows["fecha"])
-        #print(type(fecha))
-        print(fecha)
-        """year = int(format(fecha.year))
-        mes = int(format(fecha.month))
-        dia = int(format(fecha.day))
-
-        year = fecha.strftime("%Y")
-        mes = fecha.strftime("%m")
-        dia = fecha.strftime("%d")"""
 
         year = fecha_recibida.year_fecha(fecha)
         mes = fecha_recibida.month_fecha(fecha)
@@ -393,19 +384,65 @@ def mes(dia_mes):
                 "mes": nom_mes
             }
             
-            
-    #servicio_mes.append(costo_total)
-    """s_mes = np.array(servicio_mes)
-    porc = s_mes * 0.15
-    saldo_mes = s_mes.sum()
-    porc_mes = porc.sum()
-    detalle.append(saldo_mes)
-    detalle.append(porc_mes)"""
-
-    #xx = json.dumps(DatosOfServicioOftado)
-
-    #xx = type(DatosOfServicioOftado)
-    
-    #return jsonify( DatosOfServicioOftado)
     return (mis_servicios)
+
+#Consulta de servicios prestados por  mes  
+@app.route('/mes_year/<string:mes_year>', methods=['POST', 'GET'])
+def mes_year(mes_year):
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    lista = dict()
+    lista = {'view':'ListaOfServicios'
+        }
+    detalle = []
+    servicio_mes = []
+    gasto_mes = []
+    #Lista de servicios ofertados.
+    TSSOfServicioOftado = dict()
+    TSSOfServicioOftado  = {'TABLE':'servicios order by fecha',
+        'Col1':'id',
+        'Col2':'costo_total',
+        'Col3':'fecha'
+        }
+    DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
+    
+    mis_servicios = {}
+    fecha_recibida = procesar_fechas.proc_fecha()
+    #listfecha = fecha_recibida.datosdb(dia_mes)
+    cont = 0
+
+    #print(listfecha)
+
+    year_res = fecha_recibida.year_fecha(mes_year)
+    mes_res = fecha_recibida.month_fecha(mes_year)
+    dia_res = fecha_recibida.day_fecha(mes_year)
+    nom_mes = fecha_recibida.nombre_mes(mes_year)
+
+
+    for rows in DatosOfServicioOftado:
+        id = rows["id"]
+        costo_total = rows["costo_total"]
+        fecha = str(rows["fecha"])
+
+        year = fecha_recibida.year_fecha(fecha)
+        mes = fecha_recibida.month_fecha(fecha)
+        dia = fecha_recibida.day_fecha(fecha)
+
+        cont += 1
+        
+
+        if mes == mes_res and  year == year_res:
+            servicio_mes.append(costo_total)
+            mis_servicios[cont]= {"_id":id, 
+                "costo_total":costo_total,
+                "fecha": fecha,
+                "dia": dia,
+                "url": urlrev,
+                "mes": nom_mes
+            }
+            
+    return (mis_servicios)
+
+
 

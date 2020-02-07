@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Saldo de servicios prestados</title>
     <link href= "{{ url_for('static', filename='css/card_saldo.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
   <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/saldo.js')}}"></script>
 </head>
@@ -14,13 +14,13 @@
   <div class="find_service">
   <div class="fechas-dia-mes">
     <div class="items">
-      <input type="date" id="fecha"  name='fecha' />
-      <button class='Editar' onclick="mensaje()">Consultar Dia</button>
+      <input type="date" id="fecha_dia"  name='fecha' />
+      <button class='Editar' onclick="dia_mes()">Consultar Dia</button>
     </div> 
              
     <div class="items">
-      <input type="date" id="fecha"  name='fecha' />
-      <button class='Eliminar' onclick="mensaje()">Consultar Mes</button>
+      <input type="date" id="fecha_mes"  name='fecha' />
+      <button class='Editar' onclick="mes_year()">Consultar Mes</button>
     </div>
   </div>
       
@@ -37,36 +37,13 @@
     </div>
     <div class="find-date-entre">
       <div></div>
-      <button class='Eliminar' onclick="mensaje()">Consultar Mes</button>
+      <button class='Editar' onclick="mensaje()">Consultar Mes</button>
       <div></div>
     </div>
   </div>
     
     <section class="container flex text-center" id="cards">
-      <div class="column">
-      <div class="mes" id="mes">
-       date
-      </div>
-      <hr>
-      <div class="Nro_Servicios" id="Nro_servicios">
-       0
-      </div>
-      <a class="" href=""></a>
-      <hr>
-      <h5 id="dia_l">Dia del mes en que presta el servicio:</h5>
-       <div class="dias_laborados" id="dias_laborados">
-          <a href=""></a>
-       </div>
-       <hr>
-       
       
-      <h5>saldo servicios</h5>
-      <hr>
-       <div id="saldo">
-      
-       </div>
-       <hr>  
-    </div>
       
     </section>
  
