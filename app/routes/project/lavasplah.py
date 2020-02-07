@@ -365,24 +365,24 @@ def mes(dia_mes):
     for rows in DatosOfServicioOftado:
         id = rows["id"]
         costo_total = rows["costo_total"]
-        fecha = rows["fecha"]
+        fecha = str(rows["fecha"])
         #print(type(fecha))
+        print(fecha)
         """year = int(format(fecha.year))
         mes = int(format(fecha.month))
-        dia = int(format(fecha.day))"""
+        dia = int(format(fecha.day))
 
         year = fecha.strftime("%Y")
         mes = fecha.strftime("%m")
-        dia = fecha.strftime("%d")
+        dia = fecha.strftime("%d")"""
+
+        year = fecha_recibida.year_fecha(fecha)
+        mes = fecha_recibida.month_fecha(fecha)
+        dia = fecha_recibida.day_fecha(fecha)
 
         cont += 1
         
-        #mes_actual = format(today.month)
 
-        mes_actual = '7'
-        #print (mes_res)
-        #print (year_res)
-        #print (dia_res)
         if mes == mes_res and  year == year_res and  dia == dia_res:
             servicio_mes.append(costo_total)
             mis_servicios[cont]= {"_id":id, 
