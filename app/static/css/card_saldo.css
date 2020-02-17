@@ -12,6 +12,25 @@ body{
     padding: 10px;
 }
 
+.containers{
+    margin: 0 auto;
+    width: 90%;
+    background: white;
+}
+
+.flex{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;  
+    grid-gap: 15px;
+}
+
+.cards_mes{
+    border-radius: 5px;
+    border: solid 2px #e4dd9c;
+    background: rgb(214, 205, 205);
+}
+
 .fechas-dia-mes{
     display: grid;
     grid-template-columns: 50% 50%;

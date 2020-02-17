@@ -291,38 +291,8 @@ def ProcesarServicios( ):
         'Col2':'costo_total',
         'Col3':'fecha'
         }
-    #TSOfSevicioOftado = Model(TSSOfServicioOftado)
-    #sql = TSOfSevicioOftado.SSP_TABLE()
-    #cursor = db1.cursor()
-    #cursor.execute(sql)
-    #DatosOfServicioOftado = cursor.fetchall()
     DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
-    
-    
 
-    """for rows in DatosOfServicioOftado:
-        id = rows["id"]
-        costo_total = rows["costo_total"]
-        fecha = rows["fecha"]
-        
-        mes = format(fecha.month)
-        today = date.today()
-        #mes_actual = format(today.month)
-
-        mes_actual = '7'
-        #print (mes)
-        if mes == mes_actual:
-            servicio_mes.append(costo_total)
-    
-    s_mes = np.array(servicio_mes)
-    porc = s_mes * 0.15
-    saldo_mes = s_mes.sum()
-    porc_mes = porc.sum()
-    detalle.append(saldo_mes)
-    detalle.append(porc_mes)"""
-    
-    
-    #return jsonify( DatosOfServicioOftado)
     return render_template("saldo.html", url = urlrev, lista=lista, total = detalle, Softado=DatosOfServicioOftado)
 
 ##################################################
@@ -409,10 +379,8 @@ def mes_year(mes_year):
     
     mis_servicios = {}
     fecha_recibida = procesar_fechas.proc_fecha()
-    #listfecha = fecha_recibida.datosdb(dia_mes)
+   
     cont = 0
-
-    #print(listfecha)
 
     year_res = fecha_recibida.year_fecha(mes_year)
     mes_res = fecha_recibida.month_fecha(mes_year)
@@ -445,4 +413,97 @@ def mes_year(mes_year):
     return (mis_servicios)
 
 
+#Consulta de servicios prestados por  mes  
+@app.route('/between_date/<string:day_ini>/<string:day_end>/', methods=['POST', 'GET'])
+def betwwen_date(day_ini, day_end):
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    lista = dict()
+    lista = {'view':'ListaOfServicios'
+        }
+    detalle = []
+    servicio_mes = []
+    gasto_mes = []
+    datos_fechas = []
+    #Lista de servicios ofertados.
+    TSSOfServicioOftado = dict()
+    TSSOfServicioOftado  = {'TABLE':'servicios order by fecha',
+        'Col1':'id',
+        'Col2':'costo_total',
+        'Col3':'fecha'
+        }
+    DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
+    
+    mis_servicios = {}
+    data = {}
+    
+    
+    fecha_recibida = procesar_fechas.proc_fecha()
+    datos_fechas = fecha_recibida.date_between(day_ini, day_end)
+    fecha_ini = fecha_recibida.Numero_dias(day_ini)
+    fecha_end = fecha_recibida.Numero_dias(day_end)
+
+
+    for rows in DatosOfServicioOftado:
+        id = rows["id"]
+        costo_total = rows["costo_total"]
+        fecha = str(rows["fecha"])
+        year_db = fecha_recibida.year_fecha(fecha)
+        result = data.get(year_db)
+        numero_day_fecha = fecha_recibida.Numero_dias(fecha)
+     
+      
+        if(result == None):
+            servicios_mes = {}
+            servicios_mes["Enero"] = []
+            servicios_mes["Febrero"] = []
+            servicios_mes["Marzo"] = []
+            servicios_mes["Abril"] = []
+            servicios_mes["Mayo"] = []
+            servicios_mes["Junio"] = []
+            servicios_mes["Julio"] = []
+            servicios_mes["Agosto"] = []
+            servicios_mes["Septiembre"] = []
+            servicios_mes["Octubre"] = []
+            servicios_mes["Noviembre"] = []
+            servicios_mes["Diciembre"] = [] 
+            data[year_db] = servicios_mes
+           
+            if numero_day_fecha >= fecha_ini and numero_day_fecha <= fecha_end:
+               
+                year = fecha_recibida.year_fecha(fecha)
+                mes = fecha_recibida.month_fecha(fecha)
+                dia = fecha_recibida.day_fecha(fecha)
+                nom_mes = fecha_recibida.nombre_mes(fecha)
+                
+                servicio_mes.append(costo_total)
+                data[year_db][nom_mes].append({"_id":id, 
+                        "costo_total":costo_total,
+                        "fecha": fecha,
+                        "dia": dia,
+                        "url": urlrev,
+                        "mes": nom_mes,
+                        "year":year
+                        })  
+        else:
+            if numero_day_fecha >= fecha_ini and numero_day_fecha <= fecha_end:
+                year = fecha_recibida.year_fecha(fecha)
+                mes = fecha_recibida.month_fecha(fecha)
+                dia = fecha_recibida.day_fecha(fecha)
+                nom_mes = fecha_recibida.nombre_mes(fecha)
+            
+            
+                data[year_db][nom_mes].append({"_id":id, 
+                        "costo_total":costo_total,
+                        "fecha": fecha,
+                        "dia": dia,
+                        "url": urlrev,
+                        "mes": nom_mes,
+                        "year":year
+                        })  
+
+    meses_json = json.dumps(data)    
+                             
+    return (meses_json)
 
