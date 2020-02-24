@@ -188,6 +188,7 @@ class Model:
 
         return create 
 
+    #Consulta SELECT simple 
     def SSP_TABLE(self, type_user, datos_table):
         MyObjModel = Model(type_user)
         con = MyObjModel.con();
@@ -280,6 +281,7 @@ class Model:
 
         return delete 
 
+    #Actualizacion de tabla (UPDATE with WHERE)
     def UPWT_TABLE(self,type_user, datos_table, args_up):
         MyObjModel = Model(type_user)
         con = MyObjModel.con();
@@ -313,8 +315,6 @@ class Model:
         ultimaVal = Wheres[lenWheres-1]
         ultimaValue = Values[lenValues-1]
 
-       
-       
         if ultimaVal == ",":
            Wheres=Wheres[0:lenWheres-1]
            Wheres= Wheres + ";"
@@ -345,7 +345,7 @@ class Model:
 
         return   update
 
-
+    
 
     
     

@@ -1,5 +1,5 @@
 html, body {
-  background-color: whitesmoke;
+  background-color: rgb(75, 100, 29);
   margin: 10px;
   font-family: 'Baskervville', serif;
 }
@@ -8,21 +8,21 @@ html, body {
   main{
     display: grid;  
     grid-template-columns: repeat(3, 1fr);
-    background:  whitesmoke;
+    background:  rgb(75, 100, 29);
     grid-gap: 10px;
    
     }
   
    /*Dispocion de las grillas*/
   header{
-    background: white;
+    background: rgb(245, 227, 227);
     grid-column: 1/4;
     height: 250px;
     margin-top: 50px;
   }
   
   .aside-izquierda{
-    background: whitesmoke;
+    background: rgb(27, 27, 27);
     width: 100%;
   }
 
@@ -47,7 +47,7 @@ html, body {
   }
 
   article{
-    background: white;
+    background: rgb(27, 27, 27);
   }
   section{
     background: rgb(5, 5, 5);
@@ -163,7 +163,14 @@ display: block;
   display: block;
 }
 
+.categoria >a{
+  color: #eee;
+  
+}
 
+.sub-items >a{
+  color: rgb(243, 56, 9);
+}
 
 .container .navBar {
   padding-left: 0;
@@ -188,7 +195,7 @@ font-size: 17px;
 
 .sub-items{
 line-height: 3;
-border-bottom: 2px solid rgb(26, 43, 90);
+border-bottom: 2px solid rgb(245, 247, 252);
 overflow: hidden; 
 }
 
@@ -205,12 +212,12 @@ background: white;
 *                                              CSS Carrucel de imagenes                               *
 *******************************************************************************************************/
 article .slider{
-  margin-top: 20px;
   background: rgb(202, 197, 197);
   text-align: center;
   overflow: hidden;
-  border: 1px solid rgb(120, 162, 240);
+  border: 8px solid rgb(20, 21, 24);
   border-radius: 2px;
+  height: 275px;
 }
 
 
@@ -227,7 +234,7 @@ article .slider{
  .sliderNavigation{
  display: flex;
  justify-content: space-around;
- margin-top: 10px;
+ margin-top: 20px;
  
  height: 25px;
  background: white;
@@ -367,7 +374,7 @@ article .slider{
   }
   article{
     grid-column: 1/4;
-    background: white;
+    background: rgb(41, 40, 40);
     order: 2;
   }
   section{
@@ -530,12 +537,12 @@ background: white;
 *                                              CSS Carrucel de imagenes                               *
 *******************************************************************************************************/
 article .slider{
-margin-top: 20px;
 background: rgb(202, 197, 197);
 text-align: center;
 overflow: hidden;
-border: 1px solid rgb(120, 162, 240);
+border: 8px solid #11141a;
 border-radius: 2px;
+height: 250px;
 }
 
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nuestros clientes</title>
+    <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/apiClientes.js')}}"></script>
+    <link href= "{{ url_for('static', filename='css/card.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    
+</head>
+<body>
+    <h1>Nuestros clientes </h1>
+    <hr>
+    <br>
+    <div class="container flex text-center">
+       {% for valor in Oferta_Servicio %}
+       <div class="column">
+            <h2>Informacion cliente</h2>
+            <hr>
+            <div class="items">
+                <img class="img_circle" src="/static/imgs/{{valor.image}}" >
+            </div>
+            <hr>
+            <div class="items">
+                <p><strong>Nombre:</strong>   {{valor.nombre}}</p>
+            </div>
+            <hr>
+            <div class="items">
+                <p><strong>Direction:</strong> {{valor.direccion}}</p>
+            </div>
+            <hr>
+            <div class="items">
+                <p><strong>Telefono:</strong>  {{valor.telefono}}</p>
+            </div>
+            <hr>
+            <div class="items">
+                <p><strong>Nit:</strong>{{valor.nit}}</p>
+            </div>
+            <hr>
+            <div class="items">
+                <p><strong>Email:</strong> {{valor.email}}</p>
+            </div>
+            <hr>
+            <div class="items">
+                <p><strong>Web:</strong> {{valor.web}}</p>
+            </div>
+            
+        </div> 
+        {% endfor %}
+    </div>      
+</body>
+</html>
+

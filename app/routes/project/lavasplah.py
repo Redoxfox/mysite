@@ -507,3 +507,78 @@ def betwwen_date(day_ini, day_end):
                              
     return (meses_json)
 
+@app.route('/Clientes/', methods=['POST', 'GET'])
+def Clientes():
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    TSSOfServicioOftado = dict()
+    TSSOfServicioOftado  = {'TABLE':'clientes order by id',
+        'Col1':'id',
+        'Col2':'nombre',
+        'Col3':'direccion',
+        'Col4':'telefono',
+        'Col5':'nit',
+        'Col6':'email',
+        'Col7':'web',
+        'Col8':'image',
+        }
+    DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
+    
+    return render_template("users.html", url = urlrev, Oferta_Servicio = DatosOfServicioOftado)
+
+''' @app.route('/Clientes/Users/', methods=['POST', 'GET'])
+def Clientes_users():
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    direction = ["Cl 56 # 45-15",
+    "Cra 34 # 17-14",
+    "Cl 84 # 88-14",
+    "Cl 43 # 65-19",
+    "Cra 33a # 12-14",
+    "Cl 16K # 24-26",
+    "Cra 83 # 33-23",
+    "Cl 14 # 64-26",
+    "Cll 22 # 33-62",
+    "Cll 10 # 44-26"
+     ]
+    req = request.get_json()
+    cont = 0
+    idc = 9
+    for item in req:
+        idx = idc + 1
+        id = str(idx) 
+        print(item["name"])
+        nombre=item["company"]["name"]
+        direccion=direction [cont]
+        telefono=item["phone"]
+        nit = item["address"]["zipcode"]
+        email = item["email"]
+        web = item["website"]
+        Insert_client= dict()
+        Insert_client= {'TABLE':'clientes',
+            'Val1':'nombre=%s',
+            'Val2':'direccion=%s',
+            'Val3':'telefono=%s',
+            'Val4':'nit=%s',
+            'Val5':'email=%s',
+            'Val6':'web=%s',
+            'Whe7':'id='+ id
+        } 
+        Data = [nombre, direccion, telefono, nit, email, web]
+        res_update = connect.UPWT_TABLE(username, Insert_client, Data)
+        idc+=1
+        cont+=1
+    
+    
+    #req
+    #print(req[0]["address"]["street"])
+   
+        
+    res = {"messaje":"JSON received"}
+    meses_json = json.dumps(res) 
+    #res_update = connect.UPWT_TABLE(username, Update_ofservicio, Data)
+
+    return  res  '''
+

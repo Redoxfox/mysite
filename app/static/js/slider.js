@@ -10,11 +10,16 @@ let slider = document.getElementById("sliderJs");
 
 let sliderContainer = document.getElementById('slider-container');
 
+
+
 slider.style.width = images.length * 100 + "%";
+
+
 
 //Elemento carga navegacion
 
 let sliderNav = document.getElementById("sliderNavigation");
+sliderNav.style.background = "rgb(27, 27, 27)";
 
 //Variable para saber si el slider esta activo
 let active = true;

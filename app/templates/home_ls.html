@@ -43,6 +43,7 @@
                         <li class="sub-items"><a href="{{url}}/NewServicioPtado">Nuevo servicio prestado</a></li>
                         <li class="sub-items"><a href="{{url}}/ListaOfServicios">Nuestros servicios</a></li>
                         <li class="sub-items"><a href="{{url}}/ProcesarServicios">Saldo de servicios</a></li>
+                        <li class="sub-items"><a href="{{url}}/Clientes">Lista de clientes</a></li>
                       </ul>
                     </div>
               </li>
@@ -50,11 +51,12 @@
             </ul>
         </div>
     </aside>
-    <article>
+    <article id="container_slider_img">
       <div class="slider" id="slider-container">
         <div class="sliderImages" id="sliderJs"></div>
       </div>
-      <div class="sliderNavigation" id="sliderNavigation"></div>
+      <div class="sliderNavigation" id="sliderNavigation">
+      </div>
     </article>
     <aside class="aside-derecha">
       <img src="{{ url_for('static', filename='imgs/ofertas.png') }}" alt="">
