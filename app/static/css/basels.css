@@ -303,6 +303,14 @@ article .slider{
   /*text-align: center;*/
 }
 
+/******************************************************************************************************
+*                                              CSS  lateral finanzas                                   *
+*******************************************************************************************************/
+.finanzas{
+  background: black;
+  border: #11141a;
+}
+
 .items>a{
   color: black;
   display: block;
@@ -649,6 +657,7 @@ font-size: 25px;
 color: #eee;
 margin-left: 30px;
 }
+
 
 
 }

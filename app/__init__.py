@@ -9,3 +9,4 @@ from app.routes.admin import login
 from app.routes.admin import validar
 
 from app.routes.project import lavasplah
+from app.routes.project import gastos

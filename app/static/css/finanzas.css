@@ -1,0 +1,87 @@
+html, body{
+    background: whitesmoke;
+    margin: 10px;
+    font-family: 'Baskervville', serif;
+}
+
+.calendar{
+    margin: 0 auto;
+    width: 50%;
+    background: rgb(179, 179, 196);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(46, 41, 21);
+    border: 2px solid #333;
+}
+
+.dias{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.dias__name{
+  background: whitesmoke;
+  border-radius: 50%;
+  width: 60px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px rgb(46, 41, 21);
+}
+
+
+.semanas{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.semana1{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.semana2{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.semana3{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.semana4{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.semana5{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.numeroDia__semana{
+  background: white;
+  width: 50px;
+  text-align: center;
+  border: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 5px 5px 5px rgb(167, 46, 46);
+}
+
+.numeroDia__semana:hover{
+  background: rgb(95, 85, 233);
+}

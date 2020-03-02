@@ -125,11 +125,7 @@ class proc_fecha:
             else:
                 x += meses[cont] 
 
-             
-
             total_dias = x 
-
-            
 
         return x
    
@@ -171,6 +167,76 @@ class proc_fecha:
         fechas.append(num_month_year_end)
 
         return fechas
+
+    def first_day_year(self, fecha):
+        depurar_date = proc_fecha()
+        fecha = fecha
+        list_fecha = fecha.split("-")
+        year = list_fecha
+        year_int = int(year[0]) + 1
+        month_int = int(year[1])
+        day_int = int(year[2])
+
+        nom_dia= {0:"lunes",
+        1:"martes",
+        2:"miercoles",
+        3:"jueves",
+        4:"viernes",
+        5:"sabado",
+        6:"domingo"
+        }
+
+        x = 0
+        for item in range(1, year_int):
+            year = str(item)
+            fecha_iterador = year + "-01-" + "01"
+            dia_actual = x
+            if (x <= 6): 
+                este_dia =  nom_dia[x]  
+                if (depurar_date.esBisiesto(fecha_iterador)):
+                    dia_sig = x + 2
+                    if (dia_sig==8):
+                        x = 1
+                    if (dia_sig==7):
+                        x = 0
+                    if (dia_sig<=6):
+                        x = dia_sig
+                else:
+                    dia_sig = x + 1
+                    if (dia_sig==8):
+                        x = 1
+    
+                    if (dia_sig==7):
+                        x = 0
+                
+                    if (dia_sig<=6):
+                        x = dia_sig
+                print(item, este_dia,x)   
+            else:
+                if (dia_actual==8):
+                    if (depurar_date.esBisiesto(fecha_iterador)):
+                        x = 1
+                        este_dia =  nom_dia[x]
+                        x = x + 1
+                    else:
+                        x = 0
+                        este_dia =  nom_dia[x] 
+           
+                if (dia_actual==7):
+                    if (depurar_date.esBisiesto(fecha_iterador)):
+                        x = 0
+                        x = x + 1
+                        este_dia =  nom_dia[x] 
+                    else:
+                        x = 0
+                        este_dia =  nom_dia[x] 
+                        x = x + 1
+
+                print(item, este_dia,x)
+
+        return este_dia
+
+    
 
 
 
