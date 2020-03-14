@@ -140,6 +140,7 @@ function between_date(url) {
     let containerCards = document.getElementById("cards")
     containerCards.classList.remove("container")
     containerCards.classList.add("containers")
+    
 
     const day_between = url + "/between_date/" + fecha_ini + "/" + fecha_end + "/"
     /*const dia_mes = "http://127.0.0.1:5000/mes_year/" + fecha*/
@@ -222,19 +223,7 @@ function between_date(url) {
              } 
            }
          }
-       }
-   /*   for (var clave in data ){
-        if (data.hasOwnProperty(clave)) {
-          if(0 != data[clave].length){
-             for (let i = 0; i < data[clave].length; i++) {
-              console.log(data[clave][i]._id)
-              console.log(data[clave][i].mes)
-             }
-              console.log(data[clave])
-          }
-        }
-       } */ 
-    
+       }  
     })  
 }
 

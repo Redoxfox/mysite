@@ -4,6 +4,63 @@ html, body{
     font-family: 'Baskervville', serif;
 }
 
+.carrucel{
+  display: grid;
+  grid-template-columns: 25%  auto 25%;
+  margin: 0 auto;
+  width: 50%;
+  background: rgb(179, 179, 196);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(46, 41, 21);
+  border: 2px solid #333;
+  text-align: center;
+
+}
+
+.item_carrucel{
+  margin: 0;
+}
+
+
+
+ .triangulo_izq {
+  width: 0;
+  height: 0;
+  background: bisque;
+  border-top: 25px solid transparent;
+  border-right: 50px solid rgb(72, 165, 54);
+  border-bottom: 25px solid transparent;
+}
+
+.triangulo_der {
+width: 0;
+height: 0;
+background: bisque;
+border-top: 25px solid transparent;
+border-left: 50px solid rgb(72, 165, 54);
+border-bottom: 25px solid transparent;
+} 
+
+#id_anterior{
+  background: bisque;
+}
+
+#id_actual{
+  background: bisque;
+  line-height: 4;
+}
+
+#id_siguiente{
+  background: bisque;
+  
+}
+
+.item_carrucel{
+ 
+ background: beige;
+  
+}
+
 .calendar{
     margin: 0 auto;
     width: 50%;
@@ -69,6 +126,13 @@ html, body{
   margin-bottom: 15px;
 }
 
+.semana6{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
 .numeroDia__semana{
   background: white;
   width: 50px;
@@ -84,4 +148,73 @@ html, body{
 
 .numeroDia__semana:hover{
   background: rgb(95, 85, 233);
+}
+
+@media(max-width:500px){
+  .calendar{
+    margin: 0 auto;
+    width: 100%;
+    background: rgb(179, 179, 196);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(46, 41, 21);
+    border: 2px solid #333;
+  }
+
+  .carrucel{
+    display: grid;
+    grid-template-columns: 25%  auto 25%;
+    margin: 0 auto;
+    width: 100%;
+    background: rgb(179, 179, 196);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(46, 41, 21);
+    border: 2px solid #333;
+    text-align: center;
+  
+  }
+
+  .dias__name{
+    background: whitesmoke;
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px rgb(46, 41, 21);
+  }
+
+  .numeroDia__semana{
+    background: white;
+    width: 25px;
+    text-align: center;
+    border: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 5px 5px 5px rgb(167, 46, 46);
+  }
+
+  .triangulo_izq {
+    width: 0;
+    height: 0;
+    margin-top: 10px;
+    background: bisque;
+    border-top: 20px solid transparent;
+    border-right: 40px solid rgb(72, 165, 54);
+    border-bottom: 20px solid transparent;
+  }
+  
+  .triangulo_der {
+  width: 0;
+  height: 0;
+  margin-top: 10px;
+  background: bisque;
+  border-top: 20px solid transparent;
+  border-left: 40px solid rgb(72, 165, 54);
+  border-bottom: 20px solid transparent;
+  } 
+
 }

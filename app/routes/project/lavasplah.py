@@ -322,11 +322,11 @@ def mes(dia_mes):
     mis_servicios = {}
     fecha_recibida = procesar_fechas.proc_fecha()
     day_init = fecha_recibida.first_day_year(dia_mes)
-             
-    print(day_init)
+    
+    #print(day_init)
     #listfecha = fecha_recibida.datosdb(dia_mes)
     cont = 0
-
+    
     #print(listfecha)
 
     year_res = fecha_recibida.year_fecha(dia_mes)

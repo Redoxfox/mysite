@@ -6,8 +6,18 @@
     <title>Finanzas Personales</title>
     <link href= "{{ url_for('static', filename='css/finanzas.css') }}" rel="stylesheet" type="text/css" media="screen" />  
 </head>
-<body>
-    
+<body >
+     <div id="carrucel" class="carrucel">
+       <div  id="id_anterior" class="item_carrucel">
+            <button id="mes_anterior" class="triangulo_izq" onclick="{{datos.num_month_ant}};"></button> 
+       </div>
+       <div id="id_actual" class="item_carrucel">
+            <button id="mes_actual"   onclick="{{datos.num_month_act}};"></button> 
+       </div>
+       <div  id="id_siguiente" class="item_carrucel">
+            <button id="mes_siguiente" class="triangulo_der" onclick="{{datos.num_month_sig}};"></button> 
+       </div>
+     </div>
      <div id="calendar" class="calendar">
        <div id="dias" class="dias">
         <div class="dias__name">Su</div>
@@ -19,57 +29,58 @@
         <div class="dias__name">Sa</div>
       </div>
       <hr>
-      <div class="semanas">
+      <div class="semanas" id="semanas">
         <div id="semana1" class="semana1">
-          <div class="numeroDia__semana">1</div>
-          <div class="numeroDia__semana">2</div>
-          <div class="numeroDia__semana">3</div>
-          <div class="numeroDia__semana">4</div>
-          <div class="numeroDia__semana">5</div>
-          <div class="numeroDia__semana">6</div>
-          <div class="numeroDia__semana">7</div>
+          <div id="sem1_d1" class="numeroDia__semana">{{month.sem1_d1}}</div>
+          <div id="sem1_d2" class="numeroDia__semana">{{month.sem1_d2}}</div>
+          <div id="sem1_d3" class="numeroDia__semana">{{month.sem1_d3}}</div>
+          <div id="sem1_d4" class="numeroDia__semana">{{month.sem1_d4}}</div>
+          <div id="sem1_d5" class="numeroDia__semana">{{month.sem1_d5}}</div>
+          <div id="sem1_d6" class="numeroDia__semana">{{month.sem1_d6}}</div>
+          <div id="sem1_d7" class="numeroDia__semana">{{month.sem1_d7}}</div>
         </div>
     
         <div id="semana2" class="semana2">
-          <div class="numeroDia__semana">8</div>
-          <div class="numeroDia__semana">9</div>
-          <div class="numeroDia__semana">10</div>
-          <div class="numeroDia__semana">11</div>
-          <div class="numeroDia__semana">12</div>
-          <div class="numeroDia__semana">13</div>
-          <div class="numeroDia__semana">14</div>
+          <div id="sem2_d1" class="numeroDia__semana">{{month.sem2_d1}}</div>
+          <div id="sem2_d2" class="numeroDia__semana">{{month.sem2_d2}}</div>
+          <div id="sem2_d3" class="numeroDia__semana">{{month.sem2_d3}}</div>
+          <div id="sem2_d4" class="numeroDia__semana">{{month.sem2_d4}}</div>
+          <div id="sem2_d5" class="numeroDia__semana">{{month.sem2_d5}}</div>
+          <div id="sem2_d6" class="numeroDia__semana">{{month.sem2_d6}}</div>
+          <div id="sem2_d7" class="numeroDia__semana">{{month.sem2_d7}}</div>
         </div>
         
         <div id="semana3" class="semana3">
-          <div class="numeroDia__semana">15</div>
-          <div class="numeroDia__semana">16</div>
-          <div class="numeroDia__semana">17</div>
-          <div class="numeroDia__semana">18</div>
-          <div class="numeroDia__semana">19</div>
-          <div class="numeroDia__semana">20</div>
-          <div class="numeroDia__semana">21</div>
+          <div id="sem3_d1" class="numeroDia__semana">{{month.sem3_d1}}</div>
+          <div id="sem3_d2" class="numeroDia__semana">{{month.sem3_d2}}</div>
+          <div id="sem3_d3" class="numeroDia__semana">{{month.sem3_d3}}</div>
+          <div id="sem3_d4" class="numeroDia__semana">{{month.sem3_d4}}</div>
+          <div id="sem3_d5" class="numeroDia__semana">{{month.sem3_d5}}</div>
+          <div id="sem3_d6" class="numeroDia__semana">{{month.sem3_d6}}</div>
+          <div id="sem3_d7" class="numeroDia__semana">{{month.sem3_d7}}</div>
         </div>
         <div id="semana4" class="semana4">
-          <div class="numeroDia__semana">22</div>
-          <div class="numeroDia__semana">23</div>
-          <div class="numeroDia__semana">24</div>
-          <div class="numeroDia__semana">25</div>
-          <div class="numeroDia__semana">26</div>
-          <div class="numeroDia__semana">27</div>
-          <div class="numeroDia__semana">28</div>
+          <div id="sem4_d1" class="numeroDia__semana">{{month.sem4_d1}}</div>
+          <div id="sem4_d2" class="numeroDia__semana">{{month.sem4_d2}}</div>
+          <div id="sem4_d3" class="numeroDia__semana">{{month.sem4_d3}}</div>
+          <div id="sem4_d4" class="numeroDia__semana">{{month.sem4_d4}}</div>
+          <div id="sem4_d5" class="numeroDia__semana">{{month.sem4_d5}}</div>
+          <div id="sem4_d6" class="numeroDia__semana">{{month.sem4_d6}}</div>
+          <div id="sem4_d7" class="numeroDia__semana">{{month.sem4_d7}}</div>
         </div>
         <div id="semana5" class="semana5">
-          <div class="numeroDia__semana">29</div>
-          <div class="numeroDia__semana">30</div>
-          <div class="numeroDia__semana">31</div>
-          <div class="numeroDia__semana">32</div>
-          <div class="numeroDia__semana">33</div>
-          <div class="numeroDia__semana">34</div>
-          <div class="numeroDia__semana">35</div>
+          <div id="sem5_d1" class="numeroDia__semana">{{month.sem5_d1}}</div>
+          <div id="sem5_d2" class="numeroDia__semana">{{month.sem5_d2}}</div>
+          <div id="sem5_d3" class="numeroDia__semana">{{month.sem5_d3}}</div>
+          <div id="sem5_d4" class="numeroDia__semana">{{month.sem5_d4}}</div>
+          <div id="sem5_d5" class="numeroDia__semana">{{month.sem5_d5}}</div>
+          <div id="sem5_d6" class="numeroDia__semana">{{month.sem5_d6}}</div>
+          <div id="sem5_d7" class="numeroDia__semana">{{month.sem5_d7}}</div>
         </div>
+        
          
       </div>
      </div> 
-    
+<script src="{{ url_for('static', filename='js/calendar.js') }}" crossorigin="anonymous"></script>    
 </body>
 </html>
