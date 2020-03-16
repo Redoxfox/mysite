@@ -52,7 +52,7 @@ function mes_anterior(month, year) {
     document.getElementById("mes_anterior").setAttribute("onclick",link_mes_anterior);
     document.getElementById("mes_actual").setAttribute("onclick",link_mes_atual);
     document.getElementById("mes_siguiente").setAttribute("onclick",link_mes_siguiente);
-    document.getElementById("mes_actual").textContent = meses[month_actual] + " , " + year_actual; 
+    document.getElementById("mes_actual").textContent = meses[month_actual] + "  " + year_actual; 
     /*document.getElementById("mes_anterior").textContent = month_anterior  + "  " + year_anterior;
     document.getElementById("mes_siguiente").textContent = month_siguiente  + " , " + year_siguiente;*/
     const mes_year = window.origin + "/mes_calendar/" + month_actual + "/" + year_actual + "/"
@@ -176,9 +176,7 @@ function mes_siguiente(month, year) {
         year_siguiente = year+1 
     }
 
-  
 
-    
     let containerCards = document.getElementById("semanas");
     containerCards.classList.remove("semanas");
     containerCards.classList.add("semanas");
@@ -196,7 +194,7 @@ function mes_siguiente(month, year) {
     document.getElementById("mes_anterior").setAttribute("onclick",link_mes_anterior);
     document.getElementById("mes_actual").setAttribute("onclick",link_mes_atual);
     document.getElementById("mes_siguiente").setAttribute("onclick",link_mes_siguiente);
-    document.getElementById("mes_actual").textContent = meses[month_actual]  + " , " + year_actual; 
+    document.getElementById("mes_actual").textContent = meses[month_actual]  + "  " + year_actual; 
     /*document.getElementById("mes_anterior").textContent = month_anterior  + " , " + year_anterior;
     document.getElementById("mes_siguiente").textContent = month_siguiente  + " , " + year_siguiente;*/
     const mes_year = window.origin + "/mes_calendar/" + month_actual + "/" + year_actual + "/"
@@ -209,23 +207,33 @@ function mes_siguiente(month, year) {
        for (const key in data) {
            if (data.hasOwnProperty(key)) {
                num_dias_semanas = num_dias_semanas + 1
-               console.log(num_dias_semanas, key)
+              //console.log(num_dias_semanas, key)
                dias_vacios.push(num_dias_semanas)
+               
                if(num_dias_semanas <= 35) {
-                    document.getElementById(key).textContent = data[key]   
+                    document.getElementById(key).textContent = data[key]  
+                    let id_day_week = document.getElementById(key);
+                    if (data[key] != ""){
+                        let function_new_move = "new_move"+"("+ data[key] + "," + month_actual + "," +  year_actual+");";
+                        id_day_week.setAttribute("onclick",function_new_move);
+                    }
                }else{   
-                document.getElementById("semana6").remove()
-                semana6.setAttribute("id", "semana6"); 
-                semana6.classList.add("semana6");
-                containerCards.appendChild(semana6);
-                num_day = data[key]
-                id_dias_vacios.push(key)
-                console.log(key)
-                let listItem = document.createElement('div');
-                listItem.setAttribute("id", key); 
-                listItem.classList.add("numeroDia__semana");
-                semana6.appendChild(listItem);
-                listItem.textContent =  num_day; 
+                    document.getElementById("semana6").remove()
+                    semana6.setAttribute("id", "semana6"); 
+                    semana6.classList.add("semana6");
+                    containerCards.appendChild(semana6);
+                    num_day = data[key]
+                    id_dias_vacios.push(key)
+                    let listItem = document.createElement('div');
+                    listItem.setAttribute("id", key); 
+                    listItem.classList.add("numeroDia__semana");
+                    semana6.appendChild(listItem);
+                    listItem.textContent =  num_day; 
+                    if (data[key] != ""){
+                        let id_day_week = document.getElementById(key);
+                        let function_new_move = "new_move"+"("+ data[key] + "," + month_actual + "," +  year_actual+");";
+                        id_day_week.setAttribute("onclick",function_new_move);
+                    }
                } 
                
            }

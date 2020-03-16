@@ -78,7 +78,7 @@ def index_gp():
     Datos_function["num_month_act"] = "mes_actual(" + str(month_req) + "," + str(year_req) + ")"
     Datos_function["num_month_sig"] = "mes_siguiente(" + str(month_next) + "," + str(year_req) + ")"
     Datos_function["name_month_ant"] = meses[month_back] + "-" + str(year_req) 
-    Datos_function["name_month_act"] = meses[month_req]  + "-" + str(year_req) 
+    Datos_function["name_month_act"] = meses[month_req]  + " " + str(year_req) 
     Datos_function["name_month_sig"] = meses[month_next] + "-" + str(year_req) 
 
 
