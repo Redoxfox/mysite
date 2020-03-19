@@ -1,3 +1,9 @@
+function new_move(day, month, year){
+    console.log(day, month, year);
+
+}
+
+
 function mes_anterior(month, year) {
     let month_actual = month;
     let year_actual = year;
@@ -83,6 +89,11 @@ function mes_anterior(month, year) {
                 listItem.classList.add("numeroDia__semana");
                 semana6.appendChild(listItem);
                 listItem.textContent =  num_day; 
+                if (data[key] != ""){
+                    let id_day_week = document.getElementById(key);
+                    let function_new_move = "new_move"+"("+ data[key] + "," + month_actual + "," +  year_actual+");";
+                    id_day_week.setAttribute("onclick",function_new_move);
+                }
                }  
            }
        }
@@ -135,6 +146,7 @@ function mes_actual(month, year) {
                 listItem.classList.add("numeroDia__semana");
                 semana6.appendChild(listItem);
                 listItem.textContent =  num_day; 
+
                }  
            }
        }

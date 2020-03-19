@@ -164,13 +164,14 @@ html, body{
 
 .numeroDia__semana:hover{
   background: rgb(201, 163, 59);
+  cursor: pointer;
 }
 
 @media(max-width:500px){
   .calendar{
     margin: 0 auto;
     width: 100%;
-    background: rgb(179, 179, 196);
+    background: #ECEFF3;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgb(46, 41, 21);
     border: 2px solid #333;
@@ -186,13 +187,13 @@ html, body{
     box-shadow: 5px 5px 5px rgb(46, 41, 21);
     border: 2px solid #333;
     text-align: center;
-  
   }
 
   .dias__name{
-    background: whitesmoke;
+    background: rgb(235, 177, 17);
     border-radius: 50%;
     width: 30px;
+    color: #ECEFF3;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -201,8 +202,9 @@ html, body{
   }
 
   .numeroDia__semana{
-    background: white;
+    background: #0d0d0e;
     width: 25px;
+    color: #ECEFF3;
     text-align: center;
     border: 10px;
     border-radius: 20px;
@@ -217,19 +219,19 @@ html, body{
     width: 0;
     height: 0;
     margin-top: 10px;
-    background: bisque;
+    background: whitesmoke;
     border-top: 20px solid transparent;
-    border-right: 40px solid rgb(72, 165, 54);
+    border-right: 40px solid rgb(43, 44, 42);
     border-bottom: 20px solid transparent;
   }
   
-  .triangulo_der {
+ .triangulo_der {
   width: 0;
   height: 0;
   margin-top: 10px;
-  background: bisque;
+  background: whitesmoke;
   border-top: 20px solid transparent;
-  border-left: 40px solid rgb(72, 165, 54);
+  border-left: 40px solid rgb(43, 44, 42);
   border-bottom: 20px solid transparent;
   } 
 
