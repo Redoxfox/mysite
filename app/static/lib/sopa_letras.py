@@ -950,6 +950,3 @@ class llenar_palabra:
             
         
         return datos_crucigrama
-
-
-    

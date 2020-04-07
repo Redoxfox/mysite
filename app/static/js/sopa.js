@@ -49,6 +49,22 @@ function coord(x,y) {
     obj = JSON.parse(objSerialized);  */
 }
 
+function borrar_palabra(){
+  let palabra = document.getElementById("palabra");
+  palabra.value = ""
+  for (let index = 0; index < sessionStorage.length; index++) {
+    let element = sessionStorage.getItem(index);
+    let valor_json = JSON.parse(element);
+    valor = valor_json.value_letter[1]
+    id = "cood_" + valor;
+    console.log(id)
+    let celda = document.getElementById(id);
+    celda.style.background = "white"
+  }
+  sessionStorage.clear();
+  localStorage.clear();
+}
+
 function comprobar_palabra(){
 
 const url = window.origin + "/palabra/";

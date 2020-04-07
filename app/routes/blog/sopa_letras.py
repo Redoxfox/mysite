@@ -112,4 +112,3 @@ def palabra():
     res = make_response(jsonify({"message": "OK"}), 200)
     
     return result
-
