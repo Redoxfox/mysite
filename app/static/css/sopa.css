@@ -175,7 +175,7 @@ html, body {
     .fills{
         display: grid;
         grid-gap: 2px;
-        grid-template-columns: repeat(15, 15px);
+        grid-template-columns: repeat(15, 23px);
         grid-template-rows: repeat(15, 30px);
     }
 
@@ -190,7 +190,7 @@ html, body {
         display: grid;
         grid-gap: 20px;
         grid-template-columns: repeat(1, 300px);
-        grid-template-rows: repeat(3, 60px);
+        grid-template-rows: repeat(6, 60px);
     }
 
     #titulo3{
