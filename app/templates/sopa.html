@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de letras</title>
+    <link href= "{{ url_for('static', filename='css/sopa.css') }}" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/sopa.js')}}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="fills">
+            {% for fila in range(15)%}
+               {% for row in range(15) %}
+                    <div id="cood_{{fila}}-{{row}}" class="letter" onclick="coord({{fila}},{{row}})" >{{data[fila][row]}}</div>
+               {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container_action">
+        <div class="action"> 
+            <div class="palabra">
+                <label id="etiqueta">Palabra Selecionada</label>
+            </div>
+
+            <div class="palabra">
+                <input id="palabra" type="text">
+            </div>
+
+            <div class="palabra">
+                <button id="comprobar" onclick="comprobar_palabra()">Comprobar palabra</button>
+            </div>
+            <div class="palabra">
+                <button id="borrar" onclick="borrar_palabra()">Borrar palabra</button>
+            </div>
+
+            <div class="palabra">
+                <button id="nueva" onclick="nueva_sopa()">Nueva Sopa letras</button>
+            </div>
+            <div class="palabra">
+                
+            </div>
+        </div>
+    </div>
+    <div class="container_terminos">
+        <div class="terminos">
+                <div id="titulo1" class="titulos_english">English</div>
+                <div id="titulo2" class="titulos_spanish">Spanish</div>
+                <div id="titulo3" class="titulos_english">English</div>
+                <div id="titulo4" class="titulos_spanish">Spanish</div>
+            {% for row in palabras_crucigrama %}
+                <div id="{{row.english}}" class="english">{{row.english}}</div>
+                <div id="{{row.spanish}}" class="spanish">{{row.spanish}}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="definiciones">
+
+    </div>
+    
+    <script>
+        window.onbeforeunload = confirmExit;
+        function confirmExit()
+        {
+            sessionStorage.clear();
+        }
+    </script>
+</body>
+</html>

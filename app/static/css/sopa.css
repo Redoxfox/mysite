@@ -1,0 +1,206 @@
+html, body {
+    background-color: whitesmoke;
+    margin: 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.container_terminos{
+    display: flex;
+    justify-content: center;
+}
+
+.container_action{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fills{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(15, 40px);
+    grid-template-rows: repeat(15, 40px);
+}
+
+.letter{
+    background:  white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminos{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(15, 40px);  
+}
+.titulos_english{
+    display: flex;
+    background: rgb(20, 4, 240);
+    border-radius: 2px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.titulos_spanish{
+    display: flex;
+    background: rgb(250, 54, 4);
+    border-radius: 2px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.spanish{
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(248, 54, 6);
+    justify-content: center;
+    align-items: center;
+}
+
+.english{
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    font-size: 16px;
+    color: rgb(7, 7, 7);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(6, 59, 231);
+    justify-content: center;
+    align-items: center;
+}
+
+.action{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(3, 60px);
+}
+
+.palabra{
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(21, 21, 22);
+    justify-content: center;
+    align-items: center;
+}
+
+#palabra{
+    display: flex;
+    background: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    color:black;
+    box-shadow: 5px 5px 5px rgb(199, 162, 14);
+    justify-content: center;
+    align-items: center;
+}
+
+#etiqueta{
+    display: flex;
+    background: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 16px;
+    color:black;
+    box-shadow: 5px 5px 5px rgb(199, 162, 14);
+    justify-content: center;
+    align-items: center;
+}
+
+#comprobar{
+    display: flex;
+    background: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 16px;
+    color:black;
+    box-shadow: 5px 5px 5px rgb(199, 162, 14);
+    justify-content: center;
+    align-items: center;
+}
+
+#borrar{
+    display: flex;
+    background: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 16px;
+    color:black;
+    box-shadow: 5px 5px 5px rgb(199, 162, 14);
+    justify-content: center;
+    align-items: center;
+}
+
+#nueva{
+    display: flex;
+    background: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    color:black;
+    box-shadow: 5px 5px 5px rgb(199, 162, 14);
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:500px){
+    .fills{
+        display: grid;
+        grid-gap: 2px;
+        grid-template-columns: repeat(15, 25px);
+        grid-template-rows: repeat(15, 30px);
+    }
+
+    .terminos{
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(2, 150px);
+        grid-template-rows: repeat(17, 40px);  
+    }
+
+    .action{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: repeat(3, 60px);
+    }
+
+    #titulo3{
+        display: none;
+    }
+    
+    #titulo4{
+        display: none;
+    }
+  
+  }
+
+

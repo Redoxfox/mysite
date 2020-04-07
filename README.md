@@ -216,3 +216,24 @@ def IT_TABLE(self):
         return result
 
         #return result
+
+        CREATE TABLE crucigrama (id INT PRIMARY KEY,  grupo INT NOT NULL, palabras TEXT);
+        INSERT INTO crucigrama (id, grupo, palabras) VALUES (1, 1,""); 
+
+        CREATE TABLE vocabulary (id INT PRIMARY KEY,  english VARCHAR(50) NOT NULL, spanish VARCHAR(50) NOT NULL, grupo INT NOT NULL, ejemplos TEXT);
+
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (1, "LIVINGROOM", "SALA", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (2, "KITCHEN", "COCINA", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (3, "BED", "CAMA", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (4, "GARAGE", "GARAGE", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (5, "ATTIC", "ATICO", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (6, "DRESSER", "MESANOCHE", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (7, "FLOOR", "PISO", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (8, "SOAP", "JABÓN", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (9, "CAN", "LATA", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (10, "SINK", "LAVAPLATOS", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (11, "SOFA", "SOFA", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (12, "TABLE", "MESA", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (13, "CHAIR", "SILLA", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (14, "STOOL", "BANCO", 1,""); 
+        INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (15, "BOWL", "TAZON", 1,""); 

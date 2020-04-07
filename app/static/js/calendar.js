@@ -1,6 +1,24 @@
 function new_move(day, month, year){
     console.log(day, month, year);
-
+    let fecha = year + "-" + month + "-" + day;
+    let movimientos = document.getElementById("movimientos");
+   
+    let listId_movimiento = document.createElement('div');
+    id_movimiento = year + month + day
+    listId_movimiento.setAttribute("id", id_movimiento);
+    listId_movimiento.classList.add("cards_mes"); 
+    movimientos.appendChild(listId_movimiento);
+    document.getElementById(id_movimiento).innerHTML =`
+        <h3 class="logo">Gastos e ingresos personales</h3> 
+        <div class="select-move">
+            <button  type="button" class="Editar" >Nuevo Ingreso</button> 
+            <button  type="button" class="Editar" >Nuevo Gasto</button> 
+            <div class="Editar" >${fecha}</div>
+            <img class="img_close" src="${window.origin}/static/imgs/error.png">
+        </div>
+    `
+    let containerCards = document.getElementById(id_movimiento)
+    
 }
 
 

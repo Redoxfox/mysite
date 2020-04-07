@@ -167,6 +167,34 @@ html, body{
   cursor: pointer;
 }
 
+.img_close{
+  width: 30px;
+}
+
+.select-move{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.Editar{
+  text-decoration: none;
+  background: rgb(218, 58, 37);
+  font-size: 20px;
+  border-radius: 30px;
+  margin: 3px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 1;
+  color: white;
+}
+
 @media(max-width:500px){
   .calendar{
     margin: 0 auto;
@@ -234,5 +262,5 @@ html, body{
   border-left: 40px solid rgb(43, 44, 42);
   border-bottom: 20px solid transparent;
   } 
-
+  
 }

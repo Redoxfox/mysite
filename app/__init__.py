@@ -8,5 +8,9 @@ from app.routes.admin import admin
 from app.routes.admin import login
 from app.routes.admin import validar
 
+#Rutas de proyectos portafolio
 from app.routes.project import lavasplah
 from app.routes.project import gastos
+
+#Rutas de entradas blog portafolio
+from app.routes.blog import sopa_letras
