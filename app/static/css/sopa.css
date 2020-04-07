@@ -175,7 +175,7 @@ html, body {
     .fills{
         display: grid;
         grid-gap: 2px;
-        grid-template-columns: repeat(15, 23px);
+        grid-template-columns: repeat(15, 30px);
         grid-template-rows: repeat(15, 30px);
     }
 
