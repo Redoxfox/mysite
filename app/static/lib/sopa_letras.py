@@ -85,7 +85,7 @@ class llenar_palabra:
         cont = 0
         for item in palabra:
             coord_y += 1
-            if coord_y <= 13 and sopa_letras[coord_x][coord_y] == "":
+            if coord_y <= 14 and sopa_letras[coord_x][coord_y] == "":
                 sopa_letras[coord_x][coord_y] = item                
             else:
                 Fill = "incompleto"
@@ -117,7 +117,7 @@ class llenar_palabra:
         cont = 0
         for item in palabra:
             coord_x += 1
-            if coord_x <= 13 and sopa_letras[coord_x][coord_y] == "":
+            if coord_x <= 14 and sopa_letras[coord_x][coord_y] == "":
                 sopa_letras[coord_x][coord_y] = item 
             else:
                 Fill = "incompleto"
@@ -135,7 +135,7 @@ class llenar_palabra:
         for item in palabra:
             coord_x += 1
             coord_y -= 1
-            if coord_x <= 13 and coord_y >= 0 and sopa_letras[coord_x][coord_y] == "":
+            if coord_x <= 14 and coord_y >= 0 and sopa_letras[coord_x][coord_y] == "":
                 sopa_letras[coord_x][coord_y] = item 
             else:
                 Fill = "incompleto"
@@ -170,7 +170,7 @@ class llenar_palabra:
         for item in palabra:
             coord_x += 1
             coord_y += 1
-            if coord_x <= 13 and coord_y <= 13 and sopa_letras[coord_x][coord_y] == "":
+            if coord_x <= 14 and coord_y <= 14 and sopa_letras[coord_x][coord_y] == "":
                 sopa_letras[coord_x][coord_y] = item 
             else:
                 Fill = "incompleto"
@@ -188,7 +188,7 @@ class llenar_palabra:
         for item in palabra:
             coord_x -= 1
             coord_y += 1
-            if coord_x >= 0 and coord_y <= 13 and sopa_letras[coord_x][coord_y] == "":
+            if coord_x >= 0 and coord_y <= 14 and sopa_letras[coord_x][coord_y] == "":
                 sopa_letras[coord_x][coord_y] = item 
             else:
                 Fill = "incompleto"
@@ -247,7 +247,7 @@ class llenar_palabra:
                 coordenadas_palabra = []
                 if (sopa_letras[coord_refx][coord_refy] == value_letra_init):
                     for item in palabra:
-                        if coord_refy <= 13:
+                        if coord_refy <= 14:
                             if sopa_letras[coord_refx][coord_refy] == item:
                                 letter.append(item) 
                                 valor_coordenada = str(coord_refx) + "-" + str(coord_refy)
@@ -281,7 +281,7 @@ class llenar_palabra:
                 coordenadas_palabra = []
                 if (sopa_letras[coord_refx][coord_refy] == value_letra_init):
                     for item in palabra:
-                        if coord_refy <= 13:
+                        if coord_refy <= 14:
                             if sopa_letras[coord_refx][coord_refy] == item:
                                 letter.append(item) 
                                 valor_coordenada = str(coord_refx) + "-" + str(coord_refy)
@@ -315,7 +315,7 @@ class llenar_palabra:
                 coordenadas_palabra = []
                 if (sopa_letras[coord_refx][coord_refy] == value_letra_init):
                     for item in palabra:
-                        if coord_refx <= 13:
+                        if coord_refx <= 14:
                             if sopa_letras[coord_refx][coord_refy] == item:
                                 letter.append(item)
                                 valor_coordenada = str(coord_refx) + "-" + str(coord_refy)
@@ -349,7 +349,7 @@ class llenar_palabra:
                 coordenadas_palabra = []
                 if (sopa_letras[coord_refx][coord_refy] == value_letra_init):
                     for item in palabra:
-                        if coord_refx  <= 13 and coord_refy  >= 0:
+                        if coord_refx  <= 14 and coord_refy  >= 0:
                             if sopa_letras[coord_refx][coord_refy] == item:
                                 letter.append(item)
                                 valor_coordenada = str(coord_refx) + "-" + str(coord_refy)
@@ -419,7 +419,7 @@ class llenar_palabra:
                 coordenadas_palabra = []
                 if (sopa_letras[coord_refx][coord_refy] == value_letra_init):
                     for item in palabra:
-                        if coord_refx <= 13 and coord_refy  <= 13:
+                        if coord_refx <= 14 and coord_refy  <= 14:
                             if sopa_letras[coord_refx][coord_refy] == item:
                                 letter.append(item) 
                                 valor_coordenada = str(coord_refx) + "-" + str(coord_refy)
@@ -454,7 +454,7 @@ class llenar_palabra:
                 coordenadas_palabra = []
                 if (sopa_letras[coord_refx][coord_refy] == value_letra_init):
                     for item in palabra:
-                        if coord_refx >= 0  and coord_refy  <= 13:
+                        if coord_refx >= 0  and coord_refy  <= 14:
                             if sopa_letras[coord_refx][coord_refy] == item:
                                 letter.append(item) 
                                 valor_coordenada = str(coord_refx) + "-" + str(coord_refy)
@@ -512,7 +512,7 @@ class llenar_palabra:
                 if value_letra == valor_casilla or valor_casilla == "":
                     letter.append(item)
                     coord_y += 1
-                    if coord_y <= 13:
+                    if coord_y <= 14:
                         valor_casilla = data[coord_x][coord_y]
                         considencia_palabra = "".join(letter) 
                         if considencia_palabra == palabra: 
@@ -538,7 +538,7 @@ class llenar_palabra:
                 if value_letra == valor_casilla or valor_casilla == "":
                     letter.append(item)
                     coord_x += 1
-                    if coord_x <= 13:
+                    if coord_x <= 14:
                         valor_casilla = data[coord_x][coord_y]
                         considencia_palabra = "".join(letter) 
                         if considencia_palabra == palabra: 
@@ -591,7 +591,7 @@ class llenar_palabra:
                     letter.append(item)
                     coord_x += 1
                     coord_y += 1
-                    if coord_x <=13 and coord_y <=13:
+                    if coord_x <=14 and coord_y <=14:
                         valor_casilla = data[coord_x][coord_y]
                         considencia_palabra = "".join(letter) 
                         if considencia_palabra == palabra: 
@@ -618,7 +618,7 @@ class llenar_palabra:
                     letter.append(item)
                     coord_x -= 1
                     coord_y += 1
-                    if coord_x >= 0 and coord_y <=13:
+                    if coord_x >= 0 and coord_y <=14:
                         valor_casilla = data[coord_x][coord_y]
                         considencia_palabra = "".join(letter) 
                         if considencia_palabra == palabra: 
@@ -645,7 +645,7 @@ class llenar_palabra:
                     letter.append(item)
                     coord_x += 1
                     coord_y -= 1
-                    if coord_x <= 13 and coord_y >= 0:
+                    if coord_x <= 14 and coord_y >= 0:
                         valor_casilla = data[coord_x][coord_y]
                         considencia_palabra = "".join(letter) 
                         if considencia_palabra == palabra: 
@@ -690,9 +690,9 @@ class llenar_palabra:
     def crucigrama(self, palabras):
         data = []
 
-        for i in range(14):
+        for i in range(15):
             data.append([])
-            for j in range(14):
+            for j in range(15):
                 data[i].append("")
 
         nombres_funciones = ["llena_palabra_izq", "llena_palabra_der", "llena_palabra_arr", "llena_palabra_abj",
@@ -710,8 +710,8 @@ class llenar_palabra:
                 Index_aleatorio = randint(0, 7)
                 crucigrama = llenar_palabra()
                 if Index_aleatorio == 0:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_izq(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]
@@ -730,8 +730,8 @@ class llenar_palabra:
                     Index_aleatorio = randint(0, 7) 
             
                 if Index_aleatorio == 1:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_der(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]
@@ -750,8 +750,8 @@ class llenar_palabra:
                         Index_aleatorio = randint(0, 7) 
             
                 if Index_aleatorio == 2:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_arr(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]
@@ -770,8 +770,8 @@ class llenar_palabra:
                         Index_aleatorio = randint(0, 7)  
             
                 if Index_aleatorio == 3:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_abj(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]
@@ -790,8 +790,8 @@ class llenar_palabra:
                         Index_aleatorio = randint(0, 7)  
             
                 if Index_aleatorio == 4:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_diagonal_izq_abj(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]
@@ -810,8 +810,8 @@ class llenar_palabra:
                         Index_aleatorio = randint(0, 7) 
             
                 if Index_aleatorio == 5:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_diagonal_izq_arr(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]
@@ -830,8 +830,8 @@ class llenar_palabra:
                         Index_aleatorio = randint(0, 7)  
 
                 if Index_aleatorio == 6:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_diagonal_der_abj(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]
@@ -850,8 +850,8 @@ class llenar_palabra:
                         Index_aleatorio = randint(0, 7)  
             
                 if Index_aleatorio == 7:
-                    coord_x = randint(0, 13)
-                    coord_y = randint(0, 13)
+                    coord_x = randint(0, 14)
+                    coord_y = randint(0, 14)
                     mapeo = crucigrama.mapeo_diagonal_der_arr(data, palabra, coord_x, coord_y)
                     if mapeo[0] == True and mapeo[1]==True:
                         Nombre_Funcion_Selecionada = nombres_funciones[Index_aleatorio]

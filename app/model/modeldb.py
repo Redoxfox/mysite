@@ -126,7 +126,7 @@ class Model:
 
         return create
 
-    #Consulta para la creacion de tablas############################################ 
+    #Consulta para la insertar elementos############################################ 
     def IT_TABLE(self, type_user, datos_table, args):
         MyObjModel = Model(type_user)
         con = MyObjModel.con();
@@ -344,6 +344,21 @@ class Model:
         con.close()  
 
         return   update
+
+    #Actualizacion de tabla (UPDATE with WHERE)
+    def MAX_ID_TABLE(self, type_user, datos_table, id):
+        MyObjModel = Model(type_user)
+        con = MyObjModel.con();
+       
+        result = "SELECT  " + "max(" + id + ")" + "as max_id FROM  " + datos_table + ";"
+
+        sql = result
+        cursor = con.cursor()
+        cursor.execute(sql)
+        Allresuls = cursor.fetchall()
+        con.close()
+
+        return  Allresuls
 
     
 

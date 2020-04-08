@@ -6,6 +6,7 @@ function coord(x,y) {
     id = "cood_" + x + "-" + y
     let celda = document.getElementById(id);
     let palabra = document.getElementById("palabra");
+
     value_anterior = palabra.value
     value_letter = celda.innerText
     palabra.value =  value_anterior + value_letter
@@ -36,17 +37,6 @@ function coord(x,y) {
         let rbgColor = localStorage.getItem('rgbColor')
         celda.style.background = "rgb(" + rbgColor +")";
     }
-
-    
-    /* var obj = new Object();
-    obj.name   = name;
-    obj.email  = email;
-    obj.mobile = mobile;
-    obj.note   = note;
-    objSerialized = JSON.stringify(obj);
-    localStorage.set('hashkey', objSerialized);
-    objSerialized = localStorage.get('hashkey');
-    obj = JSON.parse(objSerialized);  */
 }
 
 function borrar_palabra(){
@@ -65,6 +55,50 @@ function borrar_palabra(){
   localStorage.clear();
 }
 
+function nueva_sopa(){
+  let palabra = document.getElementById("palabra");
+  palabra.value = ""
+  sessionStorage.clear();
+  localStorage.clear();
+  location.reload(); 
+}
+
+function ocultar(id){
+  document.getElementById("intrucciones").innerHTML =""
+}
+
+
+function intrucciones(){
+  document.getElementById("intrucciones").innerHTML =`
+    <div class="container_titulo">
+      <div>
+        <strong>Instruccioes juego sopa letras</strong>
+      </div>
+      <div id="container_cerrar">
+          <div id="cerrar"> X </div>
+      </div>
+    </div>
+              
+    <div class="container_instrucciones">
+      <p class="instruccion">1. En la sopa de letras hay 15 palabras en ingles.</p>
+      <p class="instruccion">2. Las palabras se encuentran distribuidas al azar.</p>
+      <p class="instruccion">3. Al dar clic o presionar sobre cada letra cambia de color.</p>
+      <p class="instruccion">4. Cuando completes la palabra presiona el boton "Comprobar palabra".</p>
+      <p class="instruccion">5. Si la palabra es correcta las letras conservan su color.</p>
+      <p class="instruccion">6. Si la palabra es incorrecta las letras volveran a su color original.</p>
+      <p class="instruccion">7. Cada que aciertes la palabra cambia de color en las definiciones de la parte inferior.</p>
+      <p class="instruccion">8. Si te equivocas en la secuencia de letras presiona el boton "Borrar palabra".</p>
+      <p class="instruccion">9. Si deseas cambiar de sopa de letras presiona el boton "Nueva sopa".</p>
+    </div>
+
+    <div class="container_titulo">
+        <div>
+            Espero que te diviertas!!...
+        </div>
+    </div>
+  `
+}
+
 function comprobar_palabra(){
 
 const url = window.origin + "/palabra/";
@@ -79,9 +113,11 @@ for (let index = 0; index < sessionStorage.length; index++) {
 }
 console.log(obj)
 let palabra = document.getElementById("palabra"); 
+let nro_crucigrama = document.getElementById("Nro_crucigrama");
 var entry = {
   palabra: palabra.value,
-  coordenadas: obj
+  coordenadas: obj,
+  nro_crucigrama : nro_crucigrama.innerText
 };
 
 fetch(url, {

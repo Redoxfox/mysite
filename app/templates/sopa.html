@@ -20,26 +20,29 @@
     <div class="container_action">
         <div class="action"> 
             <div class="palabra">
+                <button id="comprobar" onclick="comprobar_palabra()">Comprobar palabra</button>
+            </div>
+            <div class="palabra">
+                <button id="borrar" onclick="borrar_palabra()">Borrar palabra</button>
+            </div>
+            <div class="palabra">
                 <label id="etiqueta">Palabra Selecionada</label>
             </div>
 
             <div class="palabra">
                 <input id="palabra" type="text">
             </div>
-
-            <div class="palabra">
-                <button id="comprobar" onclick="comprobar_palabra()">Comprobar palabra</button>
-            </div>
-            <div class="palabra">
-                <button id="borrar" onclick="borrar_palabra()">Borrar palabra</button>
-            </div>
-
             <div class="palabra">
                 <button id="nueva" onclick="nueva_sopa()">Nueva Sopa letras</button>
             </div>
             <div class="palabra">
-                
+                <button id="nueva" onclick="intrucciones()">Instrucciones</button>
             </div>
+            <div id="modal" class="modal"> 
+                <div class="modal_content" id="intrucciones" onclick="ocultar('modal')">
+                
+                </div> 
+            </div>  
         </div>
     </div>
     <div class="container_terminos">
@@ -57,6 +60,15 @@
 
     <div class="definiciones">
 
+    </div>
+
+    <div class="Nro_crucigramas">
+            <div>
+                Numero de crucigramas
+                <div id="Nro_crucigrama">
+                    {{id_crucigrama}}
+                </div>
+            </div>
     </div>
     
     <script>
