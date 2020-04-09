@@ -3,6 +3,23 @@ html, body {
     margin: 10px;
 }
 
+.estadisticas{
+    display: flex;
+    justify-content: center;
+}
+
+.container_estadisticas{
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(3, 150px);
+    margin-bottom: 20px;
+}
+
+.container_tiempo{
+    display: grid;
+    grid-template-columns: repeat(3, 20px);
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -11,6 +28,28 @@ html, body {
 .container_terminos{
     display: flex;
     justify-content: center;
+}
+
+.container_item{
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    font-size: 16px;
+    color:black;
+    box-shadow: 5px 5px 5px rgb(199, 162, 14);
+    justify-content: center;
+    align-items: center;
+}
+
+.container_tiempo{
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    font-size: 16px;
+    color:black;
+    box-shadow: 5px 5px 5px rgb(199, 162, 14);
+    justify-content: center;
+    align-items: center;
 }
 
 .container_action{
@@ -225,11 +264,13 @@ html, body {
 
 
 
+
+
 @media(max-width:500px){
     .fills{
         display: grid;
         grid-gap: 2px;
-        grid-template-columns: repeat(15, 40px);
+        grid-template-columns: repeat(15, 23px);
         grid-template-rows: repeat(15, 30px);
     }
 
@@ -245,6 +286,32 @@ html, body {
         grid-gap: 20px;
         grid-template-columns: repeat(1, 300px);
         grid-template-rows: repeat(6, 60px);
+    }
+    
+    .container_estadisticas{
+        display: grid;
+        grid-gap: 25px;
+        grid-template-columns: repeat(3, 100px);
+        margin-bottom: 20px;
+    }
+
+    .modal_content{
+        margin-left: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 300px);
+    }
+
+    .container_titulo{
+        display: grid;
+        height: 25px;
+        padding-top: 3px;
+        background-color: rgb(248, 236, 124);
+        grid-template-columns: 2fr 1fr;
+        padding-left: 5px;
+    }
+
+    #titulo_instruciones{
+        font-size: 16px;
     }
 
     #titulo3{

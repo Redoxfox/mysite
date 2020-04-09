@@ -14,12 +14,15 @@ function coord(x,y) {
     console.log(sessionStorage) 
     typeof(sessionStorage)
     if (sessionStorage.length==0) {
+        var d = new Date();
+        document.getElementById("horas").innerHTML = d.toLocaleTimeString();
         let rbgRojo = getRndInteger(200, 255);
         let rbgVerde = getRndInteger(200, 255);
         let rgbAzul = getRndInteger(200, 255);
         rbgColor = rbgRojo + ","+ rbgVerde + "," + rgbAzul
         celda.style.background = "rgb(" + rbgColor +")";
         localStorage.setItem('rgbColor', rbgColor)
+        localStorage.setItem('aciertos', 0)
         //localStorage.Apellido = 'Márquez Montoya'
         var obj = new Object();
         var casilla = x + "-" + y
@@ -67,12 +70,20 @@ function ocultar(id){
   document.getElementById("intrucciones").innerHTML =""
 }
 
+function tiempo(){
+  var myVar = setInterval(myTimer, 1000);
+  function myTimer() {
+    var d = new Date();
+    document.getElementById("segundos").innerText= myVar;
+  } 
+}
+
 
 function intrucciones(){
   document.getElementById("intrucciones").innerHTML =`
     <div class="container_titulo">
-      <div>
-        <strong>Instruccioes juego sopa letras</strong>
+      <div id="titulo_instruciones">
+        <strong>Instrucciones juego:</strong>
       </div>
       <div id="container_cerrar">
           <div id="cerrar"> X </div>
@@ -92,9 +103,10 @@ function intrucciones(){
     </div>
 
     <div class="container_titulo">
-        <div>
-            Espero que te diviertas!!...
+        <div id="titulo_instruciones">
+          <strong>Diviertete!!...</strong>
         </div>
+      
     </div>
   `
 }
@@ -140,6 +152,16 @@ fetch(url, {
       var coordenadas = data.coordenadas
       if (acierto) {
         //console.log(data.palabra)
+  
+        let id_aciertos = document.getElementById("aciertos");
+        let id_faltan = document.getElementById("faltan");
+        //let cp = id_aciertos.match(patron_aciertos)
+        //console.log(patron_aciertos)
+        numero_aciertos = parseInt(id_aciertos.innerText) + 1
+        faltan = 15 - numero_aciertos
+        id_aciertos.innerText =  numero_aciertos
+        id_faltan.innerText =  faltan
+        
         let idpalabra = data.palabra
         palabra_english = document.getElementById(idpalabra);
         palabra_english.style.textDecoration = "line-through"
@@ -153,6 +175,9 @@ fetch(url, {
           id = "cood_" + values;
           let celda = document.getElementById(id);
           celda.removeAttribute("onclick")
+        }
+        if (numero_aciertos==15) {
+          alert("Felicitaciones has terminado con exito!!!...")
         }
       } else {
         let palabra = document.getElementById("palabra");

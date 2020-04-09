@@ -8,6 +8,24 @@
     <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/sopa.js')}}"></script>
 </head>
 <body>
+    <div class="estadisticas">
+        <div class="container_estadisticas">
+            <div class="container_item">
+                <div class="item_faltan">Faltan: </div>
+                <div id="faltan" > 15</div>
+            </div>
+
+            <div class="container_item">
+                <div class="item_aciertos">Aciertos: </div>
+                <div id="aciertos"> 0</div>
+            </div>
+
+            <div class="container_tiempo">
+                <div id="horas"> </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="fills">
             {% for fila in range(15)%}
