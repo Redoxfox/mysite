@@ -30,17 +30,13 @@ def index_gp():
     Urlbase = URLBASE
     username = CONFIG['TYPE_USER']['ROOT']
     connect=Model(username)   
-    #urlrev = URLBASE
     TSSServicioPtado  = {'TABLE':'servicio',
         'Col1':'id',
         'Col2':'tipo',
         'Col3':'costo',
         }
     DatosServicioPtado = connect.SSP_TABLE(username,TSSServicioPtado)
-    #fecha_recibida = procesar_fechas.proc_fecha()
-    #day_month = fecha_recibida.days_month(2019,1)   
-
-    #Día actual
+  
     today = date.today()
     year_req = today.year
     month_req = today.month 
@@ -130,15 +126,15 @@ def index_gp():
         35:"sem5_d7",
         }  
     day_of_week = {}
-    #print(day_month[1])
+
     first_day = num_day_first_week[day_month[1]]
     for item in day_month:
         name_number_week = day_weekx[first_day]
         day_of_week[name_number_week]= item
         first_day +=  1
 
-    #print(day_of_week)
-    return render_template("gestion_gastos.html", url= Urlbase, servicios = DatosServicioPtado, 
+ 
+    return render_template("/gastos/gestion_gastos.html", url= Urlbase, servicios = DatosServicioPtado, 
     month = day_of_week, datos = Datos_function)
 
 @app.route("/mes_calendar/<string:month>/<string:year>/")
@@ -203,7 +199,6 @@ def mes_calendar(month, year):
 
    
     day_of_week = {}
-    #print(day_month[1])
     first_day = num_day_first_week[day_month[1]]
     for item in day_month:
         name_number_week = day_weekx[first_day]
@@ -214,8 +209,5 @@ def mes_calendar(month, year):
         x = day_weekx[item]
         if day_of_week.get(x) == None:
            day_of_week[x] = "" 
-        
-
-    #print(day_of_week.get('b'))
         
     return (day_of_week)

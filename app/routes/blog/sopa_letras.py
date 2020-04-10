@@ -76,20 +76,7 @@ def sopa_letters():
     res_insert = connect.IT_TABLE(username, Insert_ofCrucigrama , Data) 
         
 
-    ''' id = "1"
-    Update_crucigrama = dict()
-    Update_crucigrama = {'TABLE':'crucigrama',
-            'Val1':'palabras=%s',
-            'Whe2':'id='+ id
-        }
-    Data = [palabras]
-   
-    res_update = connect.UPWT_TABLE(username, Update_crucigrama, Data) '''
-    
-    ''' id_max = connect.MAX_ID_TABLE(username, nombre_tabla  , nombre_id) 
-    print(id_max[0]["max_id"]) '''
-
-    return render_template("sopa.html", url= Urlbase, servicios = DatosServicioPtado, data = data,
+    return render_template("/blog/sopa.html", url= Urlbase, servicios = DatosServicioPtado, data = data,
     palabras_crucigrama = PalabrasCrucigrama, id_crucigrama = proximo_id)
 
 @app.route("/palabra/", methods=["POST"])
@@ -115,16 +102,7 @@ def palabra():
     for item in req["coordenadas"]:
         coord = req["coordenadas"][item]
         cx += coord
-        #x_palabra = Total_palabras.find(palabra)
-        #indice = Total_palabras.find(coord)
-        
-        #print(cx)
-        ''' print(cx)
-        print(mtrix_palabras)
-        
-        if indice == -1 and x_palabra == -1:
-            acierto = False '''
-
+     
     mtrix_palabras = Total_palabras.split("*")
     palabras_in_crucigrama = ""
     x_palabra = cx.strip("*")
@@ -134,21 +112,6 @@ def palabra():
         acierto = False
 
 
-    """ for item_palabra in mtrix_palabras:
-        #num_letters = len(item_palabra)-1
-        #palabras_in_crucigrama = palabras_in_crucigrama[1:num_letters]
-        
-        x_palabra = cx.strip("*")
-        print(item_palabra)
-        print(x_palabra)
-        if x_palabra ==  item_palabra:
-            for item_coord in req["coordenadas"]:
-                coord = req["coordenadas"][item]
-                indice = Total_palabras.find(coord)
-                if indice == -1:
-                    acierto = False
-        else:
-            acierto = False """
                   
     if (acierto):        
         result = {"palabra": req["palabra"],

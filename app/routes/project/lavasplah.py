@@ -37,7 +37,7 @@ def index_ls():
         'Col3':'costo',
         }
     DatosServicioPtado = connect.SSP_TABLE(username,TSSServicioPtado)
-    return render_template("home_ls.html", url= Urlbase, servicios = DatosServicioPtado)
+    return render_template("/lavasplash/home_ls.html", url= Urlbase, servicios = DatosServicioPtado)
 
 #Consultar servicios prestados
 @app.route('/reg_prestado/<id>/', methods=['POST', 'GET'])
@@ -63,7 +63,7 @@ def reg_prestado(id):
         }
     DatosClient = connect.SSP_TABLE(username,TSSClient)
 
-    return render_template("form_registro_servicio.html", url = urlrev, servicios = DatosServicioPtado, 
+    return render_template("/lavasplash/form_registro_servicio.html", url = urlrev, servicios = DatosServicioPtado, 
     clientes=DatosClient) 
 
 #Insertar nuevo servicio prestado
@@ -121,7 +121,7 @@ def InsertNewServicioPtdo():
         }
         DatosServicioPtado = connect.SSP_TABLE(username,TSSServicioPtado)
     
-    return render_template("home_ls.html", url = urlrev, servicios = DatosServicioPtado)
+    return render_template("/lavasplash/home_ls.html", url = urlrev, servicios = DatosServicioPtado)
 
 #Lista de servicios ofertados.
 @app.route("/ListaOfServicios", methods=["GET", "POST"])
@@ -144,7 +144,7 @@ def ListaOfServicios():
     DatosOfServicio = connect.SSP_TABLE(username,TSSOfServicio)
     
 
-    return render_template("ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
+    return render_template("/lavasplash/ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
 
 #Editar servicio ofertado
 @app.route('/ActualizarServicio/', methods=['POST', 'GET'])
@@ -182,7 +182,7 @@ def ActualizarServicio():
         'Col4':'detalles'
         }
     DatosOfServicio = connect.SSP_TABLE(username,TSSOfServicio)
-    return render_template("ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
+    return render_template("/lavasplash/ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
 
 #Nueva oferta servicio
 @app.route("/NewOfServicio", methods=["GET", "POST"])
@@ -198,7 +198,7 @@ def NewOfServicio():
         'Col4':'detalles'
         }
     DatosOfServicio = connect.SSP_TABLE(username,TSSOfServicio)
-    return render_template("form_new_servicio.html", url = urlrev, Oferta_Servicio = DatosOfServicio)  
+    return render_template("/lavasplash/form_new_servicio.html", url = urlrev, Oferta_Servicio = DatosOfServicio)  
 
 
 #Nuevo servicio prestado
@@ -214,7 +214,7 @@ def NewServicioPtado():
         'Col3':'costo',
         }
     DatosServicioPtado = connect.SSP_TABLE(username,TSSServicioPtado)
-    return render_template("form_new_servicios.html", url = urlrev, servicios = DatosServicioPtado)  
+    return render_template("/lavasplash/form_new_servicios.html", url = urlrev, servicios = DatosServicioPtado)  
 
 #Editar servicio ofertado
 @app.route('/VerDetallesServicio/<id>/', methods=['POST', 'GET'])
@@ -233,7 +233,7 @@ def VerDetallesServicio(id):
         }
     Data = (wid,)
     DatosOfServicio = connect.SW_TABLE(username,TSSOfServicio, Data)
-    return render_template("ActualizarServicio.html", url = urlrev,  Oferta_Servicio = DatosOfServicio) 
+    return render_template("/lavasplash/ActualizarServicio.html", url = urlrev,  Oferta_Servicio = DatosOfServicio) 
 
 #Eliminar servicio ofertado
 @app.route('/EliminarServicio/<id>/', methods=['POST', 'GET'])
@@ -263,7 +263,7 @@ def EliminarServicio(id):
     DatosOfServicio = cursor.fetchall()
     
 
-    return render_template("ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
+    return render_template("/lavasplash/ListaOfServicios.html", url = urlrev, Oferta_Servicio = DatosOfServicio)
 
 ##################################################
 # Gestion de servicios prestados
@@ -293,7 +293,7 @@ def ProcesarServicios( ):
         }
     DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
 
-    return render_template("saldo.html", url = urlrev, lista=lista, total = detalle, Softado=DatosOfServicioOftado)
+    return render_template("/lavasplash/saldo.html", url = urlrev, lista=lista, total = detalle, Softado=DatosOfServicioOftado)
 
 ##################################################
 # Operacion con servicios prestados
@@ -528,60 +528,7 @@ def Clientes():
         }
     DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
     
-    return render_template("users.html", url = urlrev, Oferta_Servicio = DatosOfServicioOftado)
+    return render_template("/lavasplash/users.html", url = urlrev, Oferta_Servicio = DatosOfServicioOftado)
 
-''' @app.route('/Clientes/Users/', methods=['POST', 'GET'])
-def Clientes_users():
-    urlrev = URLBASE 
-    username = CONFIG['TYPE_USER']['ROOT']
-    connect=Model(username) 
-    direction = ["Cl 56 # 45-15",
-    "Cra 34 # 17-14",
-    "Cl 84 # 88-14",
-    "Cl 43 # 65-19",
-    "Cra 33a # 12-14",
-    "Cl 16K # 24-26",
-    "Cra 83 # 33-23",
-    "Cl 14 # 64-26",
-    "Cll 22 # 33-62",
-    "Cll 10 # 44-26"
-     ]
-    req = request.get_json()
-    cont = 0
-    idc = 9
-    for item in req:
-        idx = idc + 1
-        id = str(idx) 
-        print(item["name"])
-        nombre=item["company"]["name"]
-        direccion=direction [cont]
-        telefono=item["phone"]
-        nit = item["address"]["zipcode"]
-        email = item["email"]
-        web = item["website"]
-        Insert_client= dict()
-        Insert_client= {'TABLE':'clientes',
-            'Val1':'nombre=%s',
-            'Val2':'direccion=%s',
-            'Val3':'telefono=%s',
-            'Val4':'nit=%s',
-            'Val5':'email=%s',
-            'Val6':'web=%s',
-            'Whe7':'id='+ id
-        } 
-        Data = [nombre, direccion, telefono, nit, email, web]
-        res_update = connect.UPWT_TABLE(username, Insert_client, Data)
-        idc+=1
-        cont+=1
-    
-    
-    #req
-    #print(req[0]["address"]["street"])
-   
-        
-    res = {"messaje":"JSON received"}
-    meses_json = json.dumps(res) 
-    #res_update = connect.UPWT_TABLE(username, Update_ofservicio, Data)
 
-    return  res  '''
 

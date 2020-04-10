@@ -43,15 +43,7 @@ function mes_anterior(month, year) {
         year_siguiente = year
     }
 
-  /*    if (month_anterior=11) {
-        month_anterior = 11
-        month_actual = 12
-        month_siguiente = 1
-        year_actual = year
-        year_anterior = year
-        year_siguiente = year
-    } 
- */
+
     if (month_siguiente==13) {
         month_anterior = 11
         month_actual = 12
@@ -77,20 +69,17 @@ function mes_anterior(month, year) {
     document.getElementById("mes_actual").setAttribute("onclick",link_mes_atual);
     document.getElementById("mes_siguiente").setAttribute("onclick",link_mes_siguiente);
     document.getElementById("mes_actual").textContent = meses[month_actual] + "  " + year_actual; 
-    /*document.getElementById("mes_anterior").textContent = month_anterior  + "  " + year_anterior;
-    document.getElementById("mes_siguiente").textContent = month_siguiente  + " , " + year_siguiente;*/
     const mes_year = window.origin + "/mes_calendar/" + month_actual + "/" + year_actual + "/"
-    //console.log(mes_year)
+   
     fetch(mes_year)
     .then(res => res.json())
     .then(data =>{
-       //console.log(data)
+   
        num_dias_semanas = 0
        for (const key in data) {
            if (data.hasOwnProperty(key)) {
-               //document.getElementById(key).textContent = data[key]  
+            
                num_dias_semanas = num_dias_semanas + 1
-               //console.log(num_dias_semanas, key)
                dias_vacios.push(num_dias_semanas)
                if(num_dias_semanas <= 35) {
                     document.getElementById(key).textContent = data[key]   
