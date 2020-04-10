@@ -6,6 +6,7 @@ app = Flask(__name__)
 from app.routes.admin import view
 from app.routes.admin import admin
 from app.routes.admin import login
+from app.routes.admin import registro
 from app.routes.admin import validar
 
 #Rutas de proyectos portafolio
