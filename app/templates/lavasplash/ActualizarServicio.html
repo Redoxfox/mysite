@@ -10,51 +10,97 @@
     <link href= "{{ url_for('static', filename='css/css_general/forms.css') }}" rel="stylesheet" type="text/css" media="screen" />
   </head>
 <body>
-    <div class="container">
-        <h1 class="logo">LavaSplash</h1>
-        <div class="contact-wrapper">
-            <div class="contact-form">
-                {% for valor in Oferta_Servicio %} 
-                <form action = "{{ url }}/ActualizarServicio/"  method="post">
-                  <p>
-                      <label for="id">Id del servicio:</label>
-                      <input type="text" name='id' required='required' value="{{ valor.id }}"/>
-                    </p>
-                  <p>
-                    <label for="tipo">Nombre del servicio:</label>
-                    <input type="text" name='tipo' required='required' value="{{ valor.tipo }}"/>
-                  </p>
-                <p>
-                    <label for="costo">Costo del servicio:</label>
-                    <input type="number"  name='costo' required='required' value="{{ valor.costo}}"/>
-                </p>
-
-                <p>
-                    <label for="obs">Observacion:</label>
-                    <input type="text" id="obs"  name='obs' required='required' value="{{ valor.detalles}}"/>
-                </p>
-             
-                <p>
-                    <button  type='submit' >Actualizar Servicio</button> 
-                    <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
-                </p>
-               
-                </form>
-                {% endfor %}
-            </div>
-            <div class="contact-info">
-                <h4>Mas información</h4>
+  <div class="body_form">
+    <div class="contenedor_primario_form">
+      <h2 class="item_titulo">LavaSplash Servicios</h2>
+      <div class="contenedor_secundario">
+          <div class="contenedor_info">
+              <h3>Mas información</h3>
                 <ul>
                   <li>Medellín Colombia</li>
                   <li>contacto@gmail.com</li>
                   <li>FacebooK</li>
                   <li>Intagram</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet.</p>
-                 <li>{{sql}}</li>
+                </ul><div class="container">
+                  <h1 class="logo">LavaSplash</h1>
+                  <div class="contact-wrapper">
+                      <div class="contact-form">
+                          {% for valor in Oferta_Servicio %} 
+                          <form action = "{{ url }}/ActualizarServicio/"  method="post">
+                            <p>
+                                <label for="id">Id del servicio:</label>
+                                <input type="text" name='id' required='required' value="{{ valor.id }}"/>
+                              </p>
+                            <p>
+                              <label for="tipo">Nombre del servicio:</label>
+                              <input type="text" name='tipo' required='required' value="{{ valor.tipo }}"/>
+                            </p>
+                          <p>
+                              <label for="costo">Costo del servicio:</label>
+                              <input type="number"  name='costo' required='required' value="{{ valor.costo}}"/>
+                          </p>
+          
+                          <p>
+                              <label for="obs">Observacion:</label>
+                              <input type="text" id="obs"  name='obs' required='required' value="{{ valor.detalles}}"/>
+                          </p>
+                       
+                          <p>
+                              <button  type='submit' >Actualizar Servicio</button> 
+                              <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
+                          </p>
+                         
+                          </form>
+                          {% endfor %}
+                      </div>
+                      <div class="contact-info">
+                          <h4>Mas información</h4>
+                          <ul>
+                            <li>Medellín Colombia</li>
+                            <li>contacto@gmail.com</li>
+                            <li>FacebooK</li>
+                            <li>Intagram</li>
+                          </ul>
+                          <p>Lorem ipsum dolor sit amet.</p>
+                           <li>{{sql}}</li>
+                      </div>
+                  </div>
+              </div>
             </div>
-        </div>
+            <div class="contenedor_form">
+                <h3>Agregar palabra vocabulario</h3>
+                {% for valor in Oferta_Servicio %} 
+                <form action = "{{ url }}/ActualizarServicio/"  method="post">
+                  <p>
+                    <label for="id">Id del servicio:</label>
+                    <input type="text" name='id' required='required' value="{{ valor.id }}"/>
+                  </p>
+                  <p>
+                    <label for="tipo">Nombre del servicio:</label>
+                    <input type="text" name='tipo' required='required' value="{{ valor.tipo }}"/>
+                  </p>
+                  <p>
+                    <label for="costo">Costo del servicio:</label>
+                    <input type="number"  name='costo' required='required' value="{{ valor.costo}}"/>
+                  </p>
+
+                  <p>
+                    <label for="obs">Observacion:</label>
+                    <input type="text" id="obs"  name='obs' required='required' value="{{ valor.detalles}}"/>
+                  </p>
+             
+                  <p>
+                    <button  type='submit' >Actualizar Servicio</button> 
+                    <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
+                  </p>
+                </form>
+                {% endfor %}
+          </div>
+      </div>
     </div>
+  </div>
+</body>
+    
 
 
  

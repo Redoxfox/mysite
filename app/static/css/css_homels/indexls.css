@@ -1,666 +1,260 @@
-html, body {
-  background-color: rgb(75, 100, 29);
-  margin: 10px;
-  font-family: 'Baskervville', serif;
+/* CSS Variables */
+:root {
+  --primary: #ddd;
+  --dark: rgb(19, 66, 4);
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --white: white;
 }
 
-@media(min-width:1024px){
-  main{
-    display: grid;  
-    grid-template-columns: repeat(3, 1fr);
-    background:  rgb(75, 100, 29);
-    grid-gap: 10px;
-   
-    }
-  
-   /*Dispocion de las grillas*/
-  header{
-    background: rgb(245, 227, 227);
-    grid-column: 1/4;
-    height: 250px;
-    margin-top: 50px;
-  }
-  
-  .aside-izquierda{
-    background: rgb(27, 27, 27);
-    width: 100%;
-  }
-
-  .aside-derecha{
-    display: grid;
-    justify-items: center;
-    background: rgb(248, 235, 53);
-    width: 100%;
-    padding-bottom: 20px;
-    font-size: 17px;
-  }
-
- 
-  .aside-derecha a{
-    text-decoration: none;
-    color: black; 
-    
-  }
-
-  .item-oferta{
-    font-size: 18px;
-  }
-
-  article{
-    background: rgb(27, 27, 27);
-  }
-  section{
-    background: rgb(5, 5, 5);
-    grid-column: 1/4;
-  }
-  footer{
-    grid-column: 1/4;
-  }
-
-
-  .cabecera{
-    display: grid;  
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .Titulo{
-    grid-column: 1/4;
-  }
-
-  .logo{
-    grid-column: 1/2;
-  }
-  
-  .menu-principal{
-    grid-column: 1/4;
-  }
-
-  /*Estilos menus*/
-
-  .option-menu {  
-    padding: 0%;
-    display: flex;
-    list-style: none;
-    background: rgb(39, 123, 226);
-    font-family: Verdana, Geneva, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
-  }
-
-  .menuitems{
-    font-size: 25px;
-  }
-  
-  .option-menu li a {   
-    color: white;
-    display: block;
-    text-decoration: none;
-    padding: .5em 1em;
-    font-family: 'Baskervville', serif;
-  }
-
-.option-menu li {
-  flex-grow:1;
-  text-align:left;
-  border-right: 4px solid yellowgreen;
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
 }
 
-.option-menu li:first-child{
-  border-left: 2px solid yellowgreen;
+body {
+  background: rgb(107, 204, 51);
+  margin: 30px 50px;
+  line-height: 1.4;
 }
 
-.option-menu li a:hover {
-  background: tomato;
-  color: white;
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
 }
 
-/*******************************************************************************************************
-*                                              CSS Menu lateral                                       *
-*******************************************************************************************************/
-.container .menu_lateral {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-top: 20px;
-  color: white;
-  grid-column: 1/2;
-  height: 500px;
+img {
+  max-width: 100%;
 }
 
-#cabecera-menu-lateral{
-  background: steelblue;
-  color: white;
-  display: block; 
-}
-
-.cabecera-menu-lateral{
-padding-right: 0;
-padding-left: 0;
-margin-top: 0;
-margin-bottom: 0;
-margin-right: 0;
-display: block;
-}
-
-
-.cabecera-menu-lateral>li{
-  flex: auto;
-  width: 100%;
-  line-height: 3;
-  border-bottom: 2px solid black;
-  overflow: hidden; 
-}
-
-.cabecera>li:hover{
-  background: rgb(202, 197, 197);
-}
-
-.categoria .Servicios{
-  display:none;
-}
-
-.categoria .Servicios:hover{
-  display: block;
-}
-
-.categoria >a{
-  color: #eee;
-  
-}
-
-.sub-items >a{
-  color: rgb(243, 56, 9);
-}
-
-.container .navBar {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style: none;
-  background: steelblue; 
-  width: 100%;
-  height: 500px;
-  display: flex;
-  flex-direction: row;
-}
-
-ul>li{
-  list-style: none;
-}
-
-li>a{
-text-decoration:none; 
-font-size: 17px;
-}
-
-.sub-items{
-line-height: 3;
-border-bottom: 2px solid rgb(245, 247, 252);
-overflow: hidden; 
-}
-
-.sub-items:last-child{
-border-bottom: none;
-}
-
-.sub-items:hover{
-background: white;
-}
-
-
-/******************************************************************************************************
-*                                              CSS Carrucel de imagenes                               *
-*******************************************************************************************************/
-article .slider{
-  background: rgb(202, 197, 197);
-  text-align: center;
-  overflow: hidden;
-  border: 8px solid rgb(20, 21, 24);
-  border-radius: 2px;
-  height: 275px;
-}
-
-
-    
-.slider .sliderImages {
-  width: 100%;
-  height: auto;
-  background: white;
-  position: relative;
-  transition: all 0.5s;      
-}
-      
-    
- .sliderNavigation{
- display: flex;
- justify-content: space-around;
- margin-top: 20px;
- 
- height: 25px;
- background: white;
-}
-      
-.slider-nav{
-  width: 40px;
-  height: 20px;
-  border: 1px solid rgb(120, 162, 240);
-  /*background: blue;*/
-  background: rgb(58, 58, 99);
-  /*box-shadow: 2px 7px 3px black inset;
-  border-radius: 50%; */
-}
-    
-.slider-nav.slider-nav-active{
-  background: yellowgreen;
-}
-    
-.slider-nav:hover{
-  background: red;
-}
-    
-.slider-nav.slider-nav-active:hover{
-  background: red;
-}
-
-/******************************************************************************************************
-*                                              CSS Carrucel de imagenes                               *
-*******************************************************************************************************/
-
-.images_servicios{
+.wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  
-  
-  /*display: flex;
-  flex-wrap: wrap;
-  justify-content: center;*/
-} 
-
-.images_servicios .items-services{
-  width: 95%;
-  height: 250px;
-  margin: 10px;
-
+  grid-gap: 20px;
 }
 
-.itms-img{
-  border: 2px solid #333;
+.head{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--dark); 
 }
 
-#mis-servicios{
-  text-align: center;
-  color: whitesmoke;
+.logo img{
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-.items{
+#verde{
+  color: green;
+}
+
+#azul{
+  color: blue;
+}
+
+.name_company h1{
+  color: var(--white);
+}
+
+/* Navigation */
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
   list-style: none;
-  margin: 10px;
-  background: #F7F7F7;
-  color: black;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+  background: var(--primary);
   display: block;
-  
-  /*text-align: center;*/
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
 }
 
-/******************************************************************************************************
-*                                              CSS  lateral finanzas                                   *
-*******************************************************************************************************/
-.finanzas{
-  background: black;
-  border: #11141a;
+.main-nav a:hover {
+  background: var(--dark);
+  color: var(--light);
 }
 
-.items>a{
-  color: black;
-  display: block;
+/* Top Container */
+.top-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
 }
 
+/* Showcase */
+.showcase {
+  grid-area: showcase;
+  min-height: 400px;
+  background: url(https://pixabay.com/get/54e1d3424b5bb10ff3d89960c62d3f761637dee65455_640.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.showcase h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: var(--light);
+}
+
+.showcase p {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--light);
+}
+
+
+/* Top Box */
+.top-box {
+  background: var(--primary);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.top-box .price {
+  font-size: 2.5rem;
+}
+
+
+
+.top-box-a {
+  grid-area: top-box-a;
+}
+
+.top-box-a h4{
+  background: rgb(110, 182, 2);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  border: 0;
+}
+
+.top-box-b h4{
+  background: rgb(78, 105, 226);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  border: 0;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.box {
+  background: var(--primary);
+  text-align: center;
+  padding: 1.5rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+
+
+/* Info */
+.info {
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem;
+}
+
+/* Portfolio */
+.portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
 .footer .sociales{
+  margin-top: 20px;
   padding: 10px;
-  background: rgb(46, 94, 182);
+
+  background: var(--dark);
   display: flex;
   flex-direction: row;
   justify-content: left;
   flex-wrap: wrap;
   border-radius: 10px;
-}
-
-.footer .sociales a{
+  }
+  
+  .footer .sociales a{
   font-size: 25px;
   color: #eee;
   margin-left: 30px;
-}
-
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  
- 
-  
-}
-
-@media(max-width:768px){
-
-  main{
-    display: grid;  
-    grid-template-columns: repeat(3, 1fr);
-    background:  whitesmoke;
-    grid-gap: 10px;
   }
 
-   /*Dispocion de las grillas*/
-   header{
-    background: white;
-    grid-column: 1/4;
-    height: auto;
-    margin-top: 50px;
-    order: 1;
-  }
-  
-  .aside-izquierda{
-    grid-column: 1/4;
-    background: whitesmoke;
-    width: 100%;
-    order: 3;
+/* Media Queries */
+@media (max-width: 700px) {
+  .top-container {
+    grid-template-areas:
+      'showcase showcase'
+      'top-box-a top-box-b';
   }
 
-  .aside-derecha{
-    grid-column: 1/4;
+  .showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .info .btn {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-container {
+    grid-template-areas:
+      'showcase'
+      'top-box-a'
+      'top-box-b';
+  }
+
+  .head{
     display: grid;
-    justify-items: center;
-    background: rgb(248, 235, 53);
-    width: 100%;
-    padding-bottom: 20px;
-    order: 4;
+    grid-template-columns: 1fr;
+    background: var(--dark); 
   }
- 
-  .aside-derecha a{
-    grid-column: 1/4;
-    text-decoration: none;
-    color: black; 
-  }
-  article{
-    grid-column: 1/4;
-    background: rgb(41, 40, 40);
-    order: 2;
-  }
-  section{
-    background: rgb(5, 5, 5);
-    grid-column: 1/4;
-    order: 5;
-  }
-  footer{
-    grid-column: 1/4;
-    order: 6;
-  }
-
-
-  .cabecera{
-    display: grid;  
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .Titulo{
-    grid-column: 1/4;
-  }
-
-  .logo{
-    grid-column: 1/2;
-  }
-  
-  .menu-principal{
-    grid-column: 1/4;
-  }
-
-/*Estilos menus*/
-
-.option-menu {  
-  padding: 0%;
-  /*display: flex;*/
-  list-style: none;
-  /*background: rgb(39, 123, 226);*/
-  background: rgb(1, 12, 26);
-  font-family: Verdana, Geneva, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
 }
-
-.menuitems{
-  font-size: 20px;
-}
-
-.option-menu li a {   
-  color: white;
-  display: block;
-  text-decoration: none;
-  padding: .5em 1em;
-  font-family: 'Baskervville', serif;
-}
-
-.option-menu li {
-flex-grow:1;
-text-align:left;
-border-bottom: 4px solid yellowgreen;
-}
-
-.option-menu li:first-child{
-border-top: 2px solid yellowgreen;
-}
-
-.option-menu li a:hover {
-background: tomato;
-color: white;
-}
-
-/*******************************************************************************************************
-*                                              CSS Menu lateral                                       *
-*******************************************************************************************************/
-.container .menu_lateral {
-padding-left: 0;
-margin-top: 0;
-margin-bottom: 0;
-margin-top: 20px;
-color: white;
-grid-column: 1/2;
-height: 500px;
-}
-
-#cabecera-menu-lateral{
-/*background: steelblue;*/
-background: rgb(33, 44, 53);
-color: white;
-display: block; 
-}
-
-.cabecera-menu-lateral{
-padding-right: 0;
-padding-left: 0;
-margin-top: 0;
-margin-bottom: 0;
-margin-right: 0;
-display: block;
-}
-
-
-.cabecera-menu-lateral>li{
-flex: auto;
-width: 100%;
-line-height: 3;
-border-bottom: 2px solid black;
-overflow: hidden; 
-}
-
-.cabecera>li:hover{
-background: rgb(202, 197, 197);
-}
-
-.categoria .Servicios{
-display:none;
-}
-
-.categoria .Servicios:hover{
-display: block;
-}
-
-
-
-.container .navBar {
-padding-left: 0;
-margin-top: 0;
-margin-bottom: 0;
-list-style: none;
-background: steelblue; 
-width: 100%;
-height: 500px;
-display: flex;
-flex-direction: row;
-}
-
-ul>li{
-list-style: none;
-}
-
-li>a{
-text-decoration:none; 
-font-size: 17px;
-}
-
-.sub-items{
-line-height: 3;
-border-bottom: 2px solid rgb(26, 43, 90);
-overflow: hidden; 
-}
-
-.sub-items:last-child{
-border-bottom: none;
-}
-
-.sub-items:hover{
-background: white;
-}
-
-
-/******************************************************************************************************
-*                                              CSS Carrucel de imagenes                               *
-*******************************************************************************************************/
-article .slider{
-background: rgb(202, 197, 197);
-text-align: center;
-overflow: hidden;
-border: 8px solid #11141a;
-border-radius: 2px;
-height: 250px;
-}
-
-
-  
-.slider .sliderImages {
-width: 100%;
-height: auto;
-background: white;
-position: relative;
-transition: all 0.5s;      
-}
-    
-  
-.sliderNavigation{
-display: flex;
-justify-content: space-around;
-margin-top: 10px;
-
-height: 25px;
-background: white;
-}
-    
-.slider-nav{
-width: 40px;
-height: 20px;
-border: 1px solid rgb(120, 162, 240);
-/*background: blue;*/
-background: rgb(58, 58, 99);
-/*box-shadow: 2px 7px 3px black inset;
-border-radius: 50%; */
-}
-  
-.slider-nav.slider-nav-active{
-background: yellowgreen;
-}
-  
-.slider-nav:hover{
-background: red;
-}
-  
-.slider-nav.slider-nav-active:hover{
-background: red;
-}
-
-/******************************************************************************************************
-*                                              CSS Carrucel de imagenes                               *
-*******************************************************************************************************/
-
-.images_servicios{
-display: grid;
-grid-template-columns: 1fr;
-justify-items: center;
-padding-left: 20px;
-padding-right: 20px;
-
-/*display: flex;
-flex-wrap: wrap;
-justify-content: center;*/
-} 
-
-.images_servicios .items-services{
-width: 300px;
-height: 250px;
-margin: 10px;
-
-}
-
-.itms-img{
-border: 2px solid #333;
-}
-
-#mis-servicios{
-text-align: center;
-color: whitesmoke;
-}
-
-.items{
-list-style: none;
-margin: 10px;
-background: #F7F7F7;
-color: black;
-display: block;
-
-/*text-align: center;*/
-}
-
-.items>a{
-color: black;
-display: block;
-}
-
-.footer .sociales{
-padding: 10px;
-background: rgb(5, 5, 5);
-display: flex;
-flex-direction: row;
-justify-content: left;
-flex-wrap: wrap;
-border-radius: 10px;
-}
-
-.footer .sociales a{
-font-size: 25px;
-color: #eee;
-margin-left: 30px;
-}
-
-
-
-}
-
-
- 

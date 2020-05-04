@@ -36,7 +36,8 @@ def index_gp():
         'Col3':'costo',
         }
     DatosServicioPtado = connect.SSP_TABLE(username,TSSServicioPtado)
-  
+    data_calendar = []
+    data_week = {}
     today = date.today()
     year_req = today.year
     month_req = today.month 
@@ -79,7 +80,7 @@ def index_gp():
 
 
     fecha_recibida = procesar_fechas.proc_fecha()
-    day_month = fecha_recibida.days_month(year_req,month_req) 
+    day_month = fecha_recibida.days_month(year_req, month_req) 
     num_day_first_week = {"domingo":1,
         "lunes": 2,
         "martes":3,
@@ -124,6 +125,13 @@ def index_gp():
         33:"sem5_d5",
         34:"sem5_d6",
         35:"sem5_d7",
+        36:"sem6_d1",
+        37:"sem6_d2",
+        38:"sem6_d3",
+        39:"sem6_d4",
+        40:"sem6_d5",
+        41:"sem6_d6",
+        42:"sem6_d7" 
         }  
     day_of_week = {}
 
@@ -131,11 +139,48 @@ def index_gp():
     for item in day_month:
         name_number_week = day_weekx[first_day]
         day_of_week[name_number_week]= item
-        first_day +=  1
+        first_day +=  1 
+    cont = 0
+    data_insert = 0
+    num_semana = 0
+    for item in day_weekx:
+        x = day_weekx[item]
+        print(x)
+        cont += 1
+        if day_of_week.get(x) == None:
+           value = "" 
+           if cont < 7:
+               data_week[x] = value
+               data_insert += 1
+               cont += 1
 
+           if cont == 7:     
+               data_week[x] = value
+               data_insert += 1
+               cont = 0
+               
+        else:
+           if cont < 7:
+               data_week[x] = day_of_week[x]
+               data_insert += 1
+               cont += 1
+
+           if cont == 7:     
+               data_week[x] = day_of_week[x]
+               data_insert += 1
+               cont = 0
+               
+        if data_insert == 7:
+            data_calendar.append(data_week)
+            data_week = {}
+            data_insert = 0
+        
+    #
+    print(data_calendar)
+    #print(Datos_function)
  
     return render_template("/gastos/gestion_gastos.html", url= Urlbase, servicios = DatosServicioPtado, 
-    month = day_of_week, datos = Datos_function)
+    month = day_of_week, datos = Datos_function, data_calendar = data_calendar)
 
 @app.route("/mes_calendar/<string:month>/<string:year>/")
 def mes_calendar(month, year):
@@ -194,7 +239,6 @@ def mes_calendar(month, year):
         40:"sem6_d5",
         41:"sem6_d6",
         42:"sem6_d7" 
-      
         }  
 
    

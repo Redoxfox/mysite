@@ -76,14 +76,14 @@ def sopa_letters():
     res_insert = connect.IT_TABLE(username, Insert_ofCrucigrama , Data) 
         
 
-    return render_template("/blog/sopa.html", url= Urlbase, servicios = DatosServicioPtado, data = data,
+    return render_template("/blog/sopa.html", url = Urlbase, servicios = DatosServicioPtado, data = data,
     palabras_crucigrama = PalabrasCrucigrama, id_crucigrama = proximo_id)
 
 @app.route("/palabra/", methods=["POST"])
 def palabra():
     Urlbase = URLBASE
     username = CONFIG['TYPE_USER']['ROOT']
-    connect=Model(username)   
+    connect = Model(username)   
     req = request.get_json()
     wid = req["nro_crucigrama"]
     #wid = "1"
@@ -92,7 +92,7 @@ def palabra():
         'Whe2':'id=%s'
         }
     Data = (wid,)
-    EnCrucigrama = connect.SW_TABLE(username,TSSPalabras, Data)
+    EnCrucigrama = connect.SW_TABLE(username, TSSPalabras, Data)
     
     cx = "*"
     Total_palabras = EnCrucigrama[0]["palabras"]

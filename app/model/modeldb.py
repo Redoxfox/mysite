@@ -199,7 +199,7 @@ class Model:
         self.Datos_table = datos_table
         for items in self.Datos_table:
             valor = self.Datos_table[items]
-            if items=="TABLE":
+            if items == "TABLE":
                 Cadena = valor + ";"
                 list_table.append(Cadena)
             else:
@@ -345,7 +345,7 @@ class Model:
 
         return   update
 
-    #Actualizacion de tabla (UPDATE with WHERE)
+    #Maximo id de la tabla
     def MAX_ID_TABLE(self, type_user, datos_table, id):
         MyObjModel = Model(type_user)
         con = MyObjModel.con();
@@ -353,6 +353,34 @@ class Model:
         result = "SELECT  " + "max(" + id + ")" + "as max_id FROM  " + datos_table + ";"
 
         sql = result
+        cursor = con.cursor()
+        cursor.execute(sql)
+        Allresuls = cursor.fetchall()
+        con.close()
+
+        return  Allresuls
+
+    #Mostrar tablas de la base de datos.
+    def SHOW_TABLES(self, type_user):
+        MyObjModel = Model(type_user)
+        con = MyObjModel.con();
+       
+        sql  = "SHOW TABLES;"
+
+        cursor = con.cursor()
+        cursor.execute(sql)
+        Allresuls = cursor.fetchall()
+        con.close()
+
+        return  Allresuls
+
+    #Mostrar tablas de la base de datos.
+    def DESCRIBE_TABLES(self, type_user, datos_table):
+        MyObjModel = Model(type_user)
+        con = MyObjModel.con();
+       
+        sql  = "DESCRIBE  " + datos_table + ";"
+
         cursor = con.cursor()
         cursor.execute(sql)
         Allresuls = cursor.fetchall()

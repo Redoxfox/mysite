@@ -6,261 +6,105 @@ html, body{
 
 .carrucel{
   display: grid;
-  grid-template-columns: 25%  auto 25%;
-  margin: 0 auto;
-  width: 50%;
-  background: rgb(179, 179, 196);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(46, 41, 21);
-  border: 2px solid #333;
-  text-align: center;
+  justify-content: center;
+  grid-template-columns: 50px 350px 50px;
+  margin-bottom: 10px;
+}
 
+.items-central{
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  border: 1px solid;
+  height: 60px;
+  background: rgb(12, 118, 179);
 }
 
 .item_carrucel{
-  margin: 0;
-}
-
- .button{
-  background: #0e0d0d;
-  border: 0;
-  width: 100%;
-  padding: 1em;
-  border-radius: 15px;
-  font-size: 16px;
-  color: #ECEFF3;
-  box-shadow: 3px 3px 0px 0px rgb(96, 197, 75);
-}
-
-
-.triangulo_izq {
-  width: 0;
-  height: 0;
-  margin-top: 10px;
-  background: whitesmoke;
-  border-top: 25px solid transparent;
-  border-right: 50px solid rgb(43, 44, 42);
-  border-bottom: 25px solid transparent;
-  
-}
-
-.triangulo_der {
-  width: 0;
-  height: 0;
-  margin-top: 10px;
-  background: whitesmoke;
-  border-top: 25px solid transparent;
-  border-left: 50px solid rgb(43, 44, 42);
-  border-bottom: 25px solid transparent;
-} 
-
- #id_anterior{
-  background: whitesmoke;
-}
-
-#id_actual{
-  background: whitesmoke;
-  line-height: 4;
-}
-
-#id_siguiente{
-  background: whitesmoke;
-  
-} 
-
-.item_carrucel{
- 
- background: beige;
-  
-}
-
-.calendar{
-    margin: 0 auto;
-    width: 50%;
-    background: #ECEFF3;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(46, 41, 21);
-    border: 2px solid #333;
-}
-
-.dias{
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 20px;
-}
-
-.dias__name{
-  background: rgb(235, 177, 17);
-  border-radius: 50%;
-  width: 60px;
-  color: #ECEFF3;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  box-shadow: 5px 5px 5px rgb(46, 41, 21);
-}
-
-
-.semanas{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.semana1{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.semana2{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.semana3{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.semana4{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.semana5{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin-bottom: 15px;
-}
-
-.semana6{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin-bottom: 15px;
-}
-
-.numeroDia__semana{
-  background: #0d0d0e;
-  width: 50px;
-  color: #ECEFF3;
-  text-align: center;
-  border: 10px;
-  border-radius: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  box-shadow: 5px 5px 5px rgb(167, 46, 46);
-}
-
-
-.numeroDia__semana:hover{
-  background: rgb(201, 163, 59);
-  cursor: pointer;
-}
-
-.img_close{
-  width: 30px;
-}
-
-.select-move{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin-bottom: 15px;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.Editar{
-  text-decoration: none;
-  background: rgb(218, 58, 37);
-  font-size: 20px;
-  border-radius: 30px;
-  margin: 3px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  line-height: 1;
   color: white;
 }
 
-@media(max-width:500px){
-  .calendar{
-    margin: 0 auto;
-    width: 100%;
-    background: #ECEFF3;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(46, 41, 21);
-    border: 2px solid #333;
-  }
-
-  .carrucel{
-    display: grid;
-    grid-template-columns: 25%  auto 25%;
-    margin: 0 auto;
-    width: 100%;
-    background: rgb(179, 179, 196);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(46, 41, 21);
-    border: 2px solid #333;
-    text-align: center;
-  }
-
-  .dias__name{
-    background: rgb(235, 177, 17);
-    border-radius: 50%;
-    width: 30px;
-    color: #ECEFF3;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    box-shadow: 5px 5px 5px rgb(46, 41, 21);
-  }
-
-  .numeroDia__semana{
-    background: #0d0d0e;
-    width: 25px;
-    color: #ECEFF3;
-    text-align: center;
-    border: 10px;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    box-shadow: 5px 5px 5px rgb(167, 46, 46);
-  }
-
-  .triangulo_izq {
-    width: 0;
-    height: 0;
-    margin-top: 10px;
-    background: whitesmoke;
-    border-top: 20px solid transparent;
-    border-right: 40px solid rgb(43, 44, 42);
-    border-bottom: 20px solid transparent;
-  }
-  
- .triangulo_der {
-  width: 0;
-  height: 0;
-  margin-top: 10px;
-  background: whitesmoke;
-  border-top: 20px solid transparent;
-  border-left: 40px solid rgb(43, 44, 42);
-  border-bottom: 20px solid transparent;
-  } 
-  
+#mes_anterior{
+  padding-bottom: 20px;
 }
+
+#mes_siguiente{
+  padding-bottom: 20px;
+}
+
+
+
+.semanas{
+ display: grid;
+ justify-content: center;
+}
+
+.semana{
+  display: grid;
+  background: rgb(0, 113, 128);
+  grid-template-columns: repeat(7, 50px);
+  grid-template-rows:repeat(1, 50px);
+}
+
+
+.numeroDia__semana{
+  display: grid;
+  background: rgb(0, 113, 128);
+  color: black;
+  border: 1px solid; 
+}
+
+.numeroDia__semana .day_month{
+  justify-self: end; 
+  color: rgb(245, 244, 244);
+  padding-top: 2px;
+  padding-right: 5px;
+}
+
+.numeroDia__semana .service{
+  justify-self: start;
+  align-self: end;
+  padding-left: 5px;
+  padding-top: 2px;
+  width: 30px;
+  height: 20px;
+  background: rgb(0, 113, 128);  
+}
+
+.numeroDia__semana:hover{
+  background: rgb(241, 185, 133);
+  cursor: pointer;
+}
+
+.cabecera{
+  display: grid;
+  justify-content: center;
+  
+ }
+ 
+ .dias{
+   display: grid;
+   background: rgb(0, 113, 128);
+   grid-template-columns: repeat(7, 50px);
+   grid-template-rows:repeat(1, 40px);
+   margin-bottom: 2px;
+ }
+ 
+ 
+ .dias__name{
+   display: grid;
+   background: white;
+   color: black;
+   border: 1px solid; 
+   justify-content: center;
+   padding-top: 10px;
+ }
+ 
+ .dias__name:hover{
+   background: rgb(27, 83, 13);
+   cursor: pointer;
+ }
+
+ 

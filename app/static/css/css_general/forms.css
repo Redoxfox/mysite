@@ -1,128 +1,92 @@
 /*Diseño*/
-/*Tomado: https://www.youtube.com/watch?v=rXWNr8sEUXE&t=900s*/
-/*Canal: Fazt Code*/
-
-*{
-    box-sizing: border-box;
+/*Tomado: https://www.youtube.com/watch?v=Sb5qOa3R4hY*/
+/*Canal: Traversy Media*/
+.body_form{
+    background: #92bde7;
+    color: #485e74;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1em;
 }
-
-body{
-    background:grey;
-    color:rgb(59, 54, 65);
-    font-family: 'Quicksand', sans-serif;
-    padding: 0 1.5em;
-}
-
-.container{
-    max-width: 1180px;
+.contenedor_primario_form{
+    max-width: 1170px;
     margin-left: auto;
-    margin-right: auto;
-    padding: 1.5em;
+    padding: 1em;
 }
 
-.logo{
+ul{
+    list-style: none;
+    padding: 0%;
+}
+
+.item_titulo{
     text-align: center;
 }
 
-.contact-wrapper{
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
+.contenedor_secundario{
+    box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
 }
 
-.contact-wrapper > * {
+.contenedor_secundario > *{
     padding: 1em;
 }
 
-.contact-form{
-    background:#e2d7d7;
-    border-radius: 15px;
+.contenedor_info{
+    background: #c9e6ff;
 }
 
-.contact-form form{
-    padding: 1em;
-    margin: 0;
-    border-radius: 15px;
+.contenedor_info h3, .contenedor_info ul{
+    text-align: center;
+    margin: 0 0 1rem 0;
+    padding-top: 15px;
 }
 
-.contact-info{
-    background:#e2d7d7;
-    padding: 1em;
-    margin: 5px;
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
+.contenedor_form{
+    background: #f9feff;
 }
-.contact-form input,
-.contact-form button,
-.contact-form select{
+
+.contenedor_form h3{
+    text-align: center;
+}
+
+/*Estilos formulario */
+.contenedor_form form{
+    display: grid;
+    grid-template-columns: 1fr;   
+}
+
+.contenedor_form form input{
+    width: 97%;
+}
+
+.contenedor_form form label{
+    margin-bottom: 5px;
+}
+
+.contenedor_form form select{
     width: 100%;
-    padding: 0.7em;
-    border: none;
-    background: none;
-    outline: 0;
-    border-bottom: 1px solid brown;
-    color:black;
-    
-}
-
-.contact-form button{
-    background: #484f57;
     border: 0;
-    padding: 1em;
-    border-radius: 15px;
-    font-size: 16px;
+    background: white;
+    padding: 6px;
+    border-bottom: 1px solid rgb(230, 223, 223);
+    appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
-ul>li{
-    list-style: none;
-}
-
-.categoria{
-    list-style: none;  
-}
-
-li>a{
-    text-decoration:none; 
-    color: yellow;
- }
-
- /*#cabecera{
-    color: rgb(15, 15, 14);
- }*/
-
-.Servicios {
-    display: none; 
-        
-}
-
-#servicios:hover .Servicios{
-    display: block; 
-    color: black; 
-}
-
-
-
-
-@media(min-width: 700px){
-    body{
-        padding: 0 1em;
-    }
+.contenedor_form form textarea{
+    width: 100%;
     
-    .contact-wrapper{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-
-    .contact-wrapper > *{
-        padding: 0.3em;
-    }
-
-    .contact-form form{
-        padding: 0;
-        margin: 0;
-        border-radius: 15px;
-    }
-
-    .container{
-        padding: 0.3em;
-    }
 }
+
+
+
+@media(min-width:700px){
+    .contenedor_secundario{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+
+}
+

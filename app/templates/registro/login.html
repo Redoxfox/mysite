@@ -8,42 +8,40 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href= "{{ url_for('static', filename='css/css_general/forms.css') }}" rel="stylesheet" type="text/css" media="screen" />
-  </head>
+</head>
 <body>
-    <div class="container">
-        <h1 class="logo">LavaSplash</h1>
-        <div class="contact-wrapper">
-            
-            <div class="contact-form">
-                <form action="{{url}}/validar" method="post">
-                    <p>
-                        <label for="username">Usuario:</label>
-                        <input type="text" name="username" id="username">
-                    </p>
-                    <p>
-                        <label for="password">Contraseña:</label>
-                        <input type="password" name="password" id="password">
-                    </p>
-                    
-                    <p>
-                        <button type="submit">Enviar registro</button>
-                    </p>
-
-                </form>
-            </div>
-            <div class="contact-info">
-                <h4>Mas información</h4>
+    <div class="body_form">
+        <div class="contenedor_primario_form">
+          <h2 class="item_titulo">Iniciar Sesión</h2>
+          <div class="contenedor_secundario">
+              <div class="contenedor_info">
+                <h3>Mas información</h3>
                 <ul>
                   <li>Medellín Colombia</li>
                   <li>contacto@gmail.com</li>
                   <li>FacebooK</li>
                   <li>Intagram</li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet.</p>
-
-            </div>
+                </div>
+                <div class="contenedor_form">
+                    <h3>Datos de Usuario</h3>
+                    <form action="{{url}}/validar" method="post">
+                        <p>
+                            <label for="username">Usuario:</label>
+                            <input type="text" name="username" id="username">
+                        </p>
+                        <p>
+                            <label for="password">Contraseña:</label>
+                            <input type="password" name="password" id="password">
+                        </p>
+                        
+                        <p>
+                            <button type="submit">Enviar registro</button>
+                        </p>
+                  </form>
+              </div>
+          </div>
         </div>
     </div>
-    
 </body>
 </html>

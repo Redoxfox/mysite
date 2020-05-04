@@ -233,7 +233,9 @@ def VerDetallesServicio(id):
         }
     Data = (wid,)
     DatosOfServicio = connect.SW_TABLE(username,TSSOfServicio, Data)
-    return render_template("/lavasplash/ActualizarServicio.html", url = urlrev,  Oferta_Servicio = DatosOfServicio) 
+    
+    return render_template("/lavasplash/ActualizarServicio.html", url = urlrev,  
+    Oferta_Servicio = DatosOfServicio) 
 
 #Eliminar servicio ofertado
 @app.route('/EliminarServicio/<id>/', methods=['POST', 'GET'])

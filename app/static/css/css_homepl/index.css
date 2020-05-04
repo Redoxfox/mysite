@@ -307,14 +307,13 @@
     }
     
     .project-show:hover{
-        
         background: yellowgreen;
     }
     
     .project-show a:hover{
         text-decoration: none;
         color:white; 
-        font-size: 35px;
+        font-size: 16px;
     }
     
     .items-app{

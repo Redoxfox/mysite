@@ -7,80 +7,46 @@
     <link href= "{{ url_for('static', filename='css/css_homegt/finanzas.css') }}" rel="stylesheet" type="text/css" media="screen" />  
 </head>
 <body >
-     <div id="carrucel" class="carrucel">
-       <div  id="id_anterior" class="item_carrucel">
-            <button id="mes_anterior" class="triangulo_izq" onclick="{{datos.num_month_ant}};"></button> 
-       </div>
-       <div id="id_actual" class="item_carrucel">
-            <button id="mes_actual"  class="button" onclick="{{datos.num_month_act}};">{{datos.name_month_act}}</button> 
-       </div>
-       <div  id="id_siguiente" class="item_carrucel">
-            <button id="mes_siguiente" class="triangulo_der" onclick="{{datos.num_month_sig}};"></button> 
-       </div>
-     </div>
-     <div id="calendar" class="calendar">
-       <div id="dias" class="dias">
-        <div class="dias__name">Su</div>
-        <div class="dias__name">Mo</div>
-        <div class="dias__name">Tu</div>
-        <div class="dias__name">We</div>
-        <div class="dias__name">Th</div>
-        <div class="dias__name">Fr</div>
-        <div class="dias__name">Sa</div>
+      <div id="carrucel" class="carrucel">
+        <div class="items-carrucel">
+        </div>
+        <div class="items-central">
+          <div  id="id_anterior" class="item_carrucel">
+            <img  id="mes_anterior" onclick="{{datos.num_month_ant}};" src="{{ url_for('static', filename='imgs/arrowcl.png') }}">
+          </div>
+          <div id="id_actual"  class="item_carrucel">
+            <div id="mes_actual" onclick="{{datos.num_month_act}};">{{datos.name_month_act}}</div>
+          </div>
+          <div  id="id_siguiente"  class="item_carrucel">
+            <img id="mes_siguiente" onclick="{{datos.num_month_sig}};" src="{{ url_for('static', filename='imgs/arrowcr.png') }}">
+          </div>
+        </div>
+        <div class="items-carrucel">
+        </div>
       </div>
-      <hr>
-      <div class="semanas" id="semanas">
-        <div id="semana1" class="semana1">
-          <div id="sem1_d1" class="numeroDia__semana">{{month.sem1_d1}}</div>
-          <div id="sem1_d2" class="numeroDia__semana">{{month.sem1_d2}}</div>
-          <div id="sem1_d3" class="numeroDia__semana">{{month.sem1_d3}}</div>
-          <div id="sem1_d4" class="numeroDia__semana">{{month.sem1_d4}}</div>
-          <div id="sem1_d5" class="numeroDia__semana">{{month.sem1_d5}}</div>
-          <div id="sem1_d6" class="numeroDia__semana">{{month.sem1_d6}}</div>
-          <div id="sem1_d7" class="numeroDia__semana">{{month.sem1_d7}}</div>
+      <div class="cabecera">
+        <div id="dias" class="dias">
+          <div class="dias__name">Su</div>
+          <div class="dias__name">Mo</div>
+          <div class="dias__name">Tu</div>
+          <div class="dias__name">We</div>
+          <div class="dias__name">Th</div>
+          <div class="dias__name">Fr</div>
+          <div class="dias__name">Sa</div>
         </div>
-    
-        <div id="semana2" class="semana2">
-          <div id="sem2_d1" class="numeroDia__semana">{{month.sem2_d1}}</div>
-          <div id="sem2_d2" class="numeroDia__semana">{{month.sem2_d2}}</div>
-          <div id="sem2_d3" class="numeroDia__semana">{{month.sem2_d3}}</div>
-          <div id="sem2_d4" class="numeroDia__semana">{{month.sem2_d4}}</div>
-          <div id="sem2_d5" class="numeroDia__semana">{{month.sem2_d5}}</div>
-          <div id="sem2_d6" class="numeroDia__semana">{{month.sem2_d6}}</div>
-          <div id="sem2_d7" class="numeroDia__semana">{{month.sem2_d7}}</div>
-        </div>
-        
-        <div id="semana3" class="semana3">
-          <div id="sem3_d1" class="numeroDia__semana">{{month.sem3_d1}}</div>
-          <div id="sem3_d2" class="numeroDia__semana">{{month.sem3_d2}}</div>
-          <div id="sem3_d3" class="numeroDia__semana">{{month.sem3_d3}}</div>
-          <div id="sem3_d4" class="numeroDia__semana">{{month.sem3_d4}}</div>
-          <div id="sem3_d5" class="numeroDia__semana">{{month.sem3_d5}}</div>
-          <div id="sem3_d6" class="numeroDia__semana">{{month.sem3_d6}}</div>
-          <div id="sem3_d7" class="numeroDia__semana">{{month.sem3_d7}}</div>
-        </div>
-        <div id="semana4" class="semana4">
-          <div id="sem4_d1" class="numeroDia__semana">{{month.sem4_d1}}</div>
-          <div id="sem4_d2" class="numeroDia__semana">{{month.sem4_d2}}</div>
-          <div id="sem4_d3" class="numeroDia__semana">{{month.sem4_d3}}</div>
-          <div id="sem4_d4" class="numeroDia__semana">{{month.sem4_d4}}</div>
-          <div id="sem4_d5" class="numeroDia__semana">{{month.sem4_d5}}</div>
-          <div id="sem4_d6" class="numeroDia__semana">{{month.sem4_d6}}</div>
-          <div id="sem4_d7" class="numeroDia__semana">{{month.sem4_d7}}</div>
-        </div>
-        <div id="semana5" class="semana5">
-          <div id="sem5_d1" class="numeroDia__semana">{{month.sem5_d1}}</div>
-          <div id="sem5_d2" class="numeroDia__semana">{{month.sem5_d2}}</div>
-          <div id="sem5_d3" class="numeroDia__semana">{{month.sem5_d3}}</div>
-          <div id="sem5_d4" class="numeroDia__semana">{{month.sem5_d4}}</div>
-          <div id="sem5_d5" class="numeroDia__semana">{{month.sem5_d5}}</div>
-          <div id="sem5_d6" class="numeroDia__semana">{{month.sem5_d6}}</div>
-          <div id="sem5_d7" class="numeroDia__semana">{{month.sem5_d7}}</div>
-        </div> 
       </div>
-     </div> 
-     <h2>Lista de movimientos por dia</h2>
-     <div id="movimientos"></div>
+    <div class="semanas" id="semanas">
+      {% for valor in data_calendar %} 
+        <div  class="semana">
+          {% for item in valor %}
+            <div class="numeroDia__semana">
+              <div id="{{item}}" class="day_month">{{valor[item]}}</div>
+              <div id="{{item}}s" class="service"></div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>       
 <script src="{{ url_for('static', filename='js/js_homegt/calendar.js') }}" crossorigin="anonymous"></script>    
 </body>
 </html>

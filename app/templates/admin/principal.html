@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion de sitio web</title>
+    <link href= "{{ url_for('static', filename='css/css_homead/admin.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/css_general/forms.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css" media="screen" />   
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet"> 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+    
+</head>
+<body>
+  <!--  <nav>
+        <div id="menu"> 
+            <ul class="menup"> 
+                <li class="dropdown"><a href="">Administracion BD</a> 
+                    <ul> 
+                        <li><span></span><a onclick="ver_tablas()">Ver tablas</a></li>
+                        <hr> 
+                        <li><span></span><a href="#opcion2">opcion</a></li> 
+                    </ul> 
+                </li>
+                <li class="dropdown"><a href="">Administracion Blog</a> 
+                    <ul> 
+                        <li><span></span><a href="#opcion1">opcion</a></li>
+                        <hr> 
+                        <li><span></span><a href="#opcion2">opcion</a></li> 
+                        <hr>
+                        <li><span></span><a href="#opcion3">opcion</a></li>
+                        <hr> 
+                        <li><span></span><a href="#opcion4">opcion</a></li>
+                        <hr> 
+                        <li class="dropdown_2"><span></span><a href="#opcion5">opcion</a>
+                            
+                        </li> 
+                    </ul> 
+                </li>
+                <li class="divider"></li>
+                <li class="dropdown"><a href="">opcion 4</a> 
+                    <ul> 
+                        <li><span></span><a href="#opcion1">opcion</a></li>
+                        <hr> 
+                        <li><span></span><a href="#opcion2">opcion</a></li> 
+                        <hr>
+                        <li><span></span><a href="#opcion3">opcion</a></li>
+                    </ul> 
+                </li>
+        </div>
+    </nav> -->
+
+
+<nav>
+    <ul>
+        <!-- Top level menu -->
+        <li>
+            <a href="#">Inicio</a>
+        </li> 
+        <li>
+            <a href="#">Inicio</a>
+        </li> 
+        <li>
+            <a href="#">
+                Administracion BD
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <!-- Submenu -->
+            <ul class="dropdown">
+                <li><a onclick="ver_tablas()">Ver tablas</a></li>
+                <li><a href="#">Programación PHP</a></li>
+                <li><a href="#">Maquetación CSS</a></li>
+            </ul>
+            <!-- End submenu -->
+        </li>
+        <li>
+            <a href="#">
+                Servicios
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <!-- Submenu -->
+            <ul class="dropdown">
+                <li>
+                    <a href="#">
+                        Web Hosting
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    <!-- Submenu (level 2) -->
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#">Hosting 10GB</a>
+                        </li>
+                        <li>
+                            <a href="#">Hosting 25GB</a>
+                        </li>
+                        <li>
+                            <a href="#">Hosting 50GB</a>
+                        </li>
+                        <li>
+                            <a href="#">Hosting Ilimitado</a>
+                        </li>
+                    </ul>
+                    <!-- End submenu (level 2) -->
+                </li>
+                <li>
+                    <a href="#">
+                        Dominios
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    <!-- Submenu (level 2) -->
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#">Registrar</a>
+                        </li>
+                        <li>
+                            <a href="#">Transferir</a>
+                        </li>
+                    </ul>
+                    <!-- End submenu (level 2) -->
+                </li>
+                <li>
+                    <a href="#">Diseños Web</a>
+                </li>
+            </ul>
+            <!-- End submenu -->
+        </li>
+        <!-- End top level menu -->
+    </ul>
+</nav>
+
+<div id="contenedor_principal" class="contenedor_principal">
+</div>
+    <div class="body_form">
+        <div class="contenedor_primario_form">
+            <h2 class="item_titulo">Registrar palabras</h2>
+            <div class="contenedor_secundario">
+                <div class="contenedor_info">
+                    <h3>Registro palabras ingles</h3>
+                    <ul>
+                        <li>Proyecto</li>
+                        <li>Sopa letras</li>
+                        <li>Insertar palabras</li>
+                        <div class="caja">
+                            <div class="box">
+                                <img src="/static/imgs/sopa.jpg" alt="">
+                            </div>
+                        </div>    
+                    </ul>
+                </div>
+                <div class="contenedor_form">
+                    <h3>Agregar palabra vocabulario</h3>
+                    <form action="">
+                        <p class="item_form">
+                            <label>Palabra ingles:</label>
+                            <input type="text"  name = "english" >
+                        </p>
+                        <p>
+                            <label>Palabra español:</label>
+                            <input type="text"  name = "spanish" >
+                        </p>
+
+                        <p>
+                            <label>Grupo:</label>
+                            <select name="grupo" id="grupo">
+                                <option value="1">home</option>
+                                <option value="2">verbs</option>
+                            </select>
+                            <i></i>
+                        </p>
+                        <p>
+                            <label >Ejemplos:</label>
+                            <textarea name="ejemplos" id="ejemplos" cols="30" rows="5"></textarea>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/js_homead/admin.js') }}"></script>    
+</body>
+</html>

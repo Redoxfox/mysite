@@ -11,11 +11,21 @@
     <link href= "{{ url_for('static', filename='css/css_general/EstiloTabla.css') }}" rel="stylesheet" type="text/css" media="screen" />
   </head>
 <body>
-    <div class="container">
-        <h1 class="logo">LavaSplash</h1>
-        <div class="contact-wrapper">
-            
-            <div class="contact-form">
+  <div class="body_form">
+    <div class="contenedor_primario_form">
+      <h2 class="item_titulo">LavaSplash Servicios</h2>
+      <div class="contenedor_secundario">
+          <div class="contenedor_info">
+            <h3>Mas información</h3>
+            <ul>
+              <li>Medellín Colombia</li>
+              <li>contacto@gmail.com</li>
+              <li>FacebooK</li>
+              <li>Intagram</li>
+            </ul>
+            </div>
+            <div class="contenedor_form">
+                <h3>Agregar palabra vocabulario</h3>
                 <form action = "{{ url }}/InsertNewServicio"  method="post">
                   <p>
                     <label for="tipo">Nombre del servicio:</label>
@@ -35,24 +45,12 @@
                     <button  type='submit' >Registar servicio</button> 
                     <a href="{{ url }}/ListaOfServicios" class="btn btn-warning" role="button">Ver Registros</a>
                 </p>
-
-                </form>
-            </div>
-            <div class="contact-info">
-                <h4>Mas información</h4>
-                <ul>
-                  <li>Medellín Colombia</li>
-                  <li>contacto@gmail.com</li>
-                  <li>FacebooK</li>
-                  <li>Intagram</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet.</p>
-
-            </div>
-        </div>
+              </form>
+          </div>
+      </div>
     </div>
-
-
+  </div>
+    
     <br>
     <h4>Lista de servicio disponibles</h4>
       <table>
