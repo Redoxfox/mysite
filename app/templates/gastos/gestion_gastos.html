@@ -40,13 +40,23 @@
         <div  class="semana">
           {% for item in valor %}
             <div class="numeroDia__semana">
-              <div id="{{item}}" class="day_month">{{valor[item]}}</div>
-              <div id="{{item}}s" class="service"></div>
+              {% if valor[item] == "" %}
+                <div id="{{item}}" class="day_month">{{valor[item]}}</div>
+                <div id="{{item}}s" class="service"></div>
+              {% else %}
+                <div id="{{item}}" class="day_month" onclick="new_move({{valor[item]}},{{datos.month}},{{datos.year}});">{{valor[item]}}</div>
+                <div id="{{item}}s" class="service"></div>
+              {% endif %}
+              
             </div>
           {% endfor %}
         </div>
       {% endfor %}
-    </div>       
-<script src="{{ url_for('static', filename='js/js_homegt/calendar.js') }}" crossorigin="anonymous"></script>    
+    </div>  
+    <h2>Lista de movimientos por dia</h2>
+    <div id="movimientos">
+      
+    </div>     
+    <script src="{{ url_for('static', filename='js/js_homegt/calendar.js') }}" crossorigin="anonymous"></script>    
 </body>
 </html>

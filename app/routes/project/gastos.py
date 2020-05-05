@@ -77,7 +77,8 @@ def index_gp():
     Datos_function["name_month_ant"] = meses[month_back] + "-" + str(year_req) 
     Datos_function["name_month_act"] = meses[month_req]  + " " + str(year_req) 
     Datos_function["name_month_sig"] = meses[month_next] + "-" + str(year_req) 
-
+    Datos_function["month"] = month_req
+    Datos_function["year"] = year_req
 
     fecha_recibida = procesar_fechas.proc_fecha()
     day_month = fecha_recibida.days_month(year_req, month_req) 

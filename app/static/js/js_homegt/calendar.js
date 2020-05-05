@@ -95,8 +95,8 @@ function mes_anterior(month, year) {
            cont += 1 
            casillas_llenas += 1
            if ( cont <= 7 ){
-                name_id_day = "sem_" + semana + "d" + cont
-                name_id_service = "sem_" + semana + "d" + cont + "s"
+                name_id_day = "sem" + semana + "_" + "d" + cont
+                name_id_service = "sem" + semana + "_" + "d" + cont + "s"
                 let item_semana = document.createElement('div');
                 item_semana.classList.add("numeroDia__semana");
                 week.appendChild(item_semana);
@@ -120,7 +120,12 @@ function mes_anterior(month, year) {
                 containerCards.appendChild(week);
                 cont = 0
            }  
-
+           if (data[key] != ""){
+                console.log(key)
+                let id_day_week = document.getElementById(key);
+                let function_new_move = "new_move"+"("+ data[key] + "," + month_actual + "," +  year_actual+");";
+                id_day_week.setAttribute("onclick",function_new_move);
+           }
            if ( casillas_llenas > 21 &&  data[key] == '' ){
                primer_vacio.push(casillas_llenas)
                semana_vacio.push(semana)
@@ -142,8 +147,13 @@ function mes_anterior(month, year) {
         }
  
         if (diferencia == 6 && casilla_semana==6){
-         document.getElementById("semana6").remove()   
-         document.getElementById("semana7").remove()
+          document.getElementById("semana6").remove()   
+          document.getElementById("semana7").remove()
+        }
+
+        if (diferencia == 7 && casilla_semana==6){
+          document.getElementById("semana6").remove()   
+          document.getElementById("semana7").remove()
         }
  
         if (diferencia < 6 && casilla_semana == 6){
@@ -270,8 +280,8 @@ function mes_siguiente(month, year) {
             cont += 1 
             casillas_llenas += 1
             if ( cont <= 7 ){
-                 name_id_day = "sem_" + semana + "d" + cont
-                 name_id_service = "sem_" + semana + "d" + cont + "s"
+                 name_id_day = "sem" + semana + "_"  + "d" + cont
+                 name_id_service = "sem" + semana + "_" + "d" + cont + "s"
                  let item_semana = document.createElement('div');
                  item_semana.classList.add("numeroDia__semana");
                  week.appendChild(item_semana);
@@ -295,7 +305,12 @@ function mes_siguiente(month, year) {
                  containerCards.appendChild(week);
                  cont = 0
             }  
- 
+            if (data[key] != ""){
+                console.log(key)
+                let id_day_week = document.getElementById(key);
+                let function_new_move = "new_move"+"("+ data[key] + "," + month_actual + "," +  year_actual+");";
+                id_day_week.setAttribute("onclick",function_new_move);
+           }
             if ( casillas_llenas > 21 &&  data[key] == '' ){
                 primer_vacio.push(casillas_llenas)
                 semana_vacio.push(semana)
@@ -319,6 +334,11 @@ function mes_siguiente(month, year) {
         if (diferencia == 6 && casilla_semana==6){
          document.getElementById("semana6").remove()   
          document.getElementById("semana7").remove()
+        }
+
+        if (diferencia == 7 && casilla_semana==6){
+            document.getElementById("semana6").remove()   
+            document.getElementById("semana7").remove()
         }
  
         if (diferencia < 6 && casilla_semana == 6){
