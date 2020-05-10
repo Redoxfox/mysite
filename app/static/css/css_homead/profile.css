@@ -1,0 +1,123 @@
+.container{
+    display: grid;
+    grid-template-columns: 45% 55%;
+    width: 21cm; 
+    min-height: 29.7cm; 
+    padding: 2cm; margin: 1cm auto; 
+    border: 1px #D3D3D3 solid; 
+    border-radius: 5px; 
+    background: white; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.slider_description{
+    grid-column: 1;
+    grid-row: 1/2;
+    background: rgb(185, 176, 176);
+    justify-items: center;
+    padding: 15px;
+}
+
+.description{
+    width: 100%;
+    justify-items: center;
+   
+}
+
+.picture{
+    display: grid;
+    width: 100%;
+    height: 120px;
+    background: rgb(28, 44, 58);
+    justify-items: center;
+    color: aliceblue;
+}
+
+
+
+.img-log{
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: #DDDDDD;
+    height: 150px;
+    position: relative;
+    bottom: 5px;
+    width: 120px;
+}
+
+.slider_Personal_Data{
+    padding-top: 50px;
+}
+
+.profile-information{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+}
+
+.items-profile-information{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
+.Skill-information{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+}
+
+.items-information{
+    display: grid;
+    grid-template-columns: 15% 30% 55%;
+}
+
+
+#progress-spanish{
+    width: 100%;
+    background: green;
+    height: 16px;
+    font-size: 12px;
+    color: white;
+    padding-left: 5px;
+    
+}
+
+#progress-english{
+    width: 40%;
+    background: red;
+    height: 16px;
+    font-size: 12px;
+    color: white;
+    padding-left: 5px;
+}
+
+#progress-Linux{
+    width: 90%;
+    background:green;
+    height: 16px;
+    font-size: 12px;
+    color: white;
+    padding-left: 5px;
+}
+
+
+#progress-Windows{
+    width: 95%;
+    background:green;
+    height: 16px;
+    font-size: 12px;
+    color: white;
+    padding-left: 5px;
+}
+
+.slider_profile{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background: rgb(189, 189, 154);
+    padding: 15px;
+}
+
+
+

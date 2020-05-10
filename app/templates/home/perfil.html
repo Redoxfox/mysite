@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link href= "{{ url_for('static', filename='css/css_homead/profile.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css" media="screen" />   
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container">
+        <section class="slider_description">
+            <div class="description">
+                <div class="picture">
+                    <img class="img-log" src="{{ url_for('static', filename='imgs/perfil.jpg') }}">
+                    <div class="name_profile">
+                        Carlos Mario Torres R.
+                    </div>
+                </div>
+            </div>
+            <section class="slider_Personal_Data">
+                <h4>Datos personales</h4>
+                <hr>
+                <div class="profile-information" >
+                    <div class="items-profile-information">
+                        <i class="im im-home"></i>
+                        <div>Medellín</div>
+                    </div>
+                    <div class="items-profile-information">
+                        <i class="im im-mobile"></i>
+                        <div>3219290531</div>
+                    </div>
+                    <div class="items-profile-information">
+                        <i class="im im-mail"></i>
+                        <div>cmtrfenix@gmail.com</div>
+                    </div>
+                    <div class="items-profile-information">
+                        <i class="im im-calendar"></i>
+                        <div>Fecha Nacimiento: 11/12/1984</div>
+                    </div>
+                    <div class="items-profile-information">
+                        <i class="im im-location"></i>
+                        <div>Lugar Nacimiento: Titiribí (Ant)</div>
+                    </div>
+                    <div class="items-profile-information">
+                        <i class="im im-diamond-o"></i>
+                        <div>Estado Civil: Unión Libre</div>
+                    </div> 
+                </div>
+            </section>
+
+            <section class="slider_Skill">
+                <h4>Idiomas</h4>
+                <hr>
+                <div class="Skill-information">
+                    <div class="items-information">
+                        <i class="im im-language"></i>
+                        <div>Español</div>
+                        <div id="progress-spanish">
+                            <div id="item-progres-spanish"></div>
+                            <div id="percentage-english">100%</div>
+                        </div>
+                    </div>
+                    <div class="items-information">
+                        <i class="im im-language"></i>
+                        <div>Ingles</div>
+                        <div id="progress-english">
+                            <div class="item-progres"></div>
+                            <div class="percentage">40%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slider_Languages">
+                <h4>Habilidades S.O</h4>
+                <hr>
+                <div class="Skill-information">
+                    <div class="items-information">
+                        <i class="im im-linux-os"></i>
+                        <div>Linux</div>
+                        <div id="progress-Linux">
+                            <div id="item-progres-spanish"></div>
+                            <div id="percentage-english">90%</div>
+                        </div>
+                    </div>
+                    <div class="items-information">
+                        <i class="im im-windows-os"></i>
+                        <div>Windows</div>
+                        <div id="progress-Windows">
+                            <div class="item-progres"></div>
+                            <div class="percentage">95%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="Skill-Frontend">
+                <h4>Frontend</h4>
+                <hr>
+                <div class="Skill-information">
+                    <div class="items-information">
+                        <i class="im im-code"></i>
+                        <div>HTML</div>
+                        <div id="progress-Linux">
+                            <div id="item-progres-spanish"></div>
+                            <div id="percentage-english">95%</div>
+                        </div>
+                    </div>
+                    <div class="items-information">
+                        <i class="im im-code"></i>
+                        <div>CSS</div>
+                        <div id="progress-Windows">
+                            <div class="item-progres"></div>
+                            <div class="percentage">80%</div>
+                        </div>
+                    </div>
+                    <div class="items-information">
+                        <i class="im im-code"></i>
+                        <div>Javascript</div>
+                        <div id="progress-Windows">
+                            <div class="item-progres"></div>
+                            <div class="percentage">85%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="Skill-Programming">
+                <h4>Backend</h4>
+                <hr>
+                <div class="Skill-information">
+                    <div class="items-information">
+                        <i class="im im-code"></i>
+                        <div>Python</div>
+                        <div id="progress-Linux">
+                            <div id="item-progres-spanish"></div>
+                            <div id="percentage-english">90%</div>
+                        </div>
+                    </div>
+                    <div class="items-information">
+                        <i class="im im-code"></i>
+                        <div>PHP</div>
+                        <div id="progress-Windows">
+                            <div class="item-progres"></div>
+                            <div class="percentage">80%</div>
+                        </div>
+                    </div>
+                    <div class="items-information">
+                        <i class="im im-code"></i>
+                        <div>C#</div>
+                        <div id="progress-Windows">
+                            <div class="item-progres"></div>
+                            <div class="percentage">70%</div>
+                        </div>
+                    </div>
+                    <div class="items-information">
+                        <i class="im im-code"></i>
+                        <div>Java</div>
+                        <div id="progress-Windows">
+                            <div class="item-progres"></div>
+                            <div class="percentage">50%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <section class="slider_profile">
+          <div class="profile">
+            Perfil
+            <hr>
+            <p >
+               Tecnologo Químico por profesion. Programador por vocación...
+            </p> 
+            <p >
+                Estudiante Ingenieria de Sistemas, de la Universidad Abierta y a 
+                Distancia (UNAD) de Colombia. Autodidacta, dedicado y muy apasionado por los lenguajes de programación y 
+                la tecnologia en general. Con años de experiencia trabajando en equipo en el area de Quimica, pero motivado
+                al cambio profesional.   
+             </p>    
+          </div>
+
+          <section class="work_experience">
+            <h4>Experiencia laboral</h4>
+            <hr>
+            <div class="profile_information">
+                
+            </div>
+        </section>
+
+        <section class="studies">
+            <h4>Estudios</h4>
+            <hr>
+            <div class="profile_information">
+                
+            </div>
+        </section>
+
+        <section class="studies">
+            <h4>Estudios</h4>
+            <hr>
+            <div class="profile_information">
+                
+            </div>
+        </section>
+        <section class="studies">
+            <h4>Estudios</h4>
+            <hr>
+            <div class="profile_information">
+                
+            </div>
+        </section>
+        </section>
+    </div>
+    <script src="https://kit.fontawesome.com/b6bfe8df39.js" crossorigin="anonymous"></script>  
+</body>
+</html>

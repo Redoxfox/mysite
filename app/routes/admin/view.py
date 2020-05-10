@@ -39,3 +39,23 @@ def index():
     DatosUsers = connect.SW_TABLE(username,TSWusers,Data)
     
     return render_template("/home/index.html", url=url, lista = DatosUsers)
+
+@app.route("/perfil")
+def perfil():
+
+    Sql="ddasddf"
+    url = URLBASE
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username)   
+    Nick = "Redoxfox"
+    TSWusers = dict()
+    TSWusers = {'TABLE':'users',
+        'Col1':'nick',
+        'Col2':'password',
+        'Col3':'salt',
+        'Whe4':'nick=%s'
+        }
+    Data = (Nick,)
+    DatosUsers = connect.SW_TABLE(username,TSWusers,Data)
+    
+    return render_template("/home/perfil.html", url=url, lista = DatosUsers)
