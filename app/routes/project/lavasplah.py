@@ -532,23 +532,22 @@ def Clientes():
     
     return render_template("/lavasplash/users.html", url = urlrev, Oferta_Servicio = DatosOfServicioOftado)
 
-@app.route('/Servicios/<string:day_ini>', methods=['POST', 'GET'])
-def Servicios():
-    urlrev = URLBASE 
+@app.route('/Servicios/<id>/', methods=['POST', 'GET'])
+def Servicios(id):
+    urlrev = URLBASE
     username = CONFIG['TYPE_USER']['ROOT']
     connect=Model(username) 
-    TSSOfServicioOftado = dict()
-    TSSOfServicioOftado  = {'TABLE':'clientes order by id',
+    wid = id
+    TablaServicioAutomotor = dict()
+    TablaServicioAutomotor = {'TABLE':'servicio',
         'Col1':'id',
-        'Col2':'nombre',
-        'Col3':'direccion',
-        'Col4':'telefono',
-        'Col5':'nit',
-        'Col6':'email',
-        'Col7':'web',
-        'Col8':'image',
+        'Col2':'tipo',
+        'Col3':'costo',
+        'Col4':'detalles',
+        'Whe5':'automotor=%s'
         }
-    DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
+    Data = (wid,)
+    DatosServicioV = connect.SW_TABLE(username,TablaServicioAutomotor, Data)
     
-    return render_template("/lavasplash/users.html", url = urlrev, Oferta_Servicio = DatosOfServicioOftado)
+    return render_template("/lavasplash/Servicios.html", url = urlrev, Oferta_Servicio = DatosServicioV)
 

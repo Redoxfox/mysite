@@ -4,42 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios Lavado Ecologico</title>
+    <link href= "{{ url_for('static', filename='css/css_homels/Servicios.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
 </head>
 <body>
     <div class="container">
       <!-- Boxes Section -->
       <section class="boxes">
+        {% for valor in Oferta_Servicio %}
         <div class="box">
           <!-- Codigo color 9AFF42 imagen -->
           <img src="{{ url_for('static', filename='imgs/car.png') }}">
-          <h3>Automóviles</h3>
-          <p>Servicios para automoviles</p>
-          <a href="" class="btn">Ver servicios</a>
+          <h3>{{ valor.tipo }}</h3>
+          <p>$ {{ valor.costo }}</p>
+          <p>{{ valor.detalles }}</p>
+          <a href="{{url}}/Servicios/1" class="btn">Ver servicios</a>
         </div>
-        <div class="box">
-          <img src="{{ url_for('static', filename='imgs/moto.png') }}">
-          <h3>Motos</h3>
-          <p>Servicios para motos</p>
-          <a href="" class="btn">Ver servicios</a>
-        </div>
-        <div class="box">
-          <img src="{{ url_for('static', filename='imgs/camion.png') }}">
-          <h3>Camionetas</h3>
-          <p>Servicios para camiones y camionetas</p>
-          <a href="" class="btn">Ver servicios</a>
-        </div>
-        <div class="box">
-          <img src="{{ url_for('static', filename='imgs/user.png') }}">
-          <h3>Clientes</h3>
-          <p>Nuestros clientes</p>
-          <a href="{{url}}/Clientes" class="btn">Ver clientes</a>
-        </div>
-        <div class="box">
-          <img src="{{ url_for('static', filename='imgs/data.png') }}">
-          <h3>Estadisticas</h3>
-          <p>Datos de servicios.</p>
-          <a href="{{url}}/ProcesarServicios" class="btn">Ver estadisticas</a>
-        </div>
+        {% endfor %}
       </section>
     </div>
 </body>
