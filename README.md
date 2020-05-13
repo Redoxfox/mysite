@@ -25,7 +25,7 @@ Linux (distribucion Centos 7)
 
 Estructura del proyecto:
 
-/mysite                         "Carpeta raiz del proyecto".
+<li>/mysite  "Carpeta raiz del proyecto".</li>                
     app/                        "Carpeta aplicacion".
        /config                  "Carpeta con archivos de configuración".
            __init__.py          "Archivo para validar carpeta como paquete".

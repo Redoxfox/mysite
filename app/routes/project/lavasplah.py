@@ -532,5 +532,23 @@ def Clientes():
     
     return render_template("/lavasplash/users.html", url = urlrev, Oferta_Servicio = DatosOfServicioOftado)
 
-
+@app.route('/Servicios/<string:day_ini>', methods=['POST', 'GET'])
+def Servicios():
+    urlrev = URLBASE 
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    TSSOfServicioOftado = dict()
+    TSSOfServicioOftado  = {'TABLE':'clientes order by id',
+        'Col1':'id',
+        'Col2':'nombre',
+        'Col3':'direccion',
+        'Col4':'telefono',
+        'Col5':'nit',
+        'Col6':'email',
+        'Col7':'web',
+        'Col8':'image',
+        }
+    DatosOfServicioOftado= connect.SSP_TABLE(username,TSSOfServicioOftado)
+    
+    return render_template("/lavasplash/users.html", url = urlrev, Oferta_Servicio = DatosOfServicioOftado)
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Lavado Ecologico</title>
+</head>
+<body>
+    <div class="container">
+      <!-- Boxes Section -->
+      <section class="boxes">
+        <div class="box">
+          <!-- Codigo color 9AFF42 imagen -->
+          <img src="{{ url_for('static', filename='imgs/car.png') }}">
+          <h3>Automóviles</h3>
+          <p>Servicios para automoviles</p>
+          <a href="" class="btn">Ver servicios</a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='imgs/moto.png') }}">
+          <h3>Motos</h3>
+          <p>Servicios para motos</p>
+          <a href="" class="btn">Ver servicios</a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='imgs/camion.png') }}">
+          <h3>Camionetas</h3>
+          <p>Servicios para camiones y camionetas</p>
+          <a href="" class="btn">Ver servicios</a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='imgs/user.png') }}">
+          <h3>Clientes</h3>
+          <p>Nuestros clientes</p>
+          <a href="{{url}}/Clientes" class="btn">Ver clientes</a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='imgs/data.png') }}">
+          <h3>Estadisticas</h3>
+          <p>Datos de servicios.</p>
+          <a href="{{url}}/ProcesarServicios" class="btn">Ver estadisticas</a>
+        </div>
+      </section>
+    </div>
+</body>
+</html>

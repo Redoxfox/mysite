@@ -1,0 +1,15 @@
+/* Boxes */
+.boxes {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+  
+.box {
+    background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  
+  
