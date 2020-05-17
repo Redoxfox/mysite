@@ -2062,3 +2062,551 @@ function mes_siguiente(month, year) {
       });
   })
 }
+
+
+###############################################################################################
+# Codigo viejo CSS front page
+###############################################################################################
+@media(min-width:850px){
+  html, body {
+    background-color: whitesmoke;
+    margin: 10px;
+    font-family: 'Baskervville', serif;
+  }
+  
+  .container {
+    display: grid;  
+    grid-template-columns: repeat(4, 1fr);
+    background:  whitesmoke;
+  }
+
+ 
+  
+  
+  .container .nombre
+  {   
+      background: black;
+      grid-column: 1 / 3;
+      height: 80px;
+      font-size:30px;
+      color:white;
+      font-weight: bold;
+      text-align:center;
+      display: table-cell;
+      vertical-align:middle;
+      /*Centrar Mediante Flex*/
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column; 
+  }
+  
+  .container .Logo-cv
+  {   
+      grid-column: 3 / 5;
+      background: rgb(199, 236, 202);
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column; 
+  }
+  
+  #logo-cv{
+      background: red;
+      width: 40px;
+      height: 40px;
+      border: 10px solid #eee;
+      border-top: 10px solid rgb(21, 57, 133);
+      border-radius: 50%;
+      animation-name: girar;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+      
+  }
+  
+  
+  .container .profesion
+  {   
+      background: white;
+      grid-column: 3/5;
+      grid-row: 2/3;
+      font-size:30px;
+      height: 80px;
+      font-weight: bold;
+      text-align:center;
+      display: table-cell;
+      vertical-align:middle;
+       /*Centrar Mediante Flex*/
+       display: flex;
+       justify-content: center;
+       align-content: center;
+       flex-direction: column;
+      
+  }
+  
+  
+  .container .fondo-lateral
+  {   
+      background: rgb(199, 236, 202);
+      grid-column: 1/3;
+      grid-row: 2/3;    
+  }
+  
+  .container .menu-principal
+  {   
+      background: rgb(245, 239, 239);
+      grid-column: 1/5;  
+  }
+  
+  .container .menu-principal nav
+  {   margin: 0;
+      padding: 1em;
+      font-family: Verdana, Geneva, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;  
+  }
+  
+  
+  
+  .container .menu-principal nav ul
+  {   
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: rgb(39, 123, 226);
+  }
+  
+  .container .menu-principal li a 
+  {   
+      color: white;
+      display: block;
+      text-decoration: none;
+      padding: .5em 1em;
+      font-family: 'Baskervville', serif;
+  }
+  
+  #my-picture{
+      border: 4px solid black;
+      border-radius: 10px; 
+      width: 95%;
+  }
+  
+  .container .menu-principal nav li a:hover {
+      background: tomato;
+      color: white;
+  }
+  
+  .container .descripcion{
+      grid-column: 4/4; 
+
+      grid-template-columns: 1fr 1fr;
+  }
+ 
+  .presentacion
+  {   
+      background: rgb(245, 239, 239);
+      height: 450px;
+      border: 2px solid green;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 0px;     
+  }
+  
+  
+  
+  .container .imagen-perfil
+  {   
+      background: rgb(245, 239, 239);
+      grid-column: 4/5;
+      height: 300px;
+      margin: 20px;
+      
+  }
+  
+  #titulo-items{
+      margin-top: 0px;
+      padding: 1.5em;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-right: 10px;
+      font-size: 21px;
+      background:rgb(128, 177, 250);
+      background:white;
+  }
+  
+  p{
+      font-size: 21px;
+      
+  }
+  
+  .container .titulo-proyectos
+  {   
+      grid-column: 1/5;
+      font-size: 21px;
+      height: 50px;
+      font-weight: bold;
+      margin-bottom: 50px;
+  
+  }
+  
+  
+  .titulo-proyectos hr{
+      border: 0; 
+      height: 12px; 
+      box-shadow: inset 0 12px 12px -12px orange;
+     
+  }
+  
+  .container .Menu-proyectos
+  {   
+      background: rgb(245, 239, 239);
+      grid-column: 1/5;
+        
+  }
+  
+  
+  .option-menu
+  {  
+  padding: 0%;
+     display: flex;
+     list-style: none;
+     background: rgb(39, 123, 226);
+     font-family: Verdana, Geneva, sans-serif;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale; 
+  }
+  
+  .menuitems{
+      font-size: 25px;
+  }
+  
+  .option-menu li a 
+  {   
+      color: white;
+      display: block;
+      text-decoration: none;
+      padding: .5em 1em;
+      font-family: 'Baskervville', serif;
+  }
+  
+  .option-menu li {
+      flex-grow:1;
+      text-align:left;
+      border-right: 4px solid yellowgreen;
+  }
+  .option-menu li:first-child{
+      border-left: 2px solid yellowgreen;
+    }
+  
+  .option-menu li a:hover {
+  background: tomato;
+  color: white;
+  }
+  
+  .container .vista-proyectos{
+      grid-column: 1/5;
+      grid-gap: 2px 50px;
+  }
+  
+  .show-project{
+      
+      display: flex;
+      flex-direction: row;  
+  }
+  
+  .img-project{
+      border: 4px solid rgb(43, 43, 7);
+      border-radius: 20px;
+  }
+  
+  .items-proyectos{
+      /*Distribucion de espacio de forma uniforme hijos elemento padre (.show-project)*/
+      flex-grow: 1; 
+      margin: 10px;
+      width: 25%;
+      background:rgba(245, 248, 248, 0.966);
+      border: 4px solid rgb(141, 142, 146);
+      border-radius: 10px;
+      /*Posicionamiento flexbox componente padre*/
+      display: flex;
+      flex-direction:column;  
+      align-items: center;
+  }
+  
+  
+  
+  .float-lateral{
+      background: whitesmoke; 
+      margin: 10px;
+      padding: 1.5em;
+      border: 2px solid rgb(216, 214, 100);
+      border-radius: 5px 5px;
+  }
+  
+  .project-show{
+      background: rgb(39, 123, 226);
+      width: 50%;
+      height: 50px;
+      margin:0px auto;
+      /*Centrar verticalmente elemento inline (a)*/
+      line-height: 50px;
+      display: block;
+      margin: 10px;
+      /*Centrar horizontalmente elemento inline (a)*/
+      text-align: center;
+      border-radius: 5px 5px;
+  }
+  
+  .project-show a{
+      text-decoration: none;
+      color: black; 
+      font-size: 20px;
+  }
+  
+  .project-show:hover{
+      background: yellowgreen;
+  }
+  
+  .project-show a:hover{
+      text-decoration: none;
+      color:white; 
+      font-size: 16px;
+  }
+  
+  .items-app{
+      font-size: 21px;
+  }
+  
+  .titulo-items-app{
+      font-size: 21px;
+  }
+  
+  .footer{
+      grid-column: 1/5;
+      height: 100px;   
+  }
+  
+  .footer .sociales{
+      padding: 10px;
+      background: rgb(46, 94, 182);
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      flex-wrap: wrap;
+      border-radius: 10px;
+  }
+  
+  .footer .sociales a{
+      font-size: 25px;
+      color: #eee;
+      margin-left: 30px;
+  }
+  
+  }
+  
+  /*Moviles*/
+  @media(max-width:850px){
+      html, body {
+          background-color: whitesmoke;
+          margin: 10px;
+          font-family: 'Baskervville', serif;
+        }
+     
+      .container .nombre
+      {   
+          margin-top: 5px;
+          margin-bottom: 5px;
+          background: black;
+          grid-column: 1 / 5;
+          height: 80px;
+          font-size:30px;
+          color:white;
+          font-weight: bold;
+          text-align:center;
+          display: table-cell;
+          vertical-align:middle;
+          /*Centrar Mediante Flex*/
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-direction: column; 
+          border-radius: 10px;  
+          border: 4px solid yellowgreen;
+      }
+      
+      .container .Logo-cv
+      {   
+          display: none;
+      }
+      
+      #logo-cv{
+         display: none;
+      }
+     
+      .container .profesion
+      {   
+          background: white;
+          grid-column: 1/5;
+          font-size:30px;
+          height: 80px;
+          font-weight: bold;
+          text-align:center;
+          display: table-cell;
+          vertical-align:middle;
+           /*Centrar Mediante Flex*/
+           display: flex;
+           justify-content: center;
+           align-content: center;
+           flex-direction: column;  
+           border: 4px solid black;
+           border-radius: 10px;      
+      }
+
+  #sobre-my{
+      background:rgb(248, 245, 248);
+  }
+  
+  .container .menu-principal
+  {   
+      background: rgb(245, 239, 239);
+      grid-column: 1/5;  
+  }
+  
+  .container .Menu-proyectos
+  {   
+      background: rgb(245, 239, 239);
+      grid-column: 1/5;    
+  }
+  
+  
+  .option-menu
+  {  
+     padding: 0%;
+     list-style: none;
+     background:rgb(39, 123, 226);
+     font-family: Verdana, Geneva, sans-serif;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale; 
+  }
+  
+  .menuitems{
+      font-size: 25px;
+  }
+  
+  .option-menu li a 
+  {   
+      color: white;
+      display: block;
+      text-decoration: none;
+      padding: .5em 1em;
+      font-family: 'Baskervville', serif;
+  }
+  
+  .option-menu li {
+      flex-grow:1;
+      text-align:left;
+      border-bottom: 0.5px solid rgb(48, 6, 13);
+  }
+  .option-menu li:first-child{
+      border-top: 2px solid red;
+    }
+  
+  .option-menu li a:hover {
+  background: tomato;
+  color: white;
+  }
+
+  .items-proyectos{
+      /*Posicionamiento flexbox componente padre*/
+      display: flex;
+      flex-direction:column;  
+      align-items: center;
+  }
+
+  .container .titulo-proyectos
+  {   
+      grid-column: 1/5;
+      font-size: 21px;
+      height: 50px;
+      font-weight: bold;
+      margin-bottom: 50px;
+  
+  }
+  
+  
+  .titulo-proyectos hr{
+      border: 0; 
+      height: 12px; 
+      box-shadow: inset 0 12px 12px -12px orange;
+     
+  }
+
+  .project-show{
+      background: rgb(167, 194, 228);
+      width: 100%;
+      height: 50px;
+      margin:0px auto;
+      /*Centrar verticalmente elemento inline (a)*/
+      line-height: 50px;
+      display: block;
+      margin: 10px;
+      /*Centrar horizontalmente elemento inline (a)*/
+      text-align: center;
+  }
+  
+  .project-show a{
+      text-decoration: none;
+      color: black; 
+      font-size: 20px;
+  }
+  
+  .project-show:hover{
+      
+      background: yellowgreen;
+  }
+
+  .items-proyectos{
+      /*Distribucion de espacio de forma uniforme hijos elemento padre (.show-project)*/
+      width: 100%;
+      background:rgba(241, 241, 245, 0.753);
+      border: 4px solid beige;
+      border-radius: 10px;
+      /*Posicionamiento flexbox componente padre*/
+      align-items: center;
+  }
+  
+  .project-show a:hover{
+      text-decoration: none;
+      color:white; 
+      font-size: 35px;
+  }
+
+  .footer .sociales{
+      padding: 10px;
+      background: rgb(46, 94, 182);
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      flex-wrap: wrap;
+      border-radius: 10px;
+  }
+  
+  .footer .sociales a{
+      font-size: 25px;
+      color: #eee;
+      margin-left: 30px;
+  }
+  
+}

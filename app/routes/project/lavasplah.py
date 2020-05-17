@@ -544,10 +544,29 @@ def Servicios(id):
         'Col2':'tipo',
         'Col3':'costo',
         'Col4':'detalles',
-        'Whe5':'automotor=%s'
+        'Col5':'automotor',
+        'Whe6':'automotor=%s'
         }
     Data = (wid,)
     DatosServicioV = connect.SW_TABLE(username,TablaServicioAutomotor, Data)
     
     return render_template("/lavasplash/Servicios.html", url = urlrev, Oferta_Servicio = DatosServicioV)
 
+@app.route('/All_Servicios/', methods=['POST', 'GET'])
+def All_Servicios():
+    urlrev = URLBASE
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    
+    Tabla_All_Servicios = dict()
+    Tabla_All_Servicios = {'TABLE':'servicio',
+        'Col1':'id',
+        'Col2':'tipo',
+        'Col3':'costo',
+        'Col4':'detalles',
+        'Col5':'automotor',
+    }
+   
+    DatosAllServicios = connect.SSP_TABLE(username, Tabla_All_Servicios)
+    
+    return render_template("/lavasplash/All_Servicios.html", url = urlrev, Oferta_Servicio = DatosAllServicios)

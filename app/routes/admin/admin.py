@@ -71,7 +71,6 @@ def validar():
     
     if h2 is True and tipo_user == "admin":
         return redirect(url_for('admin'))
-      
     else:
         return render_template("/registro/login.html")
 

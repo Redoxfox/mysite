@@ -184,7 +184,9 @@ class Model:
         except:
             create = False
         
+        print(sql)
         con.close()  
+
 
         return create 
 
