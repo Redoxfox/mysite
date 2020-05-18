@@ -196,3 +196,8 @@ function ocultar(id) {
     let submenu = document.getElementById(id);
     submenu.style.display = "none";
 }
+
+function mostrar(id) {
+    let submenu = document.getElementById(id);
+    submenu.style.display = "block";
+}

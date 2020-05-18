@@ -1,3 +1,18 @@
+/* CSS Variables */
+:root {
+    --primary: rgba(214, 218, 216, 0.925);
+    --nav_b:rgb(39, 123, 226);
+    --dark: rgb(19, 66, 4);
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --white: white;
+    --tomato: tomato;
+    --yellowgreen: yellowgreen;
+    --btn:rgb(19, 66, 4);
+    --black:black;
+  }
+
+
 body{
     margin: 0;
     padding: 0;
@@ -7,68 +22,55 @@ body{
 h3 {
     margin-bottom: 40px;
 }
-ul.menu {
-    margin: 0 auto;
-}
-ul.menu a {
-    background: hsl(200, 80%, 50%);
-    min-width: 160px;
-    padding: 10px 0;
-    margin: 2px;
-    color: hsl(0, 0%, 100%);
-    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+
+@media(min-width:850px){  
+/* Navigation Prymary*/
+.main-nav{
+    display: grid;
+    grid-gap: 1px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .main-nav a {
+    background: var(--nav_b);
     display: block;
     text-decoration: none;
-}
-ul.menu a:hover {
-    background-color: hsl(200, 80%, 35%);
-}
-ul.menu i {
-    float: right;
-    margin-right: 15px;
-    font-size: 20px;
-}
-ul.menu li {
-    list-style: none;
+    padding: 0.8rem;
     text-align: center;
-}
-ul.menu > li {
-    float: left;
-}
-ul.menu .dropdown {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    min-width: 160px;
-    z-index: -1;
-    -webkit-transform: translateY(-50px);
-    -moz-transform: translateY(-50px);
-    -o-transform: translateY(-50px);
-    -ms-transform: translateY(-50px);
-    transform: translateY(-50px);
-    -webkit-transition: all 0.3s ease-out;   
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-ul.menu .dropdown li {
-    position: relative;
-}
-ul.menu .dropdown ul {
-    right: -162px;
-    top: 10px;
-}
-ul.menu li:hover > .dropdown {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -o-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    transform: translateY(0px);
-}
+    color: var(--light);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+  }
 
+  .main-nav a:hover {
+    background: var(--tomato);
+    color: var(--light);
+  }
 
+  .option-menu{
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+  }
+
+  #BD{
+    display: none;
+  }
+
+  #Blog{
+    display: none;
+  }
+
+  #App{
+    display: none;
+  }
+
+  #ND{
+    display: none;
+  }
+   
 /*Estilos descripcion de tablas base de datos*/
 .contenedor_principal{
     display: grid;
@@ -126,6 +128,8 @@ ul.menu li:hover > .dropdown {
     width: 15px;
 }
 
+
+
  .tooltip {
     position: relative;
     display: inline-block;
@@ -164,3 +168,50 @@ ul.menu li:hover > .dropdown {
     visibility: visible;
     opacity: 1;
   }
+
+}
+
+
+@media(max-width:850px){
+    /* Navigation Prymary*/
+.main-nav{
+    display: grid;
+    padding: 0;
+    list-style: none;
+    grid-template-rows: 1fr;
+  }
+
+  .main-nav a {
+    background: var(--nav_b);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--light);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .main-nav a:hover {
+    background: var(--tomato);
+    color: var(--light);
+  }
+
+
+  #BD{
+    display: none;
+  }
+
+  #Blog{
+    display: none;
+  }
+
+  #App{
+    display: none;
+  }
+
+  #ND{
+    display: none;
+  }
+}
