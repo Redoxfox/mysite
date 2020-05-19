@@ -13,8 +13,10 @@ route_file_config = dir_act
 route_exist = route_file_config.find("mysite")
 if route_exist > 0:
     route_file_config = dir_act + "/app/config/config.json"
+    server = "local"
 else:
     route_file_config = dir_act + "/mysite/app/config/config.json"
+    server = "server"
 
 f = open(route_file_config , "r")
 file = f.read()
@@ -34,6 +36,10 @@ def tablas():
     username = CONFIG['TYPE_USER']['ROOT']
     connect = Model(username) 
     tablas = connect.SHOW_TABLES(username)
+    print(tablas)
+    nom_server = {}
+    nom_server["server"] = server 
+    tablas.append(nom_server)
     result = json.dumps(tablas)
 
     return (result)
@@ -82,7 +88,7 @@ def Estructura_tabla():
     req = request.get_json()
     nombreTabla = req["nombreTabla"]
     campos_tabla = connect.DESCRIBE_TABLES(username,  nombreTabla)
-    print (campos_tabla)
+    print (nombreTabla)
     estructura = json.dumps(campos_tabla)
     #print(type(result))
     #res = make_response(jsonify({"message": "OK"}), 200) 

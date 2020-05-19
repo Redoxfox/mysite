@@ -165,10 +165,11 @@ function ver_tablas(){
     fetch(tablas)
     .then(res => res.json())
     .then(data => {
-       console.log(data)
        for (const key in data) {
            if (data.hasOwnProperty(key)) {
-              let nombre_tabla = data[key].Tables_in_proyecto
+              let key_table = Object.keys(data[key])
+              value_key_table = key_table[0]
+              let nombre_tabla = data[key][value_key_table]
               let contenedor = document.getElementById("contenedor_principal");
               let listId_contenedor = document.createElement('div');
               listId_contenedor.setAttribute("id", nombre_tabla);
