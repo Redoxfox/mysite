@@ -13,50 +13,50 @@
 </head>
 <body>
 <nav class="main-nav">
-    <ul id="admin_BD" onmouseover="mostrar('BD')" onmouseout="ocultar('BD')">
-        <li><a href="">Administracion BD</a>
+    <ul id="admin_BD" onmouseover = "mostrar('BD')" onmouseout="ocultar('BD')">
+        <li><a>Administracion BD</a>
             <ul id="BD" >
                 <li><a onclick="ver_tablas()">Ver Tablas</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li> 
             </ul>   
         </li>
     </ul>
     <ul id="admin_Blog" onmouseover="mostrar('Blog')" onmouseout="ocultar('Blog')">
-        <li><a href="">Administracion Blog</a>
+        <li><a>Administracion Blog</a>
             <ul id="Blog"  >
-                <li><a href="http://">Administracion Blog</a>
+                <li><a onclick="new_palabra()">Nueva palabra</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li> 
             </ul>   
         </li>   
     </ul>
     <ul id="admin_App" onmouseover="mostrar('App')" onmouseout="ocultar('App')" >
-        <li><a href="">Administracion App</a>
+        <li><a>Administracion App</a>
             <ul id="App" >
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li> 
             </ul>   
         </li>  
     </ul>
     <ul id="admin_ND" onmouseover="mostrar('ND')" onmouseout="ocultar('ND')">
-        <li><a href="">Administracion X</a>
+        <li><a>Administracion X</a>
             <ul id="ND" >
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li>
-                <li><a href="http://">Administracion Blog</a>
+                <li><a>Administracion Blog</a>
                 </li> 
             </ul>   
         </li>   
@@ -65,52 +65,7 @@
 
 <div id="contenedor_principal" class="contenedor_principal">
 </div>
-    <div class="body_form">
-        <div class="contenedor_primario_form">
-            <h2 class="item_titulo">Registrar palabras</h2>
-            <div class="contenedor_secundario">
-                <div class="contenedor_info">
-                    <h3>Registro palabras ingles</h3>
-                    <ul>
-                        <li>Proyecto</li>
-                        <li>Sopa letras</li>
-                        <li>Insertar palabras</li>
-                        <div class="caja">
-                            <div class="box">
-                                <img src="/static/imgs/sopa.jpg" alt="">
-                            </div>
-                        </div>    
-                    </ul>
-                </div>
-                <div class="contenedor_form">
-                    <h3>Agregar palabra vocabulario</h3>
-                    <form action="">
-                        <p class="item_form">
-                            <label>Palabra ingles:</label>
-                            <input type="text"  name = "english" >
-                        </p>
-                        <p>
-                            <label>Palabra español:</label>
-                            <input type="text"  name = "spanish" >
-                        </p>
-
-                        <p>
-                            <label>Grupo:</label>
-                            <select name="grupo" id="grupo">
-                                <option value="1">home</option>
-                                <option value="2">verbs</option>
-                            </select>
-                            <i></i>
-                        </p>
-                        <p>
-                            <label >Ejemplos:</label>
-                            <textarea name="ejemplos" id="ejemplos" cols="30" rows="5"></textarea>
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
     <script src="{{ url_for('static', filename='js/js_homead/admin.js') }}"></script>    

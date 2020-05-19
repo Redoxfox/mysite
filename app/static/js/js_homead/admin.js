@@ -1,11 +1,9 @@
-function cerrar(id){
-    let contenedor = document.getElementById(id);
-    var id_tabla = "tabla" + id
-    let contenedor_t = document.getElementById(id_tabla);
-    contenedor.removeChild(contenedor_t);
-}
-
-
+/*****************************************************************************************
+ * Funciones para gestión de base de datos                                               *
+ *****************************************************************************************/
+/*********************************** 
+ *Describir tablas base de datos   *
+ **********************************/
 function describir(id) {
     let contenedor = document.getElementById(id);
     let listId_contenedor = document.createElement('div');
@@ -158,7 +156,9 @@ function describir(id) {
     });
 }
 
-
+/*********************************** 
+ *Mostrar tablas de base de datos  *
+ **********************************/
 function ver_tablas(){
     const tablas = window.origin + "/tablas/" 
 
@@ -191,8 +191,80 @@ function ver_tablas(){
     })
 }
 
-/*  */
+/*****************************************************************************************
+ * Funciones para gestión de blog                                              *
+ *****************************************************************************************/
+/*********************************** 
+ *Formulario nueva palabra blog    *
+ **********************************/
+function new_palabra(){
+    let contenedor = document.getElementById("contenedor_principal");
+    let listId_contenedor = document.createElement('div');
+    listId_contenedor.setAttribute("id", "form");
+    listId_contenedor.classList.add("body_form"); 
+    contenedor.appendChild(listId_contenedor);
+    document.getElementById("form").innerHTML =`
+        <div class="contenedor_primario_form">
+            <h2 class="item_titulo">Registrar palabras</h2>
+            <div class="contenedor_secundario">
+                <div class="contenedor_info">
+                    <h3>Registro palabras ingles</h3>
+                    <ul>
+                        <li>Proyecto</li>
+                        <li>Sopa letras</li>
+                        <li>Insertar palabras</li>
+                        <div class="caja">
+                            <div class="box">
+                                <img src="/static/imgs/sopa.jpg" alt="">
+                            </div>
+                        </div>    
+                    </ul>
+                </div>
+                <div class="contenedor_form">
+                    <h3>Agregar palabra vocabulario</h3>
+                    <form id="form1">
+                        <p class="item_form">
+                            <label>Palabra ingles:</label>
+                            <input type="text"  name = "english" >
+                        </p>
+                        <p>
+                            <label>Palabra español:</label>
+                            <input type="text"  name = "spanish" >
+                        </p>
 
+                        <p>
+                            <label>Grupo:</label>
+                            <select name="grupo" id="grupo">
+                                <option value="1">home</option>
+                                <option value="2">verbs</option>
+                            </select>
+                            <i></i>
+                        </p>
+                        <p>
+                            <label >Ejemplos:</label>
+                            <textarea name="ejemplos" id="ejemplos" cols="30" rows="5"></textarea>
+                        </p>
+
+                        <p>
+                        <button type="submit" onclick="stopDefAction(event);">Enviar Registro</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        `
+}
+
+/*Formulario vocabulario*/ 
+function stopDefAction(evt) {
+    evt.preventDefault();
+    console.log(evt.target.form[1].value)
+    console.log(evt.target)
+  }
+
+/*****************************************************************************************
+ * Funciones para animar elementos HTML                                                  *
+ *****************************************************************************************/
 function ocultar(id) {
     let submenu = document.getElementById(id);
     submenu.style.display = "none";
@@ -201,4 +273,11 @@ function ocultar(id) {
 function mostrar(id) {
     let submenu = document.getElementById(id);
     submenu.style.display = "block";
+}
+
+function cerrar(id){
+    let contenedor = document.getElementById(id);
+    var id_tabla = "tabla" + id
+    let contenedor_t = document.getElementById(id_tabla);
+    contenedor.removeChild(contenedor_t);
 }
