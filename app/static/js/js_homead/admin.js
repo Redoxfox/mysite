@@ -255,12 +255,99 @@ function new_palabra(){
         `
 }
 
+/*********************************** 
+ *Formulario nuevo topico de palabras blog    *
+ **********************************/
+function new_topic(){
+    let contenedor = document.getElementById("contenedor_principal");
+    let listId_contenedor = document.createElement('div');
+    listId_contenedor.setAttribute("id", "form");
+    listId_contenedor.classList.add("body_form"); 
+    contenedor.appendChild(listId_contenedor);
+    document.getElementById("form").innerHTML =`
+        <div class="contenedor_primario_form">
+            <h2 class="item_titulo">Registrar palabras</h2>
+            <div class="contenedor_secundario">
+                <div class="contenedor_info">
+                    <h3>Registro palabras ingles</h3>
+                    <ul>
+                        <li>Proyecto</li>
+                        <li>Sopa letras</li>
+                        <li>Insertar palabras</li>
+                        <div class="caja">
+                            <div class="box">
+                                <img src="/static/imgs/sopa.jpg" alt="">
+                            </div>
+                        </div>    
+                    </ul>
+                </div>
+                <div class="contenedor_form">
+                    <h3>Agregar palabra vocabulario</h3>
+                    <form id="form1">
+                        <p class="item_form">
+                            <label>Nombre Topico:</label>
+                            <input type="text"  name = "topico" >
+                        </p>
+                        <p>
+                        <button type="submit" onclick="topicos(event);">Enviar Registro</button>
+                        </p>
+                        <p class="item_form">
+                            <div id = "new_topico"></div>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        `
+}
+
 /*Formulario vocabulario*/ 
 function stopDefAction(evt) {
     evt.preventDefault();
-    console.log(evt.target.form[1].value)
-    console.log(evt.target)
-  }
+    let english = evt.target.form[0].value
+    let spanish = evt.target.form[1].value
+    let grupo = evt.target.form[2].value
+    let ejemplos = evt.target.form[3].value
+    const url = window.origin + "/add_palabra/";
+    
+}
+
+/*Formulario topicos*/
+function topicos(evt) {
+    evt.preventDefault();
+    let topico = evt.target.form[0].value
+    const url = window.origin + "/add_topico/";
+
+    var entry = {
+      topico: topico
+    };
+
+    fetch(url, {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(entry),
+      cache: "no-cache",
+      headers: new Headers({
+        "content-type": "application/json"
+      })
+    })
+    .then(function (response) {
+        if (response.status !== 200) {
+            console.log(`Looks like there was a problem. Status code: ${response.status}`);
+            return;
+        }
+        response.json().then(function (data) {
+        console.log(data)
+        document.getElementById("new_topico").innerHTML =`
+          ${data.new_topico}
+        `
+        });
+    })
+    .catch(function (error) {
+        console.log("Fetch error: " + error);
+    });
+}
+
 
 /*****************************************************************************************
  * Funciones para animar elementos HTML                                                  *

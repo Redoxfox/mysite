@@ -9,7 +9,6 @@
     <link href= "{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css" media="screen" />   
     <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet"> 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
-    
 </head>
 <body>
 <nav class="main-nav">
@@ -30,7 +29,7 @@
             <ul id="Blog"  >
                 <li><a onclick="new_palabra()">Nueva palabra</a>
                 </li>
-                <li><a>Administracion Blog</a>
+                <li><a onclick="new_topic()">Nuevo Topico</a>
                 </li>
                 <li><a>Administracion Blog</a>
                 </li> 
@@ -65,9 +64,6 @@
 
 <div id="contenedor_principal" class="contenedor_principal">
 </div>
-    
-
-
-    <script src="{{ url_for('static', filename='js/js_homead/admin.js') }}"></script>    
+<script src="{{ url_for('static', filename='js/js_homead/admin.js') }}"></script>    
 </body>
 </html>
