@@ -203,6 +203,8 @@ function new_palabra(){
     listId_contenedor.setAttribute("id", "form");
     listId_contenedor.classList.add("body_form"); 
     contenedor.appendChild(listId_contenedor);
+
+    
     document.getElementById("form").innerHTML =`
         <div class="contenedor_primario_form">
             <h2 class="item_titulo">Registrar palabras</h2>
@@ -235,8 +237,6 @@ function new_palabra(){
                         <p>
                             <label>Grupo:</label>
                             <select name="grupo" id="grupo">
-                                <option value="1">home</option>
-                                <option value="2">verbs</option>
                             </select>
                             <i></i>
                         </p>
@@ -253,6 +253,7 @@ function new_palabra(){
             </div>
         </div>
         `
+        grupos();
 }
 
 /*********************************** 
@@ -298,8 +299,22 @@ function new_topic(){
                 </div>
             </div>
         </div>
-        `
+          `
 }
+
+/*Llenar select grupos*/
+function grupos(){
+    const url = window.origin + "/grupos/" 
+    let select = document.getElementById("grupo");
+    fetch(url)
+    .then(res => res.json())
+    .then(data =>{ 
+       for (const key in data) {
+          select.options[key] = new Option(data[key].topico , data[key].id);
+        }
+    })
+}
+
 
 /*Formulario vocabulario*/ 
 function stopDefAction(evt) {
@@ -309,7 +324,12 @@ function stopDefAction(evt) {
     let grupo = evt.target.form[2].value
     let ejemplos = evt.target.form[3].value
     const url = window.origin + "/add_palabra/";
-    
+    var entry = {
+        english: english,
+        spanish: spanish,
+        grupo:grupo,
+        ejemplos:ejemplos
+      };
 }
 
 /*Formulario topicos*/
@@ -347,6 +367,7 @@ function topicos(evt) {
         console.log("Fetch error: " + error);
     });
 }
+
 
 
 /*****************************************************************************************

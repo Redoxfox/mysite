@@ -183,10 +183,8 @@ class Model:
             create = True
         except:
             create = False
-        
-        print(sql)
-        con.close()  
 
+        con.close()  
 
         return create 
 

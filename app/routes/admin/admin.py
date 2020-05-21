@@ -107,15 +107,7 @@ def add_topico():
     topico = wid
     nombre_id = "id"
     nombre_tabla = "grupo"
-    id_max = connect.MAX_ID_TABLE(username, nombre_tabla , nombre_id) 
-    print(id_max)
-    if id_max[0]["max_id"] == None:
-        id = "1"
-    else:
-        proximo_id = id_max[0]["max_id"] + 1
-        id = str(proximo_id)
-
-    
+    id = None
     Insert_ofgrupo = dict()
     Insert_ofgrupo = {'TABLE':'grupo',
             'Col1':'id',
@@ -128,3 +120,48 @@ def add_topico():
     res_insert = connect.IT_TABLE(username, Insert_ofgrupo , Data) 
     
     return result
+
+@app.route("/add_palabra/", methods=["POST"])
+def add_palabra():
+    Urlbase = URLBASE
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect = Model(username)   
+    req = request.get_json()
+    result = {}
+    wid = req["topico"]
+    
+    topico = wid
+    nombre_id = "id"
+    nombre_tabla = "grupo"
+    id = None
+    Insert_ofgrupo = dict()
+    Insert_ofgrupo = {'TABLE':'grupo',
+            'Col1':'id',
+            'Col2':'topico',
+            'Val3':'%s',
+            'Val4':'%s'
+    }
+    Data = [id, topico]
+    result["new_topico"] = wid 
+    res_insert = connect.IT_TABLE(username, Insert_ofgrupo , Data) 
+    
+    return result
+
+@app.route("/grupos/")
+def grupos():
+    urlrev = URLBASE
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    
+    Tabla_All_Grupos = dict()
+    Tabla_All_Grupos = {'TABLE':'grupo',
+        'Col1':'id',
+        'Col2':'topico'
+    }
+   
+    DatosAllGrupos = connect.SSP_TABLE(username, Tabla_All_Grupos)
+
+    DatosAllGrupos_json = json.dumps(DatosAllGrupos) 
+    
+    return (DatosAllGrupos_json)
+
