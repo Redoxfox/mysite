@@ -186,6 +186,7 @@ class Model:
 
         con.close()  
 
+
         return create 
 
     #Consulta SELECT simple 

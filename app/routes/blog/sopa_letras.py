@@ -8,6 +8,7 @@ from datetime import datetime, date
 import re
 from flask import jsonify, make_response
 import numpy as np
+from random import *
 
 
 dir_act = os.getcwd()
@@ -30,6 +31,7 @@ def sopa_letters():
     username = CONFIG['TYPE_USER']['ROOT']
     connect=Model(username)   
     #urlrev = URLBASE
+    num_palabras = 0
     TSSServicioPtado  = {'TABLE':'servicio',
         'Col1':'id',
         'Col2':'tipo',
@@ -48,10 +50,36 @@ def sopa_letters():
         }
     Data = (wid,)
     PalabrasCrucigrama = connect.SW_TABLE(username,TSSVocabulary, Data)
-
     list_palabras = []
+    list_id = []
+    Palabras_in_Crucigrama = []
     for items in PalabrasCrucigrama:
-        list_palabras.append(items["english"])
+        list_id.append(items["id"])
+
+    acierto = 0
+    num_palabras = 0
+    while num_palabras < 15:
+        value_palabra = randint(0, len(list_id)-1)
+        palabra_select = PalabrasCrucigrama[value_palabra]["english"]
+        palabra_select = re.sub(r"\s+", "", palabra_select, flags=re.UNICODE)
+        num_letras = len(palabra_select)
+        nueva_palabra = {}
+        if acierto == 0 and num_letras > 10 and num_letras < 13:
+            if palabra_select not in list_palabras:
+                list_palabras.append(palabra_select)
+                nueva_palabra["spanish"] = PalabrasCrucigrama[value_palabra]["spanish"]
+                nueva_palabra["english"] = palabra_select
+                Palabras_in_Crucigrama.append(nueva_palabra)
+                num_palabras += 1
+                acierto = 1
+        else:
+            if palabra_select not in list_palabras:
+                list_palabras.append(palabra_select)
+                nueva_palabra["spanish"] = PalabrasCrucigrama[value_palabra]["spanish"]
+                nueva_palabra["english"] = palabra_select
+                Palabras_in_Crucigrama.append(nueva_palabra)
+                num_palabras += 1
+
 
     resultados_crucigrama = sopa_letras.llenar_palabra()
     result_crucigrama = resultados_crucigrama.generar_crucigrama(list_palabras)
@@ -72,12 +100,11 @@ def sopa_letters():
             'Val5':'%s',
             'Val6':'%s',
     }
-    Data = [id, grupo, palabras]
-    res_insert = connect.IT_TABLE(username, Insert_ofCrucigrama , Data) 
-        
+    Data = [id, grupo, palabras] 
+    res_insert = connect.IT_TABLE(username, Insert_ofCrucigrama , Data)   
 
     return render_template("/blog/sopa.html", url = Urlbase, servicios = DatosServicioPtado, data = data,
-    palabras_crucigrama = PalabrasCrucigrama, id_crucigrama = proximo_id)
+    palabras_crucigrama = Palabras_in_Crucigrama, id_crucigrama = proximo_id)
 
 @app.route("/palabra/", methods=["POST"])
 def palabra():

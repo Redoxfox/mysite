@@ -203,8 +203,6 @@ function new_palabra(){
     listId_contenedor.setAttribute("id", "form");
     listId_contenedor.classList.add("body_form"); 
     contenedor.appendChild(listId_contenedor);
-
-    
     document.getElementById("form").innerHTML =`
         <div class="contenedor_primario_form">
             <h2 class="item_titulo">Registrar palabras</h2>
@@ -248,7 +246,13 @@ function new_palabra(){
                         <p>
                         <button type="submit" onclick="stopDefAction(event);">Enviar Registro</button>
                         </p>
+
+                        <p class="item_form">
+                            <div id = "new_topico"></div>
+                        </p>
+                        
                     </form>
+                    
                 </div>
             </div>
         </div>
@@ -329,7 +333,34 @@ function stopDefAction(evt) {
         spanish: spanish,
         grupo:grupo,
         ejemplos:ejemplos
-      };
+    };
+    fetch(url, {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(entry),
+        cache: "no-cache",
+        headers: new Headers({
+          "content-type": "application/json"
+        })
+      })
+      .then(function (response) {
+          if (response.status !== 200) {
+              console.log(`Looks like there was a problem. Status code: ${response.status}`);
+              return;
+          }
+          response.json().then(function (data) {
+          console.log(data)
+          document.getElementById("new_topico").innerHTML =`
+            ${data.new_topico}
+          `
+          evt.target.form[0].value = ""
+          evt.target.form[1].value = ""
+          evt.target.form[3].value = ""
+          });
+      })
+      .catch(function (error) {
+          console.log("Fetch error: " + error);
+      });
 }
 
 /*Formulario topicos*/

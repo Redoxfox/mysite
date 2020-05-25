@@ -128,22 +128,44 @@ def add_palabra():
     connect = Model(username)   
     req = request.get_json()
     result = {}
-    wid = req["topico"]
-    
-    topico = wid
-    nombre_id = "id"
-    nombre_tabla = "grupo"
     id = None
-    Insert_ofgrupo = dict()
-    Insert_ofgrupo = {'TABLE':'grupo',
-            'Col1':'id',
-            'Col2':'topico',
-            'Val3':'%s',
-            'Val4':'%s'
+    english = req["english"].upper()
+    spanish = req["spanish"].upper() 
+    grupo = req["grupo"] 
+    ejemplos = req["ejemplos"]
+    
+    
+    wid = english
+    TSWVocabulary = dict()
+    TSWVocabulary = {'TABLE': 'vocabulary', 
+        'Col1': 'english',
+        'Whe2': 'english=%s'
     }
-    Data = [id, topico]
-    result["new_topico"] = wid 
-    res_insert = connect.IT_TABLE(username, Insert_ofgrupo , Data) 
+         
+    Data = (wid,)
+    DatosVocabulary = connect.SW_TABLE(username, TSWVocabulary, Data)
+
+    if DatosVocabulary:
+        result["new_topico"] = "Ya se encuentra registrado " + english + " en BD"
+    else:
+        Insert_ofvocabulary = dict()
+        Insert_ofvocabulary = {'TABLE':'vocabulary',
+            'Col1':'id',
+            'Col2':'english',
+            'Col3':'spanish',
+            'Col4':'grupo',
+            'Col5':'ejemplos',
+            'Val6':'%s',
+            'Val7':'%s',
+            'Val8':'%s',
+            'Val9':'%s',
+            'Val10':'%s'
+        }
+        Data = [id,  english, spanish,  grupo, ejemplos]
+        result["new_topico"] = "Registro exitoso"
+        res_insert = connect.IT_TABLE(username,  Insert_ofvocabulary, Data) 
+        
+        
     
     return result
 
