@@ -281,6 +281,9 @@ def IT_TABLE(self):
 
         CREATE TABLE vocabulary (id INT PRIMARY KEY,  english VARCHAR(50) NOT NULL, spanish VARCHAR(50) NOT NULL, grupo INT NOT NULL, ejemplos TEXT);
 
+
+        CREATE TABLE tienda (id INT PRIMARY KEY,   nick VARCHAR(100) NOT NULL, nombre VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL,direccion VARCHAR(100) NOT NULL, telefono VARCHAR(100) NOT NULL, password VARCHAR(250) NOT NULL, salt VARCHAR(150) NOT NULL, tipo_user VARCHAR(100) NOT NULL);
+
         INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (1, "LIVINGROOM", "SALA", 1,""); 
         INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (2, "KITCHEN", "COCINA", 1,""); 
         INSERT INTO vocabulary (id, english, spanish, grupo, ejemplos) VALUES (3, "BED", "CAMA", 1,""); 
