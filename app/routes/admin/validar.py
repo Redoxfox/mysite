@@ -23,7 +23,7 @@ MODODESARROLLO = 'DEFAULT'
 URLBASE = CONFIG['DEFAULT']['URLBASE']
 
 
-@app.route("/validar", methods=["GET", "POST"])
+""" @app.route("/validar", methods=["GET", "POST"])
 def validar():
     urlrev = URLBASE 
     username = CONFIG['TYPE_USER']['ROOT']
@@ -57,5 +57,5 @@ def validar():
         else:
             return render_template("/registro/login.html") 
     else:
-        return render_template("/registro/login.html")
+        return render_template("/registro/login.html") """
         

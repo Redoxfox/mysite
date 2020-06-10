@@ -44,7 +44,7 @@ def tablas():
 
     return (result)
 
-''' @app.route("/validar", methods=["GET", "POST"])
+@app.route("/validar", methods=["GET", "POST"])
 def validar():
     urlrev = URLBASE 
     username = CONFIG['TYPE_USER']['ROOT']
@@ -65,7 +65,22 @@ def validar():
          
     Data = (wid,)
     DatosUsers = connect.SW_TABLE(username, TSWusers, Data)
-    password_userbd = DatosUsers[0]['password']
+    if DatosUsers:
+        password_userbd = DatosUsers[0]['password']
+        salt_userbd = DatosUsers[0]['salt']
+        tipo_user = DatosUsers[0]['tipo_user']
+        hash= validaciones.Validar()
+        h2=hash.check_password(password_userbd, password, salt_userbd)
+
+        if h2 == True and tipo_user=="admin":
+            #return render_template("/admin/principal.html")
+            return redirect(url_for('admin'))
+        else:
+            return render_template("/registro/login.html") 
+    else:
+        return render_template("/registro/login.html")
+
+    ''' password_userbd = DatosUsers[0]['password']
     salt_userbd = DatosUsers[0]['salt']
     tipo_user = DatosUsers[0]['tipo_user']
     hash = validaciones.Validar()
@@ -79,6 +94,8 @@ def validar():
         return redirect(url_for('admin'))
     else:
         return render_template("/registro/login.html") '''
+
+     
 
 @app.route("/Estructura_tabla/", methods=["POST"])
 def Estructura_tabla():
