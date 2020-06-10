@@ -44,7 +44,7 @@ def tablas():
 
     return (result)
 
-@app.route("/validar", methods=["GET", "POST"])
+''' @app.route("/validar", methods=["GET", "POST"])
 def validar():
     urlrev = URLBASE 
     username = CONFIG['TYPE_USER']['ROOT']
@@ -78,7 +78,7 @@ def validar():
     if h2 is True and tipo_user == "admin":
         return redirect(url_for('admin'))
     else:
-        return render_template("/registro/login.html")
+        return render_template("/registro/login.html") '''
 
 @app.route("/Estructura_tabla/", methods=["POST"])
 def Estructura_tabla():
