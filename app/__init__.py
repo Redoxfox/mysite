@@ -15,3 +15,4 @@ from app.routes.project import gastos
 
 #Rutas de entradas blog portafolio
 from app.routes.blog import sopa_letras
+from app.routes.blog import coordenadas
