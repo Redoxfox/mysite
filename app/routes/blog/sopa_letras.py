@@ -25,21 +25,20 @@ CONFIG = json.loads(file)
 MODODESARROLLO = 'DEFAULT'
 URLBASE = CONFIG['DEFAULT']['URLBASE']
 
-@app.route("/blog/sopa_letters")
-def sopa_letters():
+@app.route("/blog/sopa_letters/<string:id_topic>")
+def sopa_letters(id_topic):
     Urlbase = URLBASE
     username = CONFIG['TYPE_USER']['ROOT']
     connect=Model(username)   
     #urlrev = URLBASE
     num_palabras = 0
-    TSSServicioPtado  = {'TABLE':'servicio',
+    TSSTopico  = {'TABLE':'grupo',
         'Col1':'id',
-        'Col2':'tipo',
-        'Col3':'costo',
+        'Col2':'topico'
         }
-    DatosServicioPtado = connect.SSP_TABLE(username,TSSServicioPtado)
+    DatosTopico = connect.SSP_TABLE(username,TSSTopico)
 
-    wid = "1"
+    wid = id_topic
     TSSVocabulary  = {'TABLE':'vocabulary',
         'Col1':'id',
         'Col2':'english',
@@ -55,6 +54,8 @@ def sopa_letters():
     Palabras_in_Crucigrama = []
     for items in PalabrasCrucigrama:
         list_id.append(items["id"])
+
+    
 
     acierto = 0
     num_palabras = 0
@@ -103,8 +104,8 @@ def sopa_letters():
     Data = [id, grupo, palabras] 
     res_insert = connect.IT_TABLE(username, Insert_ofCrucigrama , Data)   
 
-    return render_template("/blog/sopa.html", url = Urlbase, servicios = DatosServicioPtado, data = data,
-    palabras_crucigrama = Palabras_in_Crucigrama, id_crucigrama = proximo_id)
+    return render_template("/blog/sopa.html", url = Urlbase, data = data,
+    palabras_crucigrama = Palabras_in_Crucigrama, id_crucigrama = proximo_id, DatosTopico= DatosTopico)
 
 @app.route("/palabra/", methods=["POST"])
 def palabra():

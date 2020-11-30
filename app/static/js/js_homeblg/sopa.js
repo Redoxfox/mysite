@@ -3,23 +3,23 @@ function getRndInteger(min, max) {
 }
 
 function coord(x,y) {
-    id = "cood_" + x + "-" + y
+    let id = "cood_" + x + "-" + y
     let celda = document.getElementById(id);
     let palabra = document.getElementById("palabra");
 
-    value_anterior = palabra.value
-    value_letter = celda.innerText
+    let value_anterior = palabra.value
+    let value_letter = celda.innerText
     palabra.value =  value_anterior + value_letter
     console.log(celda)
     console.log(sessionStorage) 
-    typeof(sessionStorage)
+
     if (sessionStorage.length==0) {
-        var d = new Date();
-        document.getElementById("horas").innerHTML = d.toLocaleTimeString();
+        var hora_ini = new Date().toLocaleTimeString();
+        //document.getElementById("horas").innerHTML = d.toLocaleTimeString();
         let rbgRojo = getRndInteger(200, 255);
         let rbgVerde = getRndInteger(200, 255);
         let rgbAzul = getRndInteger(200, 255);
-        rbgColor = rbgRojo + ","+ rbgVerde + "," + rgbAzul
+        let rbgColor = rbgRojo + ","+ rbgVerde + "," + rgbAzul
         celda.style.background = "rgb(" + rbgColor +")";
         localStorage.setItem('rgbColor', rbgColor)
         localStorage.setItem('aciertos', 0)
@@ -27,18 +27,27 @@ function coord(x,y) {
         var obj = new Object();
         var casilla = x + "-" + y
         obj.value_letter = [value_letter, casilla]
-        objSerialized = JSON.stringify(obj);
+        let objSerialized = JSON.stringify(obj);
         sessionStorage.setItem(0 , objSerialized);
-        console.log(obj)
+        
+        let id_faltan = document.getElementById("horas");
+        console.log(id_faltan)
+        if (id_faltan.textContent==" ") {
+          tiempo(hora_ini)
+        }
+        
+        //console.log(xx)
     } else {
         var obj = new Object();
-        key = sessionStorage.length
+        let key = sessionStorage.length
         var casilla = x + "-" + y
         obj.value_letter = [value_letter, casilla]
-        objSerialized = JSON.stringify(obj);
+        let objSerialized = JSON.stringify(obj);
         sessionStorage.setItem(key, objSerialized);
         let rbgColor = localStorage.getItem('rgbColor')
         celda.style.background = "rgb(" + rbgColor +")";
+        //let xx = tiempo()
+        //console.log(xx)
     }
 }
 
@@ -48,8 +57,8 @@ function borrar_palabra(){
   for (let index = 0; index < sessionStorage.length; index++) {
     let element = sessionStorage.getItem(index);
     let valor_json = JSON.parse(element);
-    valor = valor_json.value_letter[1]
-    id = "cood_" + valor;
+    let valor = valor_json.value_letter[1]
+    let id = "cood_" + valor;
     console.log(id)
     let celda = document.getElementById(id);
     celda.style.background = "white"
@@ -70,12 +79,147 @@ function ocultar(id){
   document.getElementById("intrucciones").innerHTML =""
 }
 
-function tiempo(){
+function new_soup_topic(id) {
+  let url = window.origin
+  window.location.href = url + "/blog/sopa_letters/" + id.toString();
+}
+
+function tiempo(hora_ini){
   var myVar = setInterval(myTimer, 1000);
   function myTimer() {
-    var d = new Date();
-    document.getElementById("segundos").innerText= myVar;
+     var hora_gactual = new Date().toLocaleTimeString();
+     //console.log(typeof(hora_ini));
+     let s_hora_ini = hora_ini.split(" ");
+     let valor_hora_ini = s_hora_ini[0];
+     let split_valor_hora_ini = valor_hora_ini.split(":");
+     let s_hora_actual = hora_gactual.split(" ");
+     let valor_hora_actual = s_hora_actual[0];
+     let split_valor_hora_act = valor_hora_actual.split(":");
+     let hora_inicial = parseInt(split_valor_hora_ini[0]);
+     let min_inicial = parseInt(split_valor_hora_ini[1]);
+     let seg_inicial = parseInt(split_valor_hora_ini[2]);
+     let hora_actual = parseInt(split_valor_hora_act[0]);
+     let min_actual = parseInt(split_valor_hora_act[1]);
+     let seg_actual = parseInt(split_valor_hora_act[2]);
+     let total_seg_ini = 0
+     let total_seg_act = 0
+     let mod_hour = 0
+     let mod_min = 0
+     let total_seg = 0
+     let t_in_horas = 0;
+     let t_in_min = 0;
+     let t_in_seg = 0;
+
+    //Tiempo cambio(AM-AM)
+    if (s_hora_ini[1] == "AM" && s_hora_actual[1] == "AM"){
+      total_seg_ini = hora_inicial*3600 + min_inicial*60 + seg_inicial
+      total_seg_act = hora_actual*3600 + min_actual*60 + seg_actual
+      total_seg = total_seg_act - total_seg_ini 
+      if (total_seg < 61) {
+        t_in_seg = total_seg
+      } else {
+        mod_min = total_seg%60
+        if (mod_min === 0) {
+          t_in_min = total_seg / 60
+          t_in_seg = total_seg - t_in_min*60
+        } else {
+          t_in_min = Math.trunc((total_seg/60))
+          t_in_seg = total_seg - t_in_min*60
+        }
+        mod_hour = total_seg%3600
+        if (mod_hour === 0) {
+          t_in_horas = total_seg / 3600
+        } else {
+          t_in_horas = Math.trunc((total_seg/3600))
+        }
+
+      }
+    }
+
+  //Tiempo cambio(AM-PM)
+  if (s_hora_ini[1] == "AM" && s_hora_actual[1] == "PM"){
+    total_seg_ini = hora_inicial*3600 + min_inicial*60 + seg_inicial
+    total_seg_act = (12+hora_actual)*3600 + min_actual*60 + seg_actual
+    total_seg = total_seg_act - total_seg_ini 
+    if (total_seg < 61) {
+      t_in_seg = total_seg
+    } else {
+      mod_min = total_seg%60
+      if (mod_min === 0) {
+        t_in_min = total_seg / 60
+        t_in_seg = total_seg - t_in_min*60
+      } else {
+        t_in_min = Math.trunc((total_seg/60))
+        t_in_seg = total_seg - t_in_min*60
+      }
+      mod_hour = total_seg%3600
+      if (mod_hour === 0) {
+        t_in_horas = total_seg / 3600
+      } else {
+        t_in_horas = Math.trunc((total_seg/3600))
+      }
+    }
+  }
+     
+    //Tiempo cambio (PM-PM)
+     if (s_hora_ini[1] == "PM" && s_hora_actual[1] == "PM"){
+        total_seg_ini = (12+hora_inicial)*3600 + min_inicial*60 + seg_inicial
+        total_seg_act = (12+hora_actual)*3600 + min_actual*60 + seg_actual
+        total_seg = total_seg_act - total_seg_ini 
+        if (total_seg < 61) {
+          t_in_seg = total_seg
+        } else {
+          mod_min = total_seg%60
+          if (mod_min === 0) {
+            t_in_min = total_seg / 60
+            t_in_seg = total_seg - t_in_min*60
+          } else {
+            t_in_min = Math.trunc((total_seg/60))
+            t_in_seg = total_seg - t_in_min*60
+          }
+          mod_hour = total_seg%3600
+          if (mod_hour === 0 ) {
+            t_in_horas = total_seg / 3600
+            t_in_min = total_seg - t_in_horas*60
+          } else {
+            t_in_horas = Math.trunc((total_seg/3600))
+          }
+
+        }
+
+     }
+
+     //Tiempo cambio (PM-AM)
+     if (s_hora_ini[1] == "PM" && s_hora_actual[1] == "AM"){
+        total_seg_ini = (12+hora_inicial)*3600 + min_inicial*60 + seg_inicial
+        total_seg_act = hora_actual*3600 + min_actual*60 + seg_actual
+        total_seg = total_seg_act - total_seg_ini 
+        if (total_seg < 61) {
+          t_in_seg = total_seg
+        } else {
+          mod_min = total_seg%60
+          if (mod_min === 0) {
+            t_in_min = total_seg / 60
+            t_in_seg = total_seg - t_in_min*60
+          } else {
+            t_in_min = Math.trunc((total_seg/60))
+            t_in_seg = total_seg - t_in_min*60
+          }
+          mod_hour = total_seg%3600
+          if (mod_hour === 0) {
+            t_in_horas = total_seg / 3600
+          } else {
+            t_in_horas = Math.trunc((total_seg/3600))
+          }
+        }
+     }
+
+
+     let d = t_in_horas.toString() + ":" + t_in_min.toString() + ":" + t_in_seg.toString()
+     document.getElementById("horas").innerHTML = d;
+     return d
   } 
+  return myVar;
 }
 
 
@@ -147,7 +291,7 @@ fetch(url, {
       return;
     }
     response.json().then(function (data) {
-      acierto = data.acierto
+      let acierto = data.acierto
       console.log(data)
       var coordenadas = data.coordenadas
       if (acierto) {
@@ -157,13 +301,13 @@ fetch(url, {
         let id_faltan = document.getElementById("faltan");
         //let cp = id_aciertos.match(patron_aciertos)
         //console.log(patron_aciertos)
-        numero_aciertos = parseInt(id_aciertos.innerText) + 1
-        faltan = 15 - numero_aciertos
+        let numero_aciertos = parseInt(id_aciertos.innerText) + 1
+        let faltan = 15 - numero_aciertos
         id_aciertos.innerText =  numero_aciertos
         id_faltan.innerText =  faltan
         
         let idpalabra = data.palabra
-        palabra_english = document.getElementById(idpalabra);
+        let palabra_english = document.getElementById(idpalabra);
         palabra_english.style.textDecoration = "line-through"
         palabra_english.style.background = "green"
         let palabra = document.getElementById("palabra");

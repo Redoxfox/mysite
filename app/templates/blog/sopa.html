@@ -8,7 +8,20 @@
     <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='js/js_homeblg/sopa.js')}}"></script>
 </head>
 <body>
-    
+    <div class="Topicos"> 
+        <form action="" class="container_estadisticas">
+            <div class="container_item">
+                <label for="">Topics</label>
+            </div>
+            <div class="container_item">
+                <select name="topic" id="topic" class="select_topicos">
+                    {% for row in DatosTopico %}
+                        <option value="{{row.id}}" onclick='new_soup_topic({{row.id}})'>{{row.topico}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form> 
+    </div>
     <div class="estadisticas">
         <div class="container_estadisticas">
             <div class="container_item">
@@ -37,6 +50,7 @@
         </div>
     </div>
     <div class="container_action">
+        
         <div class="action"> 
             <div class="palabra">
                 <button id="comprobar" onclick="comprobar_palabra()">Comprobar palabra</button>
@@ -76,6 +90,8 @@
             {% endfor %}
         </div>
     </div>
+
+  
 
     <div class="definiciones">
 

@@ -1,6 +1,6 @@
 /* CSS Variables */
 :root {
-    --primary: rgba(214, 218, 216, 0.925);
+    --primary: rgba(239, 247, 243, 0.925);
     /*--primary: rgba(120, 129, 126, 0.925);
     --dark: rgb(245, 247, 244);*/
     --dark: rgb(29, 31, 29);
@@ -17,7 +17,7 @@
   }
 
   body {
-    background: rgb(107, 204, 51);
+    background: white;
     margin-left: 30px;
     margin-right: 30px;
     line-height: 1.4;
