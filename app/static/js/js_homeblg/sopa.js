@@ -1,3 +1,5 @@
+var myVar;
+
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -33,7 +35,8 @@ function coord(x,y) {
         let id_faltan = document.getElementById("horas");
         console.log(id_faltan)
         if (id_faltan.textContent==" ") {
-          tiempo(hora_ini)
+          let estado = "correr"
+          tiempo(hora_ini, estado)
         }
         
         //console.log(xx)
@@ -79,13 +82,15 @@ function ocultar(id){
   document.getElementById("intrucciones").innerHTML =""
 }
 
-function new_soup_topic(id) {
-  let url = window.origin
-  window.location.href = url + "/blog/sopa_letters/" + id.toString();
-}
+// function new_soup_topic(id) {
+//   let url = window.origin
+//   window.location.href = url + "/blog/sopa_letters/" + id.toString();
+// }
 
-function tiempo(hora_ini){
-  var myVar = setInterval(myTimer, 1000);
+function tiempo(hora_ini,estado){
+  
+  if (estado==="correr") {
+  myVar = setInterval(myTimer, 1000);  
   function myTimer() {
      var hora_gactual = new Date().toLocaleTimeString();
      //console.log(typeof(hora_ini));
@@ -220,6 +225,11 @@ function tiempo(hora_ini){
      return d
   } 
   return myVar;
+} else {
+  clearInterval(myVar);
+  //console.log(myVar)
+  //document.getElementById("horas").innerHTML = d;
+}
 }
 
 
@@ -321,6 +331,9 @@ fetch(url, {
           celda.removeAttribute("onclick")
         }
         if (numero_aciertos==15) {
+          var hora_ini = new Date().toLocaleTimeString();
+          let estado = "parar"
+          tiempo(hora_ini, estado)
           alert("Felicitaciones has terminado con exito!!!...")
         }
       } else {

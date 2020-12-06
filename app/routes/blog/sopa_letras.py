@@ -25,12 +25,19 @@ CONFIG = json.loads(file)
 MODODESARROLLO = 'DEFAULT'
 URLBASE = CONFIG['DEFAULT']['URLBASE']
 
-@app.route("/blog/sopa_letters/<string:id_topic>")
-def sopa_letters(id_topic):
+@app.route("/blog/sopa_letters/", methods=["GET", "POST"])
+def sopa_letters():
     Urlbase = URLBASE
     username = CONFIG['TYPE_USER']['ROOT']
     connect=Model(username)   
     #urlrev = URLBASE
+    if request.method == "POST":
+        id_topic = request.form['topic']
+    else:
+        id_topic = "1"
+
+    print(id_topic)    
+       
     num_palabras = 0
     TSSTopico  = {'TABLE':'grupo',
         'Col1':'id',

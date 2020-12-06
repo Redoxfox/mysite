@@ -9,16 +9,19 @@
 </head>
 <body>
     <div class="Topicos"> 
-        <form action="" class="container_estadisticas">
+        <form action="{{url}}/blog/sopa_letters/" class="container_estadisticas" method="POST">
             <div class="container_item">
                 <label for="">Topics</label>
             </div>
             <div class="container_item">
                 <select name="topic" id="topic" class="select_topicos">
                     {% for row in DatosTopico %}
-                        <option value="{{row.id}}" onclick='new_soup_topic({{row.id}})'>{{row.topico}}</option>
+                        <option value="{{row.id}}" >{{row.topico}}</option>
                     {% endfor %}
                 </select>
+            </div>
+            <div class="container_item">
+                <button type="submit" id="button">Change topic</button>
             </div>
         </form> 
     </div>
