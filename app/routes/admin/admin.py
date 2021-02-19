@@ -205,5 +205,97 @@ def grupos():
     return (DatosAllGrupos_json)
 
 
+@app.route("/NewVerb/")
+def NewVerb():
+    urlrev = URLBASE
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    
+    Tabla_All_Grupos = dict()
+    Tabla_All_Grupos = {'TABLE':'grupo',
+        'Col1':'id',
+        'Col2':'topico'
+    }
+   
+    DatosAllGrupos = connect.SSP_TABLE(username, Tabla_All_Grupos)
 
+    DatosAllGrupos_json = json.dumps(DatosAllGrupos) 
+    
+    return render_template("/admin/addNewVerb.html")
+
+
+@app.route("/add_NewVerb/", methods=["POST"])
+def add_NewVerb():
+    Urlbase = URLBASE
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect = Model(username)   
+    req = request.get_json()
+    result = {}
+    id = None
+    if request.method == "POST":
+        english_form = request.form["english"]
+        spanish_form = request.form["spanish"]
+        past_form = request.form["past"]
+        pronunciation = request.form["pronunc"]
+        tipo = request.form["tipo"]
+        present = request.form["present"]               
+        future = request.form["future"]                
+                                                      
+    english = english_form.upper()
+    spanish = spanish_form.upper() 
+    past = past_form.upper()
+    
+    
+    wid = english
+    TSWVocabulary = dict()
+    TSWVocabulary = {'TABLE': 'verbs', 
+        'Col1': 'english',
+        'Whe2': 'english=%s'
+    }
+         
+    Data = (wid,)
+    DatosVocabulary = connect.SW_TABLE(username, TSWVocabulary, Data)
+
+    if DatosVocabulary:
+        result["new_topico"] = "Ya se encuentra registrado " + english + " en BD"
+    else:
+        Insert_ofvocabulary = dict()
+        Insert_ofvocabulary = {'TABLE':'verbs',
+            'Col1':'id',
+            'Col2':'english',
+            'Col3':'spanish',
+            'Col4':'present',
+            'Col5':'pass',
+            'Col6':'future',
+            'Col7':'pronunciation',
+            'Col8':'tipo',
+            'Val9':'%s',
+            'Val10':'%s',
+            'Val11':'%s',
+            'Val12':'%s',
+            'Val13':'%s',
+            'Val14':'%s',
+            'Val15':'%s',
+            'Val16':'%s'
+        }
+        Data = [id,  english, spanish,  present, past, future, pronunciation, tipo]
+        result["new_topico"] = "Registro exitoso"
+        res_insert = connect.IT_TABLE(username,  Insert_ofvocabulary, Data) 
+
+    
+    TSSVerbs = dict()
+    TSSVerbs  = {'TABLE':'verbs',
+        'Col1':'id',
+        'Col2':'english',
+        'Col3':'spanish',
+        'Col4':'pronunciation',
+        'Col5':'pass'
+        }
+   
+    DatosVerbs = connect.SSP_TABLE(username,TSSVerbs)
+  
+        
+    return render_template("/admin/addNewVerb.html", url = Urlbase, verbs = DatosVerbs)
+
+    
 

@@ -31,7 +31,7 @@
                 </li>
                 <li><a onclick="new_topic()">Nuevo Topico</a>
                 </li>
-                <li><a href="{{url}}/NewVerb">Nuevo Verbo</a>
+                <li><a href="{{url}}/blog/coordenadas">Nuevo Verbo</a>
                 </li> 
             </ul>   
         </li>   
@@ -63,7 +63,77 @@
 </nav>
 
 <div id="contenedor_principal" class="contenedor_principal">
+    <div id="form" class="body_form">
+        <div class="contenedor_primario_form">
+            <h2 class="item_titulo">Registrar palabras</h2>
+                <div class="contenedor_form">
+                    <h3>Agregar palabra vocabulario</h3>
+                    <form action="{{url}}/add_NewVerb/" method="post" id="form1">
+                        <p class="item_form">
+                            <label>English:</label>
+                            <input type="text"  name = "english" >
+                        </p>
+                        <p>
+                            <label>Spanish:</label>
+                            <input type="text"  name = "spanish" >
+                        </p>
+
+                        <p>
+                            <label>Past:</label>
+                            <input type="text"  name = "past" >
+                        </p>
+
+                        <p>
+                            <label>pronunciation:</label>
+                            <input type="text"  name = "pronunc" >
+                        </p>
+
+                        <p>
+                            <label>Tipo:</label>
+                            <select name="tipo" id="grupo">
+                                <option value="regular">Regular Verb</option>
+                                <option value="irregular">Irregular Verb</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label>present:</label>
+                            <input type="text"  name = "present" value="ND">
+                        </p>
+
+                        <p>
+                            <label>future:</label>
+                            <input type="text"  name = "future" value="ND">
+                        </p>
+
+                        <p>
+                            <button type="submit">Enviar Registro</button>
+                        </p>                   
+                    </form>      
+                </div>
+        </div>
+    </div>
 </div>
+
+<br>
+
+<table >
+    <tr>
+      <td>Verbs</td>
+      <td>Past</td>
+      <td>Finish</td>
+      <td>Spanish</td>
+    </tr>
+    {% for valor in verbs %}
+    <tr>
+      <td>{{valor.english}}</td>
+      <td>{{valor.pass}}</td>
+      <td>/{{valor.pronunciation}}/</td>
+      <td>{{valor.spanish}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 <script src="{{ url_for('static', filename='js/js_homead/admin.js') }}"></script>    
 </body>
 </html>

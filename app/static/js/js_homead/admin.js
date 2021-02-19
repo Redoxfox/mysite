@@ -206,20 +206,6 @@ function new_palabra(){
     document.getElementById("form").innerHTML =`
         <div class="contenedor_primario_form">
             <h2 class="item_titulo">Registrar palabras</h2>
-            <div class="contenedor_secundario">
-                <div class="contenedor_info">
-                    <h3>Registro palabras ingles</h3>
-                    <ul>
-                        <li>Proyecto</li>
-                        <li>Sopa letras</li>
-                        <li>Insertar palabras</li>
-                        <div class="caja">
-                            <div class="box">
-                                <img src="/static/imgs/sopa.jpg" alt="">
-                            </div>
-                        </div>    
-                    </ul>
-                </div>
                 <div class="contenedor_form">
                     <h3>Agregar palabra vocabulario</h3>
                     <form id="form1">
@@ -254,7 +240,6 @@ function new_palabra(){
                     </form>
                     
                 </div>
-            </div>
         </div>
         `
         grupos();
@@ -272,20 +257,6 @@ function new_topic(){
     document.getElementById("form").innerHTML =`
         <div class="contenedor_primario_form">
             <h2 class="item_titulo">Registrar palabras</h2>
-            <div class="contenedor_secundario">
-                <div class="contenedor_info">
-                    <h3>Registro palabras ingles</h3>
-                    <ul>
-                        <li>Proyecto</li>
-                        <li>Sopa letras</li>
-                        <li>Insertar palabras</li>
-                        <div class="caja">
-                            <div class="box">
-                                <img src="/static/imgs/sopa.jpg" alt="">
-                            </div>
-                        </div>    
-                    </ul>
-                </div>
                 <div class="contenedor_form">
                     <h3>Agregar palabra vocabulario</h3>
                     <form id="form1">
@@ -301,7 +272,6 @@ function new_topic(){
                         </p>
                     </form>
                 </div>
-            </div>
         </div>
           `
 }

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning English</title>
+    <link href= "{{ url_for('static', filename='css/css_homepl/index.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css" media="screen" />   
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <main class="container">
+        <div class="head_names">
+            <div class="nombre"> 
+                Carlos Mario Torres 
+            </div>
+    
+            <div class="Logo-cv"> 
+                <div id="logo-cv">CMT</div>
+            </div>
+
+            <div class="Logo-cv"> 
+            
+            </div> 
+    
+            <div class="profesion">
+                My elements of Learning english
+            </div>
+        </div>
+    
+        <div class="descripcion">
+            <div  class="presentacion" id="sobre-my">
+                <h4 id="titulo-items"><strong>Sobre mí: Una breve descripcion</strong></h4>
+                <p >
+                   Hola! Mi nombre es Carlos Mario Torres, soy estudiante del quinto semestre de Ingenieria de Sistemas, en la Universidad Abierta y a 
+                   Distancia (UNAD).
+                </p>  
+                <p>
+                   Aunque en el momento no cuento con experiencia laboral, ni un titulo en el area de sistemas. Si cuento con un titulo de Tecnología Quimica 
+                   de la Universidad de Antioquia y experiencia laboral de aproximadamente 8 años en la industria quimica. 
+               </p> 
+               <p> 
+                   Sin embargo soy una persona autodidacta, dedicada y muy apasionado por los lenguajes de programacion y desde el 2014 de forma personal he trabajado
+                   en proyectos en lenguajes de programacion como PHP, Python, Javascript, C#, Java, Fortran, Matlab, Tcl/tk, VBA/Excel y SO Linux; Enfocado principalmente
+                   a desarrollar aplicaciones web principalmente en el micro-framework Flask escrito en python y hace unos meses en el stack MERN de Javascript.
+               </p>      
+            </div>
+            <div class="img-profile">
+                <img class="img-log" src="{{ url_for('static', filename='imgs/perfil.jpg') }}">
+                <p>El futuro pertenece a quienes creen en sus sueños</p>
+                <p>(Eleanor Roosevelt)</p>
+            </div>
+        </div>
+
+        <div >  
+        </div>  
+            <nav class="Menu-proyectos" id="menu-proyectos">
+                <ul class="option-menu" >
+                    <li ><a href="#" class="menuitems">Flask</a></li>
+                    <li ><a href="#" class="menuitems">Javascript</a></li>
+                    <li ><a href="#" class="menuitems">Node.js</a></li>
+                    <li ><a href="#" class="menuitems">Flutter</a></li>
+                    <li ><a href="{{url}}/registro" class="menuitems">Todos</a></li>
+                </ul>
+            </nav>
+        
+        <div class="titulo-proyectos">
+            <hr>
+                Mis proyectos 
+            <hr>
+        </div>
+        <section class="vista-proyectos">
+            <div class="show-project">
+                <div class="items-proyectos">
+                    <h2>Lavasplash lavado ecologico</h2>
+                    <img class="img-project" src="https://picsum.photos/250/300" >
+                    <div class="float-lateral">
+                        <h4 class="titulo-items-app"><strong>Aplicacion Web para empresa lavado ecologico.</strong></h4>
+                        <p >
+                            Lavasplah es una inicitiva que promueve el lavado de vehiculos de forma ecologica, su principal 
+                            objetivo es la no utilizcion de agua en el lavado de vehiculos.
+                        </p>  
+                        <p>
+                            Esta simple aplicacion permite la administracion y seguimiento de los servicios prestados permitiendo. 
+                        </p> 
+                        <p> 
+                            <ul>
+                                <li class="items-app">Crecion de nuevo servicio de lavado.</li>
+                                <li class="items-app">Registro servicio solicitado por cliente.</li>
+                                <li class="items-app">Creacion de nuevos clientes.</li>
+                                <li class="items-app">Listado de servicios prestados a los clientes.</li>
+                                <li class="items-app">Consulta de servicios realizados.</li>        
+                            </ul>
+                        </p>     
+                    </div> 
+                    <div class="btn-project-show">
+                        <a href="{{url}}/lavasplash/index_ls">Ver aplicacion</a>
+                    </div>            
+                </div> 
+                <div class="items-proyectos">
+                    <h2>Control de finanazas personales</h2>
+                    <img class="img-project"  src="https://picsum.photos/250/300">
+                    <div class="float-lateral">
+                        <h4 class="titulo-items-app"><strong>Aplicacion Web para control de finanzas personales. </strong></h4>     
+                        <p >
+                            Iniciativa personal para el control de finanzas personales. 
+                        </p>  
+                        <p>
+                            Esta simple aplicacion permite la administracion y seguimiento de ingresos y gastos. Se implementan los
+                            siguientes servicios.
+                        </p> 
+                        <p> 
+                            <ul>
+                                <li class="items-app">Agregar nuevo ingreso.</li>
+                                <li class="items-app">Agregar nuevo gasto.</li>
+                                <li class="items-app">Consulta de saldo.</li>
+                                <li class="items-app">Calendario con seguimiento de movimientos.</li>       
+                            </ul>
+                        </p>         
+                    </div>
+                    <div class="btn-project-show">
+                        <a href="{{url}}/gastos/index_gp">Ver aplicacion</a>
+                    </div>    
+                </div>
+                <div class="items-proyectos">
+                    <h2>Juego Sopa Letras</h2>
+                    <img class="img-project"  src="https://picsum.photos/250/300">
+                    <div class="float-lateral">
+                        <h4 class="titulo-items-app"><strong>Aplicación Web Juego Sopa de Letras.</strong></h4>     
+                        <p>
+                            Iniciativa personal para practicar y aprender ingles con un juego tradicional. 
+                        </p>  
+                        <p>
+                            Esta simple aplicación presenta una sopa de letras se genera aleatoriamente y consta de 15 palabras.
+                            Se implementan las siguientes pestaciones.
+                        </p> 
+                        <p> 
+                            <ul>
+                                <li class="items-app">Conteo palabras acertadas y faltantes.</li>
+                                <li class="items-app">Marcación de palabras con colores.</li>
+                                <li class="items-app">Subrayado palabras encontradas.</li>
+                                <li class="items-app">Menu de instruciones.</li>  
+                                <li class="items-app">Creacion de nueva sopa letras.</li>  
+                            </ul>
+                        </p>     
+                    </div>
+                    <div class="btn-project-show">
+                        <a href="{{url}}/blog/sopa_letters/">Ver aplicacion</a>
+                    </div>    
+                </div>
+
+                <div class="items-proyectos">
+                    <h2>Simulación comsumo API</h2>
+                    <img class="img-project"  src="https://picsum.photos/250/300">
+                    <div class="float-lateral">
+                        <h4 class="titulo-items-app"><strong>Aplicación Web para simulación de coordenadas</strong></h4>     
+                        <p>
+                            Obtener coordenadas de un arreglo. 
+                        </p>  
+                        <p>
+                            Esta simple aplicación consta de una lista de coordenas.
+                        </p> 
+                        <p> 
+                            <ul>
+                                <li class="items-app">HTML vista.</li>
+                                <li class="items-app">CSS estilos.</li>
+                                <li class="items-app">Javascript consumo API.</li>
+                                <li class="items-app">Fecth protocolo HTTP.</li>  
+                            </ul>
+                        </p>     
+                    </div>
+                    <div class="btn-project-show">
+                        <a href="{{url}}/blog/coordenadas">Ver aplicacion</a>
+                    </div>    
+                </div>
+            </div>  
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="sociales">
+            <a href="https://twitter.com/CarlosM06905817"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com/cmrestrepo1"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/Redoxfox"><i class="fab fa-github-square"></i></i></a>
+            <a href="https://www.linkedin.com/in/carlos-torres-b2446629/"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/sobre-my.js') }}" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b6bfe8df39.js" crossorigin="anonymous"></script>       
+</body>
+</html>

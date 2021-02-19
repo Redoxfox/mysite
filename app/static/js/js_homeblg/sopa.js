@@ -330,11 +330,74 @@ fetch(url, {
           let celda = document.getElementById(id);
           celda.removeAttribute("onclick")
         }
-        if (numero_aciertos==15) {
+        if (numero_aciertos==1) {
           var hora_ini = new Date().toLocaleTimeString();
           let estado = "parar"
           tiempo(hora_ini, estado)
-          alert("Felicitaciones has terminado con exito!!!...")
+          let $mytime = document.getElementById("horas");
+          let mytime = $mytime.textContent
+          let s_mytime = mytime.split(":");
+          let hour = parseInt(s_mytime[0]);
+          let min = parseInt(s_mytime[1]);
+          let seg = parseInt(s_mytime[2]);
+          let total_seg = hour*3600 + 60*min + seg
+          const url_score = window.origin + "/palabra/";
+
+          document.getElementById("score").innerHTML =`
+          <div class="container_titulo">
+            <div id="titulo_instruciones">
+              <strong>Felicitaciones has terminado con exito!!!...</strong>
+            </div>
+            <div id="container_cerrar">
+                <div id="cerrar"> X </div>
+            </div>
+          </div>
+          <div class="container_instrucciones">
+            <div class="stats_game">
+              <div class="item_stats_p">
+                <h4>Tu tiempo de juego<h4/>
+                <ul> 
+                  <li>horas: ${hour} </li>
+                  <li>mins: ${min} </li>
+                  <li>Segs: ${seg} </li>
+                </ul>
+              </div>
+              
+              <div class="item_stats_p">
+                <h4>Ranking de juego<h4/>
+                <ul> 
+                  <li>horas: ${hour} </li>
+                  <li>mins: ${min} </li>
+                  <li>Segs: ${seg} </li>
+                </ul>
+              </div>
+              <form class="item_stats">
+                <h4>Registra tu score </h4>
+                <label>Nombre:</label>
+                <input type="text"  name = "name" >
+                <label>Ciudad:</label>
+                <input type="text"  name = "city" >
+                <button type="submit" onclick="topicos(event);">Enviar Registro</button>
+              </form>  
+              
+              <div class="item_stats">
+            
+              </div> 
+            </div>
+          <div class="container_titulo">
+              <div id="titulo_instruciones">
+                <strong>Diviertete!!...</strong>
+              </div>
+          </div>
+       
+          `
+          let $modal_sc = document.getElementById("modal_sc")
+          $modal_sc.classList.add("bg-active")
+          $modal_sc.classList.add("modal_sc")
+          console.log(total_seg)
+          // alert("Felicitaciones has terminado con exito!!!...")
+          
+          
         }
       } else {
         let palabra = document.getElementById("palabra");

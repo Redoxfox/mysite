@@ -44,3 +44,9 @@ def ver_coordenadas():
        servidor WEB no se pueden ver a menos que se implemente desde cero la APP"""
     return result
 
+
+#Vista principal de la aplicación
+@app.route("/blog/english/", methods=["GET"])
+def english():
+    #Ruta para mostrar vista coordenadas
+    return render_template("/blog/english.html")
