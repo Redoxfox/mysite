@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion de sitio web</title>
+    <link href= "{{ url_for('static', filename='css/css_homead/admin.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/css_general/forms.css') }}" rel="stylesheet" type="text/css" media="screen" /> 
+    <link href= "{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css" media="screen" />   
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet"> 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+</head>
+<body>
+<nav class="main-nav">
+    <ul id="admin_BD" onmouseover = "mostrar('BD')" onmouseout="ocultar('BD')">
+        <li><a>Administracion BD</a>
+            <ul id="BD" >
+                <li><a onclick="ver_tablas()">Ver Tablas</a>
+                </li>
+                <li><a>Administracion Blog</a>
+                </li>
+                <li><a>Administracion Blog</a>
+                </li> 
+            </ul>   
+        </li>
+    </ul>
+    <ul id="admin_Blog" onmouseover="mostrar('Blog')" onmouseout="ocultar('Blog')">
+        <li><a>Administracion Blog</a>
+            <ul id="Blog"  >
+                <li><a  href="{{url}}/NewWord">Nueva palabra</a>
+                </li>
+                <li><a onclick="new_topic()">Nuevo Topico</a>
+                </li>
+                <li><a href="{{url}}/NewVerb">Nuevo Verbo</a>
+                </li> 
+            </ul>   
+        </li>   
+    </ul>
+    <ul id="admin_App" onmouseover="mostrar('App')" onmouseout="ocultar('App')" >
+        <li><a>Administracion App</a>
+            <ul id="App" >
+                <li><a>Administracion Blog</a>
+                </li>
+                <li><a>Administracion Blog</a>
+                </li>
+                <li><a>Administracion Blog</a>
+                </li> 
+            </ul>   
+        </li>  
+    </ul>
+    <ul id="admin_ND" onmouseover="mostrar('ND')" onmouseout="ocultar('ND')">
+        <li><a>Administracion X</a>
+            <ul id="ND" >
+                <li><a>Administracion Blog</a>
+                </li>
+                <li><a>Administracion Blog</a>
+                </li>
+                <li><a>Administracion Blog</a>
+                </li> 
+            </ul>   
+        </li>   
+    </ul>
+</nav>
+
+<div id="contenedor_principal" class="contenedor_principal">
+</div>
+<script src="{{ url_for('static', filename='js/js_homead/admin.js') }}"></script>    
+</body>
+</html>

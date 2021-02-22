@@ -228,7 +228,7 @@ function new_palabra(){
                             <label >Ejemplos:</label>
                             <textarea name="ejemplos" id="ejemplos" cols="30" rows="5"></textarea>
                         </p>
-
+                        ALTER TABLE post ADD summary text;
                         <p>
                         <button type="submit" onclick="stopDefAction(event);">Enviar Registro</button>
                         </p>

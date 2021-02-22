@@ -138,19 +138,23 @@ def add_topico():
     
     return result
 
-@app.route("/add_palabra/", methods=["POST"])
-def add_palabra():
+@app.route("/add_NewWord", methods=["POST"])
+def add_NewWord():
     Urlbase = URLBASE
     username = CONFIG['TYPE_USER']['ROOT']
     connect = Model(username)   
     req = request.get_json()
     result = {}
     id = None
-    english = req["english"].upper()
-    spanish = req["spanish"].upper() 
-    grupo = req["grupo"] 
-    ejemplos = req["ejemplos"]
+    if request.method == "POST":
+        english_form = request.form["english"].upper()
+        spanish_form = request.form["spanish"].upper() 
+        grupo = request.form["grupo"] 
+        ejemplos = request.form["ejemplos"]
+        pronunc = request.form["pronunc"] 
     
+    english = english_form.upper()
+    spanish = spanish_form.upper() 
     
     wid = english
     TSWVocabulary = dict()
@@ -162,8 +166,16 @@ def add_palabra():
     Data = (wid,)
     DatosVocabulary = connect.SW_TABLE(username, TSWVocabulary, Data)
 
+    Tabla_All_Grupos = dict()
+    Tabla_All_Grupos = {'TABLE':'grupo',
+        'Col1':'id',
+        'Col2':'topico'
+    }
+   
+    DatosAllGrupos = connect.SSP_TABLE(username, Tabla_All_Grupos)
+
     if DatosVocabulary:
-        result["new_topico"] = "Ya se encuentra registrado " + english + " en BD"
+        result["message"] = "Ya se encuentra registrado " + english + " en BD"
     else:
         Insert_ofvocabulary = dict()
         Insert_ofvocabulary = {'TABLE':'vocabulary',
@@ -172,19 +184,29 @@ def add_palabra():
             'Col3':'spanish',
             'Col4':'grupo',
             'Col5':'ejemplos',
-            'Val6':'%s',
+            'Col6':'pronunc',
             'Val7':'%s',
             'Val8':'%s',
             'Val9':'%s',
-            'Val10':'%s'
+            'Val10':'%s',
+            'Val11':'%s',
+            'Val12':'%s'
         }
-        Data = [id,  english, spanish,  grupo, ejemplos]
-        result["new_topico"] = "Registro exitoso"
+        Data = [id,  english, spanish,  grupo, ejemplos, pronunc]
+        result["message"] = "Registro exitoso"
         res_insert = connect.IT_TABLE(username,  Insert_ofvocabulary, Data) 
+
+    Tabla_All_Words = dict()
+    Tabla_All_Words = {'TABLE':'vocabulary',
+        'Col1':'id',
+        'Col2':'english',
+        'Col3':'spanish',
+        'Col4':'pronunc'
+    }
+
+    DatosAllWords = connect.SSP_TABLE(username, Tabla_All_Words)
         
-        
-    
-    return result
+    return render_template("/admin/addNewWord.html", url = Urlbase, grupos = DatosAllGrupos, words = DatosAllWords , result=result)
 
 @app.route("/grupos/")
 def grupos():
@@ -222,6 +244,33 @@ def NewVerb():
     DatosAllGrupos_json = json.dumps(DatosAllGrupos) 
     
     return render_template("/admin/addNewVerb.html")
+
+@app.route("/NewWord")
+def NewWord():
+    urlrev = URLBASE
+    username = CONFIG['TYPE_USER']['ROOT']
+    connect=Model(username) 
+    
+    Tabla_All_Grupos = dict()
+    Tabla_All_Grupos = {'TABLE':'grupo',
+        'Col1':'id',
+        'Col2':'topico'
+    }
+    result = {}
+    result["message"] = "Registro exitoso"
+   
+    DatosAllGrupos = connect.SSP_TABLE(username, Tabla_All_Grupos)
+
+    Tabla_All_Words = dict()
+    Tabla_All_Words = {'TABLE':'vocabulary',
+        'Col1':'id',
+        'Col2':'english',
+        'Col3':'spanish',
+        'Col4':'pronunc'
+    }
+
+    DatosAllWords = connect.SSP_TABLE(username, Tabla_All_Words)
+    return render_template("/admin/addNewWord.html", url = urlrev, grupos = DatosAllGrupos, words = DatosAllWords, result = result)
 
 
 @app.route("/add_NewVerb/", methods=["POST"])

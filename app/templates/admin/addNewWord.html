@@ -1,0 +1,81 @@
+{% extends 'base/baseAdmin.html'%}
+
+{%block showForm%}
+    <div id="contenedor_principal" class="contenedor_principal">
+        <div id="form" class="body_form">
+            <div class="contenedor_primario_form">
+                <h2 class="item_titulo">Registrar palabras</h2>
+                    <div class="contenedor_form">
+                        <h3>Agregar palabra vocabulario</h3>
+                        <form action="{{url}}/add_NewWord" method="post" id="form1">
+                            <p class="item_form">
+                                <label>Palabra ingles:</label>
+                                <input type="text"  name = "english" >
+                            </p>
+                            <p>
+                                <label>Palabra español:</label>
+                                <input type="text"  name = "spanish" >
+                            </p>
+
+                            <p>
+                                <label>Grupo:</label>
+                                <select name="grupo" id="grupo">
+                                    {% for valor in grupos %}
+                                        <option value="{{valor.id}}">{{valor.topico}}</option>
+                                    {% endfor %}
+                                </select>
+                            </p>
+
+                            <p>
+                                <label>Audio:</label>
+                                <input type="text"  name = "pronunc" >
+                            </p>
+
+                            <p>
+                                <label >Ejemplos:</label>
+                                <textarea name="ejemplos" id="ejemplos" cols="30" rows="5"></textarea>
+                            </p>
+                            <p>
+                                <button type="submit">Enviar Registro</button>
+                            </p>                   
+                        </form>      
+                    </div>
+            </div>
+        </div>
+        <div>{{result.message}}</div>
+    </div>
+    <br>
+{%endblock%}
+
+{%block showTable%}
+    <table class="table">
+        <tr>
+          <td>Verbs</td>
+          <td>Past</td>
+          <td>Finish</td>
+          <td>Spanish</td>
+        </tr>
+        {% for valor in words %}
+        <tr>
+          <td>{{valor.id}}</td>
+          <td>{{valor.english}}</td>
+          <td>{{valor.spanish}}</td>
+          <td>{{valor.pronunc}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+<script src="{{ url_for('static', filename='js/js_homead/admin.js') }}"></script> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>   
+</body>
+</html>
