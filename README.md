@@ -25,8 +25,8 @@ Linux (distribucion Centos 7-Server Linux Ubuntu)
 
 Estructura del proyecto:
 
--/mysite  "Carpeta raiz del proyecto".  
-    -app/                         "Carpeta aplicacion". 
+*/mysite  "Carpeta raiz del proyecto".  
+    *app/                         "Carpeta aplicacion". 
         -/config                  "Carpeta con archivos de configuración".
             -__init__.py          "Archivo para validar carpeta como paquete".
             -config.json          "Archivo con datos de configuracion innorado en repositorio por -seguridad".
