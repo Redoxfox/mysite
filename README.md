@@ -27,10 +27,10 @@ Estructura del proyecto:
 
 * /mysite  "Carpeta raiz del proyecto".  
     * app/                         "Carpeta aplicacion". 
-        * /config                  "Carpeta con archivos de configuración".
+        - **/config                  "Carpeta con archivos de configuración".
             - __init__.py          "Archivo para validar carpeta como paquete".
             - config.json          "Archivo  configuracion innorado en repositorio por - seguridad".
-        - /model                   "Carpeta con modelos de la base de datos".
+        - ** /model                   "Carpeta con modelos de la base de datos".
             - __init__.py          "Archivo para validar carpeta como paquete".
             - modeldb.py           "Archivo para modelos y consultas a base de datos".
         - /routes                  "Carpeta para configuracion de rutas y carpetas con diferentes rutas".
@@ -51,4 +51,8 @@ Estructura del proyecto:
                 - lavasplah.py     "Archivo gestion aplicacion de lavado ecologico de autos".
         - /static                  "Carpeta para gestion de estilos, js y librerias proyecto".
         - /css
-    - un.py 
+        - /imgs
+        - /js
+        - /lib
+        - /media 
+    * run.py                        
