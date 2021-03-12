@@ -25,8 +25,8 @@ Linux (distribucion Centos 7-Server Linux Ubuntu)
 
 Estructura del proyecto:
 
-* /mysite  "Carpeta raiz del proyecto".  
-    * app/                         "Carpeta aplicacion". 
+* __/mysite__  "Carpeta raiz del proyecto".  
+    * __app/__                         "Carpeta aplicacion". 
         - __/config__                  "Carpeta con archivos de configuración."
             - __init__.py          "Archivo para validar carpeta como paquete".
             - __config.json__         "Archivo  configuracion innorado en repositorio por - seguridad".
@@ -37,22 +37,22 @@ Estructura del proyecto:
             - __init__.py          "Archivo para cofiguracion de acceso rutas".
             - __/admin__               "Carpeta con rutas para administrar el proyecto".
                 - __init__.py      "Archivo para validar carpeta como paquete".
-                - admin.py         "Archivo con metodos para administracion del proyecto".
-                - login.py         "Archivo con metodos para logeo al proyecto".
-                - registro.py      "Archivo con metodos para manejo de registros del proyecto".
-                - validar.py       "Archivo con metodos para validacioes del proyecto".
-                - view.py          "Archivo con metodos para gestionar vistas para admin proyecto".
-            - /blog                "Carpeta con rutas para gestion de blog en el proyecto".
+                - __admin.py__         "Archivo con metodos para administracion del proyecto".
+                - __login.py__         "Archivo con metodos para logeo al proyecto".
+                - __registro.py__      "Archivo con metodos para manejo de registros del proyecto".
+                - __validar.py__       "Archivo con metodos para validacioes del proyecto".
+                - __view.py__          "Archivo con metodos para gestionar vistas para admin proyecto".
+            - __/blog__                "Carpeta con rutas para gestion de blog en el proyecto".
                 - __init__.py      "Archivo para validar carpeta como paquete".
-                - sopa_letras.py   "Archivo gestion de aplicacion entrada blog".
-            - /project             "Carpeta con rutas para gestion de proyectos".
+                - __sopa_letras.py__   "Archivo gestion de aplicacion entrada blog".
+            - __/project__             "Carpeta con rutas para gestion de proyectos".
                 - __init__.py      "Archivo para validar carpeta como paquete".
-                - gastos.py        "Archivo gestion aplicacion gastos personales".
-                - lavasplah.py     "Archivo gestion aplicacion de lavado ecologico de autos".
-        - /static                  "Carpeta para gestion de estilos, js y librerias proyecto".
-        - /css
-        - /imgs
-        - /js
-        - /lib
-        - /media 
-    * run.py                        
+                - __gastos.py__        "Archivo gestion aplicacion gastos personales".
+                - __lavasplah.py__     "Archivo gestion aplicacion de lavado ecologico de autos".
+        - __/static__                  "Carpeta para gestion de estilos, js y librerias proyecto".
+        - __/css__
+        - __/imgs__
+        - __/js__
+        - __/lib__
+        - __/media__ 
+    * __run.py__                        
