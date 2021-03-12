@@ -63,7 +63,7 @@ ___
 [Proyecto Personal Portafolio](https://redoxfox1.pythonanywhere.com/) 
 
 Y este es link de mi otro gran proyecto personal desplegado en DigitalOcean
-
+___
 [Proyecto Personal Emprendimiento](https://www.sandyvitalstore.com/) 
 
 
