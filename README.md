@@ -27,15 +27,15 @@ Estructura del proyecto:
 
 * /mysite  "Carpeta raiz del proyecto".  
     * app/                         "Carpeta aplicacion". 
-        - /config                  "Carpeta con archivos de configuración."
+        - __/config__                  "Carpeta con archivos de configuración."
             - __init__.py          "Archivo para validar carpeta como paquete".
-            - config.json          "Archivo  configuracion innorado en repositorio por - seguridad".
-        - /model                   "Carpeta con modelos de la base de datos".
+            - __config.json__         "Archivo  configuracion innorado en repositorio por - seguridad".
+        - __/model__                   "Carpeta con modelos de la base de datos".
             - __init__.py          "Archivo para validar carpeta como paquete".
-            - modeldb.py           "Archivo para modelos y consultas a base de datos".
-        - /routes                  "Carpeta para configuracion de rutas y carpetas con diferentes rutas".
+            - __modeldb.py__           "Archivo para modelos y consultas a base de datos".
+        - __/routes__                  "Carpeta para configuracion de rutas y carpetas con diferentes rutas".
             - __init__.py          "Archivo para cofiguracion de acceso rutas".
-            - /admin               "Carpeta con rutas para administrar el proyecto".
+            - __/admin__               "Carpeta con rutas para administrar el proyecto".
                 - __init__.py      "Archivo para validar carpeta como paquete".
                 - admin.py         "Archivo con metodos para administracion del proyecto".
                 - login.py         "Archivo con metodos para logeo al proyecto".
