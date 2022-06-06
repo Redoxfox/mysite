@@ -435,3 +435,36 @@ function cerrar(id){
     let contenedor_t = document.getElementById(id_tabla);
     contenedor.removeChild(contenedor_t);
 }
+
+<div class="container_instrucciones">
+    <div class="stats_game">
+      <div class="item_stats_p">
+        <h4>Tu tiempo de juego<h4/>
+        <ul> 
+          <li>horas: ${hour} </li>
+          <li>mins: ${min} </li>
+          <li>Segs: ${seg} </li>
+        </ul>
+      </div>
+      
+      <div class="item_stats_p">
+        <h4>Ranking de juego<h4/>
+        <ul> 
+          <li>horas: ${hour} </li>
+          <li>mins: ${min} </li>
+          <li>Segs: ${seg} </li>
+        </ul>
+      </div>
+      <form class="item_stats">
+        <h4>Registra tu score </h4>
+        <label>Nombre:</label>
+        <input type="text"  name = "name" >
+        <label>Ciudad:</label>
+        <input type="text"  name = "city" >
+        <button type="submit" onclick="topicos(event);">Enviar Registro</button>
+      </form>  
+      
+      <div class="item_stats">
+    
+      </div> 
+    </div>

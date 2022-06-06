@@ -22,9 +22,10 @@ print(os.path.isdir('app/config'))
 
 @app.route("/")
 def index():
-
-    Sql="ddasddf"
     url = URLBASE
+    #DatosUsers = "f"
+    Sql="ddasddf"
+    
     username = CONFIG['TYPE_USER']['ROOT']
     connect=Model(username)   
     Nick = "Redoxfox"

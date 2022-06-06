@@ -82,6 +82,10 @@ function ocultar(id){
   document.getElementById("intrucciones").innerHTML =""
 }
 
+function ocultarm(id){
+  document.getElementById("score").innerHTML =""
+}
+
 // function new_soup_topic(id) {
 //   let url = window.origin
 //   window.location.href = url + "/blog/sopa_letters/" + id.toString();
@@ -330,8 +334,8 @@ fetch(url, {
           let celda = document.getElementById(id);
           celda.removeAttribute("onclick")
         }
-        if (numero_aciertos==1) {
-          var hora_ini = new Date().toLocaleTimeString();
+        if (numero_aciertos==15) {
+          /*var hora_ini = new Date().toLocaleTimeString();
           let estado = "parar"
           tiempo(hora_ini, estado)
           let $mytime = document.getElementById("horas");
@@ -341,8 +345,8 @@ fetch(url, {
           let min = parseInt(s_mytime[1]);
           let seg = parseInt(s_mytime[2]);
           let total_seg = hour*3600 + 60*min + seg
-          const url_score = window.origin + "/palabra/";
-
+          
+                   
           document.getElementById("score").innerHTML =`
           <div class="container_titulo">
             <div id="titulo_instruciones">
@@ -353,51 +357,22 @@ fetch(url, {
             </div>
           </div>
           <div class="container_instrucciones">
-            <div class="stats_game">
-              <div class="item_stats_p">
-                <h4>Tu tiempo de juego<h4/>
-                <ul> 
-                  <li>horas: ${hour} </li>
-                  <li>mins: ${min} </li>
-                  <li>Segs: ${seg} </li>
-                </ul>
-              </div>
-              
-              <div class="item_stats_p">
-                <h4>Ranking de juego<h4/>
-                <ul> 
-                  <li>horas: ${hour} </li>
-                  <li>mins: ${min} </li>
-                  <li>Segs: ${seg} </li>
-                </ul>
-              </div>
-              <form class="item_stats">
-                <h4>Registra tu score </h4>
-                <label>Nombre:</label>
-                <input type="text"  name = "name" >
-                <label>Ciudad:</label>
-                <input type="text"  name = "city" >
-                <button type="submit" onclick="topicos(event);">Enviar Registro</button>
-              </form>  
-              
-              <div class="item_stats">
-            
-              </div> 
-            </div>
-          <div class="container_titulo">
+           
+            <div class="container_titulo">
               <div id="titulo_instruciones">
-                <strong>Diviertete!!...</strong>
+                <strong>Gracias por!!...</strong>
               </div>
+            </div>
           </div>
-       
           `
           let $modal_sc = document.getElementById("modal_sc")
           $modal_sc.classList.add("bg-active")
           $modal_sc.classList.add("modal_sc")
-          console.log(total_seg)
-          // alert("Felicitaciones has terminado con exito!!!...")
-          
-          
+          console.log(total_seg)*/
+
+          const url_score = window.origin + "/palabra/";
+          alert("Felicitaciones has terminado con exito!!!...")
+         
         }
       } else {
         let palabra = document.getElementById("palabra");

@@ -114,11 +114,11 @@ function api(){
             var map = L.map('map').setView([7, -75.5], 6);
             for (let index = 0; index < LatLng.length; index++) {
               const element = LatLng[index];
-              let Extra = document.createElement('div');
+              /*let Extra = document.createElement('div');
               let id_Extra  = "Extra" + index
               Extra.setAttribute("id", id_Extra);
               Extra.textContent = "latitud:"+element[0]+"---"+"longitud:"+element[1]
-              coodenadas.appendChild(Extra);
+              coodenadas.appendChild(Extra);*/
              
               dibujar(element[0], element[1])
               }

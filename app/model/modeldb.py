@@ -3,12 +3,17 @@ import pymysql.cursors
 import os
 import json
 dir_act = os.getcwd()
+absolutepath = os.path.abspath(__file__)
+print(absolutepath)
 route_file_config = dir_act 
 route_exist = route_file_config.find("mysite")
 if route_exist > 0:
-    route_file_config = dir_act + "/app/config/config.json"
+    #route_file_config = dir_act + os.path.join("app", "config", "directory2")
+    route_file_config ="app/config/config.json"
+    #route_file_config = "C:/Users/cmtrf/source" + "\\app\\config\\config.json"
 else:
-    route_file_config = dir_act + "/mysite/app/config/config.json"
+    #route_file_config = dir_act + "/mysite/app/config/config.json"
+    route_file_config = "C:/Users/cmtrf/source" + "/mysite/app/config/config.json"
 
 f =open(route_file_config,"r")
 file=f.read()
@@ -26,7 +31,7 @@ class Model:
                              user=self.usuario,
                              password = CONFIG['DEFAULT']['DB_PASSWORD'],
                              db = CONFIG['DEFAULT']['DB_NAME'],
-                             charset = CONFIG['DEFAULT']['DB_CRARSET'],
+                             charset = CONFIG['DEFAULT']['DB_CHARSET'],
                              cursorclass=pymysql.cursors.DictCursor
                              )
         return self.connection
@@ -34,7 +39,7 @@ class Model:
     #Consulta con combinacion de SELECT and WHERE############################################ 
     def SW_TABLE(self, type_user, datos_table, *args):
         MyObjModel = Model(type_user)
-        con = MyObjModel.con();
+        con = MyObjModel.con()
         self.Datos_table = datos_table
         list_column = []
         list_table = []
@@ -89,7 +94,7 @@ class Model:
     #Consulta para la creacion de tablas############################################
     def CT_TABLE(self, type_user, Datos_table):
         MyObjModel = Model(type_user)
-        con = MyObjModel.con();
+        con = MyObjModel.con()
         list_table = []
         for items in Datos_table:
             valor = Datos_table[items]
@@ -129,7 +134,7 @@ class Model:
     #Consulta para la insertar elementos############################################ 
     def IT_TABLE(self, type_user, datos_table, args):
         MyObjModel = Model(type_user)
-        con = MyObjModel.con();
+        con = MyObjModel.con()
         list_column = []
         list_values = []
         cont=0

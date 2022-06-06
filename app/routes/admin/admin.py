@@ -65,7 +65,8 @@ def validar():
          
     Data = (wid,)
     DatosUsers = connect.SW_TABLE(username, TSWusers, Data)
-    if DatosUsers:
+    return redirect(url_for('admin'))
+    '''if DatosUsers:
         password_userbd = DatosUsers[0]['password']
         salt_userbd = DatosUsers[0]['salt']
         tipo_user = DatosUsers[0]['tipo_user']
@@ -80,7 +81,7 @@ def validar():
     else:
         return render_template("/registro/login.html")
 
-    ''' password_userbd = DatosUsers[0]['password']
+    password_userbd = DatosUsers[0]['password']
     salt_userbd = DatosUsers[0]['salt']
     tipo_user = DatosUsers[0]['tipo_user']
     hash = validaciones.Validar()
